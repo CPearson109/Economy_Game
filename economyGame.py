@@ -17,9 +17,9 @@ BLACK = (0, 0, 0)
 
 # Initialize player states (3 players)
 players = [
-    {"money": 1000, "resources": {"Wood": 0, "Iron": 0, "Tools": 0}},
-    {"money": 1000, "resources": {"Wood": 0, "Iron": 0, "Tools": 0}},
-    {"money": 1000, "resources": {"Wood": 0, "Iron": 0, "Tools": 0}}
+    {"money": 1000, "resources": {"Wood": 0, "Stone": 0, "Iron": 0, "Gold": 0, "Diamond": 0}},
+    {"money": 1000, "resources": {"Wood": 0, "Stone": 0, "Iron": 0, "Gold": 0, "Diamond": 0}},
+    {"money": 1000, "resources": {"Wood": 0, "Stone": 0, "Iron": 0, "Gold": 0, "Diamond": 0}}
 ]
 
 # Market state
@@ -27,20 +27,32 @@ market = {
     "Wood": {
         "supply": 10,
         "max_supply": 20,
-        "min_price": 20,
-        "max_price": 100
+        "min_price": 1,
+        "max_price": 150
+    },
+    "Stone": {
+        "supply": 10,
+        "max_supply": 20,
+        "min_price": 5,
+        "max_price": 250
     },
     "Iron": {
         "supply": 10,
         "max_supply": 20,
-        "min_price": 50,
-        "max_price": 200
+        "min_price": 10,
+        "max_price": 300
     },
-    "Tools": {
-        "supply": 0,
-        "max_supply": 20,
+    "Gold": {
+        "supply": 5,
+        "max_supply": 10,
+        "min_price": 50,
+        "max_price": 500
+    },
+    "Diamond": {
+        "supply": 2,
+        "max_supply": 5,
         "min_price": 100,
-        "max_price": 400
+        "max_price": 2000
     }
 }
 
@@ -73,10 +85,10 @@ def buy_resource(player, resource):
         player["money"] -= price
         player["resources"][resource] += 1
         market[resource]["supply"] -= 1
-        return True  # Action successful
-    return False  # Action failed (no money or no supply)
+        return True
+    return False
 
-# Function to handle resource selling (only count action if successful)
+# Function to handle selling
 def sell_resource(player, resource):
     global market
     if player["resources"][resource] > 0:
@@ -84,29 +96,14 @@ def sell_resource(player, resource):
         player["money"] += price
         player["resources"][resource] -= 1
         market[resource]["supply"] += 1
-        return True  # Action successful
-    return False  # Action failed (no resources to sell)
-
-# Function to handle crafting (Wood + Iron = Tools, only count action if successful)
-def craft_tools(player):
-    if player["resources"]["Wood"] > 0 and player["resources"]["Iron"] > 0:
-        player["resources"]["Wood"] -= 1
-        player["resources"]["Iron"] -= 1
-        player["resources"]["Tools"] += 1
-        market["Tools"]["supply"] += 1
-        return True  # Action successful
-    return False  # Action failed (not enough resources)
+        return True
+    return False
 
 # Function to restock the market each turn
 def restock_market():
     for resource in market:
-        if resource != "Tools":  # Tools are only crafted by the player
-            restock_amount = random.randint(1, 3)  # Add a small amount of raw materials
-            market[resource]["supply"] = min(market[resource]["max_supply"], market[resource]["supply"] + restock_amount)
-
-    # Remove a percentage of Tools to simulate consumption
-    tools_consumed = random.randint(0, market["Tools"]["supply"])
-    market["Tools"]["supply"] = max(0, market["Tools"]["supply"] - tools_consumed)
+        restock_amount = random.randint(1, 3)  # Add a small amount of resources
+        market[resource]["supply"] = min(market[resource]["max_supply"], market[resource]["supply"] + restock_amount)
 
 # Main game loop
 running = True
@@ -118,29 +115,62 @@ current_player = 0
 actions_taken = 0  # Track number of actions taken per player turn
 max_actions_per_turn = 5  # Limit of 5 actions per turn
 
+sellMode = False
+
 while running:
     screen.fill(WHITE)
 
     # Event handling
     for event in pygame.event.get():
+
         if event.type == pygame.QUIT:
             running = False
+
         elif event.type == pygame.KEYDOWN and actions_taken < max_actions_per_turn:  # Check if action limit is reached
-            if event.key == pygame.K_w:  # Buy Wood
-                if buy_resource(players[current_player], "Wood"):
-                    actions_taken += 1
-            elif event.key == pygame.K_i:  # Buy Iron
-                if buy_resource(players[current_player], "Iron"):
-                    actions_taken += 1
-            elif event.key == pygame.K_s:  # Sell Tools
-                if sell_resource(players[current_player], "Tools"):
-                    actions_taken += 1
-            elif event.key == pygame.K_c:  # Craft Tools
-                if craft_tools(players[current_player]):
-                    actions_taken += 1
-            elif event.key == pygame.K_SPACE:  # End turn, restock market, and move to next player
-                restock_market()
-                actions_taken = max_actions_per_turn  # Ensure the player finishes their turn
+
+                if event.key == pygame.K_s:  # Sell mode
+                    sellMode = True
+
+                if event.key == pygame.K_b:
+                    sellMode = False
+
+                if not sellMode:
+                    if event.key == pygame.K_w:  # Buy Wood
+                        if buy_resource(players[current_player], "Wood"):
+                            actions_taken += 1
+                    elif event.key == pygame.K_s:  # Buy Stone
+                        if buy_resource(players[current_player], "Stone"):
+                            actions_taken += 1
+                    elif event.key == pygame.K_i:  # Buy Iron
+                        if buy_resource(players[current_player], "Iron"):
+                            actions_taken += 1
+                    elif event.key == pygame.K_g:  # Buy Gold
+                        if buy_resource(players[current_player], "Gold"):
+                            actions_taken += 1
+                    elif event.key == pygame.K_d:  # Buy Diamond
+                        if buy_resource(players[current_player], "Diamond"):
+                            actions_taken += 1
+
+                if sellMode:
+                    if event.key == pygame.K_w:  # Buy Wood
+                        if sell_resource(players[current_player], "Wood"):
+                            actions_taken += 1
+                    elif event.key == pygame.K_s:  # Buy Stone
+                        if sell_resource(players[current_player], "Stone"):
+                            actions_taken += 1
+                    elif event.key == pygame.K_i:  # Buy Iron
+                        if sell_resource(players[current_player], "Iron"):
+                            actions_taken += 1
+                    elif event.key == pygame.K_g:  # Buy Gold
+                        if sell_resource(players[current_player], "Gold"):
+                            actions_taken += 1
+                    elif event.key == pygame.K_d:  # Buy Diamond
+                        if sell_resource(players[current_player], "Diamond"):
+                            actions_taken += 1
+
+                elif event.key == pygame.K_SPACE:  # End turn, restock market, and move to next player
+                    restock_market()
+                    actions_taken = max_actions_per_turn  # Ensure the player finishes their turn
 
     # When the player has taken 5 actions, move to the next player
     if actions_taken >= max_actions_per_turn:
@@ -150,8 +180,10 @@ while running:
 
     # Update prices based on supply
     wood_price = calculate_price("Wood")
+    stone_price = calculate_price("Stone")
     iron_price = calculate_price("Iron")
-    tools_price = calculate_price("Tools")
+    gold_price = calculate_price("Gold")
+    diamond_price = calculate_price("Diamond")
 
     # Draw the game interface
     player = players[current_player]
@@ -159,18 +191,28 @@ while running:
     draw_text(f"Money: ${player['money']}", 10, 40)
     draw_text("Your Resources:", 10, 70)
     draw_text(f"Wood: {player['resources']['Wood']}", 10, 100)
-    draw_text(f"Iron: {player['resources']['Iron']}", 10, 130)
-    draw_text(f"Tools: {player['resources']['Tools']}", 10, 160)
+    draw_text(f"Stone: {player['resources']['Stone']}", 10, 130)
+    draw_text(f"Iron: {player['resources']['Iron']}", 10, 160)
+    draw_text(f"Gold: {player['resources']['Gold']}", 10, 190)
+    draw_text(f"Diamond: {player['resources']['Diamond']}", 10, 220)
 
     draw_text("Market:", 300, 70)
     draw_text(f"Wood - Price: ${wood_price} Supply: {market['Wood']['supply']}", 300, 100)
-    draw_text(f"Iron - Price: ${iron_price} Supply: {market['Iron']['supply']}", 300, 130)
-    draw_text(f"Tools - Price: ${tools_price} Supply: {market['Tools']['supply']}", 300, 160)
+    draw_text(f"Stone - Price: ${stone_price} Supply: {market['Stone']['supply']}", 300, 130)
+    draw_text(f"Iron - Price: ${iron_price} Supply: {market['Iron']['supply']}", 300, 160)
+    draw_text(f"Gold - Price: ${gold_price} Supply: {market['Gold']['supply']}", 300, 190)
+    draw_text(f"Diamond - Price: ${diamond_price} Supply: {market['Diamond']['supply']}", 300, 220)
 
     # Instructions
-    draw_text("Press W to buy Wood, I to buy Iron", 10, 250)
-    draw_text("Press C to craft Tools (1 Wood + 1 Iron)", 10, 280)
-    draw_text("Press S to sell Tools, SPACE to end turn", 10, 310)
+    draw_text("Press W to buy Wood, S to buy Stone", 10, 280)
+    draw_text("Press I to buy Iron, G to buy Gold, D to buy Diamond", 10, 310)
+    draw_text("Press SPACE to end turn", 10, 340)
+
+    if not sellMode:
+        draw_text("Buy Mode:", 400, 20)
+
+    if sellMode:
+        draw_text("Sell Mode:", 400, 20)
 
     # Update the display
     pygame.display.flip()
