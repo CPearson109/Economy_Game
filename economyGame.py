@@ -1,19 +1,18 @@
 import pygame
 import random
 import sys
-import math
 import matplotlib.pyplot as plt
 
 # Initialize pygame
 pygame.init()
 
 # Screen settings
-WIDTH, HEIGHT = 800, 800  # Increased height to accommodate more text
+WIDTH, HEIGHT = 800, 700  # Increased height to fit additional information
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Enhanced Economy Simulation")
+pygame.display.set_caption("Simplified Economy Simulation")
 
 # Fonts
-FONT = pygame.font.SysFont("arial", 20)
+FONT = pygame.font.SysFont("arial", 18)
 
 # Colors
 WHITE = (255, 255, 255)
@@ -32,27 +31,25 @@ PRODUCTION_PER_WORKER = {"Food": 12, "Fuel": 10, "Clothes": 8}
 WAGE_MULTIPLIERS = {"Food": 1.5, "Fuel": 2.0, "Clothes": 2.5}
 
 # Minimum wage for factories
-MINIMUM_WAGE = 5.0  # Set to a very low value
+MINIMUM_WAGE = 5.0
 
 class Market:
     def __init__(self):
         self.prices = {resource: 10.0 for resource in RESOURCES}
-        self.supply = {resource: 500.0 for resource in RESOURCES}  # Start with 500 units of each resource
+        self.supply = {resource: 500.0 for resource in RESOURCES}
         self.demand = {resource: 0.0 for resource in RESOURCES}
-        self.daily_supply = {resource: 0.0 for resource in RESOURCES}  # Supply added each day
 
     def adjust_prices(self):
         for resource in RESOURCES:
             if self.demand[resource] > self.supply[resource]:
                 # Increase price
-                self.prices[resource] *= 1.05  # Increase price by 5%
+                self.prices[resource] *= 1.05
             elif self.demand[resource] < self.supply[resource]:
                 # Decrease price
-                self.prices[resource] *= 0.95  # Decrease price by 5%
+                self.prices[resource] *= 0.95
             # Ensure price doesn't go negative
             self.prices[resource] = max(self.prices[resource], 0.01)
-            # Reset daily supply and demand for the next day
-            self.daily_supply[resource] = 0.0
+            # Reset daily demand
             self.demand[resource] = 0.0
 
 class Person:
@@ -70,12 +67,8 @@ class Person:
             if self.resources[resource] < 0:
                 self.is_alive = False
 
-    def decide_to_work(self, market):
-        # Decide to work if money is less than a certain threshold
-        if self.money < 200:
-            return True
-        else:
-            return False
+    def decide_to_work(self):
+        return self.money < 200
 
     def buy_resources(self, market):
         initial_budget = self.money
@@ -91,7 +84,7 @@ class Person:
                 market.supply[resource] -= amount_can_buy
 
     def reproduce(self):
-        reproduction_chance = 0.01  # 1% chance to reproduce each day
+        reproduction_chance = 0.01
         if random.random() < reproduction_chance and self.money > 50:
             self.money /= 2
             child = Person()
@@ -103,69 +96,56 @@ class Person:
         return None
 
 class Factory:
-    # Optional: Set a maximum number of workers per factory
-    MAX_WORKERS = 20  # You can adjust or remove this limit
-
     def __init__(self, resource_type):
         self.resource_type = resource_type
         self.workers = []
         self.production_per_worker = PRODUCTION_PER_WORKER[resource_type]
         self.wage_multiplier = WAGE_MULTIPLIERS[resource_type]
-        self.wage = 0.0
-        self.days_unprofitable = 0
-        self.money = 2000.0  # Increased starting capital
+        self.initial_wage = MINIMUM_WAGE
+        self.current_wage = MINIMUM_WAGE
+        self.worker_count = 0  # Track number of workers accepted
 
     def calculate_wage(self, market):
-        # Expected production per worker
-        expected_production_per_worker = self.production_per_worker
-        expected_revenue_per_worker = expected_production_per_worker * market.prices[self.resource_type]
-        # Adjusted desired profit margin
+        expected_revenue_per_worker = self.production_per_worker * market.prices[self.resource_type]
         desired_profit_margin = 0.3
-        # Set wage so that wage = (revenue per worker) * (1 - profit margin)
-        self.wage = max((1 - desired_profit_margin) * expected_revenue_per_worker, MINIMUM_WAGE)
+        # Set initial wage based on the value of the material produced
+        self.initial_wage = max((1 - desired_profit_margin) * expected_revenue_per_worker, MINIMUM_WAGE)
+        # Reset current wage to initial wage at the start of the day
+        self.current_wage = self.initial_wage
 
     def accept_workers(self, applicants):
-        # Calculate maximum workers factory can afford
-        max_affordable_workers = int(self.money / self.wage)
-        if self.MAX_WORKERS:
-            max_affordable_workers = min(max_affordable_workers, self.MAX_WORKERS)
-        if max_affordable_workers <= 0:
-            return  # Can't afford any workers
-        random.shuffle(applicants)
-        self.workers = []
         for person in applicants:
-            if len(self.workers) >= max_affordable_workers:
-                break
-            self.workers.append((person, self.wage))
+            # Offer the current wage
+            self.workers.append((person, self.current_wage))
             person.working = True
             person.factory = self
+            # Decrease the wage slightly for the next worker
+            self.current_wage *= 0.99  # Decrease wage by 1%
+            # Ensure wage does not go below MINIMUM_WAGE
+            if self.current_wage < MINIMUM_WAGE:
+                self.current_wage = MINIMUM_WAGE
+            # Increment worker count
+            self.worker_count += 1
 
     def produce(self, market):
         total_workers = len(self.workers)
-        # Linear production
         production_amount = self.production_per_worker * total_workers
         if production_amount > 0:
             market.supply[self.resource_type] += production_amount
-            market.daily_supply[self.resource_type] = production_amount
         # Pay wages and calculate profit
-        total_wages = self.wage * total_workers
+        total_wages = sum(wage for _, wage in self.workers)
         revenue = production_amount * market.prices[self.resource_type]
         profit = revenue - total_wages
-        self.money += profit
-        # Check profitability
-        if profit <= 0:
-            self.days_unprofitable += 1
-        else:
-            self.days_unprofitable = 0
-        # Pay workers
+        # Pay workers and clear them for the next day
         for person, wage in self.workers:
             person.money += wage
             person.working = False
             person.factory = None
         self.workers = []
 
-    def should_close(self):
-        return self.days_unprofitable >= 10  # Increased threshold
+    def reset_worker_count(self):
+        """Reset the worker count to zero at the start of each day."""
+        self.worker_count = 0
 
 class CentralBank:
     def __init__(self):
@@ -182,11 +162,11 @@ def draw_window(win, people, factories, market, day):
     # Display day
     day_text = FONT.render(f"Day: {day}", True, BLACK)
     win.blit(day_text, (10, y_offset))
-    y_offset += 30
+    y_offset += 25
     # Display population count
     population_text = FONT.render(f"Population: {len(people)}", True, BLACK)
     win.blit(population_text, (10, y_offset))
-    y_offset += 30
+    y_offset += 25
     if len(people) > 0:
         # Display average money
         avg_money = sum(person.money for person in people) / len(people)
@@ -208,31 +188,35 @@ def draw_window(win, people, factories, market, day):
         price_text = FONT.render(f"{resource} Price: ${market.prices[resource]:.2f}", True, BLACK)
         win.blit(price_text, (10, y_offset))
         y_offset += 25
-    # Display market supply
+    # Display supply and demand for each resource
     for resource in RESOURCES:
+        # Calculate total demand
+        total_demand = CONSUMPTION_RATES[resource] * len(people)
         supply_text = FONT.render(f"{resource} Supply: {market.supply[resource]:.2f}", True, BLACK)
+        demand_text = FONT.render(f"{resource} Demand: {total_demand:.2f}", True, BLACK)
         win.blit(supply_text, (10, y_offset))
         y_offset += 25
-    # Display total demand
-    for resource in RESOURCES:
-        total_demand = len(people) * CONSUMPTION_RATES[resource]
-        demand_text = FONT.render(f"{resource} Total Demand: {total_demand:.2f}", True, BLACK)
         win.blit(demand_text, (10, y_offset))
         y_offset += 25
-    # Display factory counts
-    factory_counts = {resource: 0 for resource in RESOURCES}
+    # Display factory worker counts and wages
+    y_offset += 10
+    factory_header = FONT.render("Factories and Worker Counts:", True, BLACK)
+    win.blit(factory_header, (10, y_offset))
+    y_offset += 25
     for factory in factories:
-        factory_counts[factory.resource_type] += 1
-    for resource in RESOURCES:
-        factory_text = FONT.render(f"{resource} Factories: {factory_counts[resource]}", True, BLACK)
-        win.blit(factory_text, (10, y_offset))
+        workers_text = FONT.render(f"{factory.resource_type} Factory: {len(factory.workers)} workers (Total accepted: {factory.worker_count})", True, BLACK)
+        win.blit(workers_text, (10, y_offset))
+        y_offset += 25
+        wage_text = FONT.render(f"Starting Wage: ${factory.initial_wage:.2f}", True, BLACK)
+        win.blit(wage_text, (10, y_offset))
         y_offset += 25
     pygame.display.update()
 
 def main():
     clock = pygame.time.Clock()
     people = [Person() for _ in range(NUM_PEOPLE)]
-    factories = [Factory(resource) for resource in RESOURCES for _ in range(5)]
+    # Initialize one factory per resource
+    factories = [Factory(resource) for resource in RESOURCES]
     market = Market()
     central_bank = CentralBank()
     day = 0
@@ -240,8 +224,6 @@ def main():
     # For plotting trends
     days = []
     prices_history = {resource: [] for resource in RESOURCES}
-
-    MAX_FACTORIES_PER_RESOURCE = 10  # Maximum factories per resource
 
     running = True
     while running:
@@ -270,42 +252,35 @@ def main():
                     # Workers decide where to work
                     factory_applications = {factory: [] for factory in factories}
                     for person in people:
-                        if person.decide_to_work(market) and not person.working:
-                            # Determine the resource the person needs the most
-                            needed_resources = {resource: person.max_resource - person.resources[resource] for resource in RESOURCES}
-                            most_needed_resource = max(needed_resources, key=needed_resources.get)
-                            # Find factories producing that resource
-                            preferred_factories = [factory for factory in factories if factory.resource_type == most_needed_resource]
-                            if preferred_factories:
-                                # Choose the factory offering the highest wage
-                                preferred_factory = max(preferred_factories, key=lambda f: f.wage)
-                                if preferred_factory.wage >= MINIMUM_WAGE:
-                                    factory_applications[preferred_factory].append(person)
+                        if person.decide_to_work() and not person.working:
+                            # Calculate days left for each resource
+                            days_left = {
+                                resource: (person.resources[resource] / CONSUMPTION_RATES[resource]) if person.resources[resource] > 0 else 0
+                                for resource in RESOURCES
+                            }
+                            # Determine the resource with the minimum days left
+                            most_needed_resource = min(days_left, key=days_left.get)
+                            # Find the factory producing that resource
+                            preferred_factory = next((f for f in factories if f.resource_type == most_needed_resource), None)
+                            if preferred_factory:
+                                factory_applications[preferred_factory].append(person)
                     # Factories accept workers
                     for factory in factories:
-                        factory.accept_workers(factory_applications[factory])
-                    # Factories produce goods (update market supply)
+                        applicants = factory_applications.get(factory, [])
+                        factory.accept_workers(applicants)
+                    # Factories produce goods
                     for factory in factories:
                         factory.produce(market)
-                    # Remove unprofitable factories
-                    factories = [factory for factory in factories if not factory.should_close()]
                     # Randomize purchase order
                     random.shuffle(people)
-                    # People buy resources (update market demand)
+                    # People buy resources
                     for person in people:
                         person.buy_resources(market)
-                    # Market adjusts prices based on updated supply and demand
+                    # Market adjusts prices
                     market.adjust_prices()
-
-                    # Demand-based factory creation
-                    for resource in RESOURCES:
-                        total_factories_of_resource = [factory for factory in factories if factory.resource_type == resource]
-                        if market.demand[resource] > market.supply[resource] * 1.2:
-                            if len(total_factories_of_resource) < MAX_FACTORIES_PER_RESOURCE:
-                                new_factory = Factory(resource)
-                                new_factory.money = 1000  # Initial capital
-                                factories.append(new_factory)
-
+                    # Reset worker counts for each factory at the end of the day
+                    for factory in factories:
+                        factory.reset_worker_count()
                     # People reproduce
                     new_people = []
                     for person in people:
