@@ -25,9 +25,10 @@ MAX_RESOURCE = 20
 # Resources and Consumption Rates
 RESOURCES = ["Food", "Fuel", "Clothes"]
 CONSUMPTION_RATES = {"Food": 3, "Fuel": 2, "Clothes": 1}
+BASE_PRICES = {"Food": 20, "Fuel": 30, "Clothes": 60}
 
 # Production per worker and wage multipliers per resource
-PRODUCTION_PER_WORKER = {"Food": 12, "Fuel": 10, "Clothes": 8}
+PRODUCTION_PER_WORKER = {"Food": 9, "Fuel": 7, "Clothes": 6}
 WAGE_MULTIPLIERS = {"Food": 1.5, "Fuel": 2.0, "Clothes": 2.5}
 
 # Minimum wage for factories
@@ -35,18 +36,16 @@ MINIMUM_WAGE = 10.0
 
 class Market:
     def __init__(self):
-        self.prices = {resource: 10.0 for resource in RESOURCES}
         self.supply = {resource: 500.0 for resource in RESOURCES}
-        self.demand = {resource: 0.0 for resource in RESOURCES}
+        self.demand = {resource: NUM_PEOPLE*CONSUMPTION_RATES[resource] for resource in RESOURCES}
+        self.prices = {resource: BASE_PRICES[resource] * (self.demand[resource] / self.supply[resource]) for resource in RESOURCES}
 
     def adjust_prices(self):
         for resource in RESOURCES:
-            if self.demand[resource] > self.supply[resource]:
-                # Increase price
-                self.prices[resource] *= 1.05
-            elif self.demand[resource] < self.supply[resource]:
-                # Decrease price
-                self.prices[resource] *= 0.95
+
+            if self.supply[resource] != 0:
+                self.prices[resource] =  BASE_PRICES[resource] * (self.demand[resource] / self.supply[resource])
+
             # Ensure price doesn't go negative
             self.prices[resource] = max(self.prices[resource], 0.01)
             # Reset daily demand
@@ -68,7 +67,19 @@ class Person:
                 self.is_alive = False
 
     def decide_to_work(self):
-        return self.money < 200
+        work = True
+        allResource = 0
+
+        if self.money > 100:
+
+            for resource in RESOURCES:
+                if self.resources[resource] > 8:
+                    allResource += 1
+                    if allResource == 3:
+                        work = False
+
+        return work == True
+
 
     def buy_resources(self, market):
         initial_budget = self.money
