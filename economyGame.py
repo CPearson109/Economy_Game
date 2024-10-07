@@ -31,7 +31,7 @@ PRODUCTION_PER_WORKER = {"Food": 12, "Fuel": 10, "Clothes": 8}
 WAGE_MULTIPLIERS = {"Food": 1.5, "Fuel": 2.0, "Clothes": 2.5}
 
 # Minimum wage for factories
-MINIMUM_WAGE = 5.0
+MINIMUM_WAGE = 10.0
 
 class Market:
     def __init__(self):
@@ -55,7 +55,7 @@ class Market:
 class Person:
     def __init__(self):
         self.money = random.uniform(30, 100)
-        self.resources = {resource: random.uniform(5, 10) for resource in RESOURCES}
+        self.resources = {resource: random.uniform(5, 20) for resource in RESOURCES}
         self.is_alive = True
         self.max_resource = MAX_RESOURCE
         self.working = False
@@ -144,17 +144,9 @@ class Factory:
         self.workers = []
 
     def reset_worker_count(self):
-        """Reset the worker count to zero at the start of each day."""
+        # Reset the worker count to zero at the start of each day
         self.worker_count = 0
 
-class CentralBank:
-    def __init__(self):
-        self.total_money = 0
-
-    def inject_money(self, people):
-        for person in people:
-            person.money += 10
-            self.total_money += 10 * len(people)
 
 def draw_window(win, people, factories, market, day):
     win.fill(WHITE)
@@ -193,11 +185,9 @@ def draw_window(win, people, factories, market, day):
         # Calculate total demand
         total_demand = CONSUMPTION_RATES[resource] * len(people)
         supply_text = FONT.render(f"{resource} Supply: {market.supply[resource]:.2f}", True, BLACK)
-        demand_text = FONT.render(f"{resource} Demand: {total_demand:.2f}", True, BLACK)
         win.blit(supply_text, (10, y_offset))
         y_offset += 25
-        win.blit(demand_text, (10, y_offset))
-        y_offset += 25
+
     # Display factory worker counts and wages
     y_offset += 10
     factory_header = FONT.render("Factories and Worker Counts:", True, BLACK)
@@ -218,8 +208,8 @@ def main():
     # Initialize one factory per resource
     factories = [Factory(resource) for resource in RESOURCES]
     market = Market()
-    central_bank = CentralBank()
     day = 0
+
 
     # For plotting trends
     days = []
@@ -236,10 +226,10 @@ def main():
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
+                    for factory in factories:
+                        factory.reset_worker_count()
                     # Advance one day
                     day += 1
-                    # Central bank injects money
-                    central_bank.inject_money(people)
                     # People consume resources
                     for person in people:
                         if person.is_alive:
@@ -253,17 +243,11 @@ def main():
                     factory_applications = {factory: [] for factory in factories}
                     for person in people:
                         if person.decide_to_work() and not person.working:
-                            # Calculate days left for each resource
-                            days_left = {
-                                resource: (person.resources[resource] / CONSUMPTION_RATES[resource]) if person.resources[resource] > 0 else 0
-                                for resource in RESOURCES
-                            }
-                            # Determine the resource with the minimum days left
-                            most_needed_resource = min(days_left, key=days_left.get)
-                            # Find the factory producing that resource
-                            preferred_factory = next((f for f in factories if f.resource_type == most_needed_resource), None)
-                            if preferred_factory:
-                                factory_applications[preferred_factory].append(person)
+                            #compare wages across all factories
+                            highest_wage_factory = max(factories, key=lambda factory: factory.current_wage)
+                            #apply to highest paying factory
+                            factory_applications[highest_wage_factory].append(person)
+
                     # Factories accept workers
                     for factory in factories:
                         applicants = factory_applications.get(factory, [])
@@ -278,9 +262,6 @@ def main():
                         person.buy_resources(market)
                     # Market adjusts prices
                     market.adjust_prices()
-                    # Reset worker counts for each factory at the end of the day
-                    for factory in factories:
-                        factory.reset_worker_count()
                     # People reproduce
                     new_people = []
                     for person in people:
@@ -298,6 +279,7 @@ def main():
                         prices_history[resource].append(market.prices[resource])
         # Drawing
         draw_window(WIN, people, factories, market, day)
+        # Reset worker counts for each factory at the end of the day
     # Plotting resource prices over time
     plt.figure(figsize=(10, 5))
     for resource in RESOURCES:
