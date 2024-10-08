@@ -7,18 +7,23 @@ import matplotlib.pyplot as plt
 pygame.init()
 
 # Screen settings
-WIDTH, HEIGHT = 800, 700  # Increased height to fit additional information
+WIDTH, HEIGHT = 800, 600  # Adjusted height
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Simplified Economy Simulation")
 
 # Fonts
-FONT = pygame.font.SysFont("arial", 18)
+FONT = pygame.font.SysFont("arial", 20, bold=True)
+SMALL_FONT = pygame.font.SysFont("arial", 16)
 
 # Colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
-GRAY = (200, 200, 200)
+GRAY = (230, 230, 230)
+DARK_GRAY = (50, 50, 50)
 RED = (255, 0, 0)
+GREEN = (34, 177, 76)
+BLUE = (0, 162, 232)
+ORANGE = (255, 127, 39)
 
 # Simulation settings
 NUM_PEOPLE = 100
@@ -41,12 +46,11 @@ CONSUMPTION_RATES = {"Food": 3, "Fuel": 2, "Clothes": 2}
 BASE_PRICES = {"Food": 3, "Fuel": 6, "Clothes": 9}
 
 # Production per worker and wage multipliers per resource
-PRODUCTION_PER_WORKER = {"Food": 12, "Fuel": 10, "Clothes": 8}
-WAGE_MULTIPLIERS = {"Food": 1.0, "Fuel": 1.0, "Clothes": 1.0}
+PRODUCTION_PER_WORKER = {"Food": 10, "Fuel": 8, "Clothes": 6}
+WAGE_MULTIPLIERS = {"Food": 2.0, "Fuel": 2.0, "Clothes": 2.0}
 
 # Minimum wage for factories
 MINIMUM_WAGE = 10.0
-
 
 class Button:
     def __init__(self, text, x, y, width, height, color, hover_color, action=None):
@@ -63,7 +67,7 @@ class Button:
         else:
             pygame.draw.rect(win, self.color, self.rect)
 
-        text_surface = FONT.render(self.text, True, BLACK)
+        text_surface = SMALL_FONT.render(self.text, True, BLACK)
         win.blit(text_surface, (self.rect.x + (self.rect.width - text_surface.get_width()) // 2,
                                 self.rect.y + (self.rect.height - text_surface.get_height()) // 2))
 
@@ -74,13 +78,12 @@ class Button:
                 if self.action:
                     self.action()
 
-
 class Market:
     def __init__(self):
         self.supply = {
-            "Food": 1000.0,
-            "Fuel": 750.0,
-            "Clothes": 500.0
+            "Food": 2000.0,
+            "Fuel": 1500.0,
+            "Clothes": 1000.0
         }
         self.demand = {resource: NUM_PEOPLE * CONSUMPTION_RATES[resource] for resource in RESOURCES}
         self.prices = {resource: BASE_PRICES[resource] * (self.demand[resource] / self.supply[resource]) for resource in RESOURCES}
@@ -106,7 +109,7 @@ class Market:
             self.price_history[resource].append(price)
 
             # Keep only the last N prices for moving average
-            N = 3  # Moving average over last 3 days
+            N = 5  # Moving average over last n days
             if len(self.price_history[resource]) > N:
                 self.price_history[resource].pop(0)
 
@@ -114,7 +117,6 @@ class Market:
             smoothed_price = sum(self.price_history[resource]) / len(self.price_history[resource])
 
             self.prices[resource] = smoothed_price
-
 
 class Person:
     def __init__(self):
@@ -136,7 +138,6 @@ class Person:
                 self.is_alive = False
 
     def decide_to_work(self, market):
-        # Increased thresholds to reduce eagerness to work
         money_threshold = 100  # Lower money threshold to make them work less often
         resource_threshold = {resource: CONSUMPTION_RATES[resource] * 3 for resource in RESOURCES}
 
@@ -152,25 +153,23 @@ class Person:
         return needs_money_or_resources or resource_low_supply
 
     def buy_resources(self, market):
-        # Increased target resource level to increase buying behavior
-        target_resource_level = {resource: CONSUMPTION_RATES[resource] * 10 for resource in RESOURCES}
+        target_resource_level = {resource: CONSUMPTION_RATES[resource] * 5 for resource in RESOURCES}
         budget_allocation = {'Food': 0.5, 'Fuel': 0.3, 'Clothes': 0.2}
-        total_budget = self.money * 0.8  # Spend up to 80% of current money (increased from 50%)
+        total_budget = self.money * 0.5  # Keep money as float for precision
         for resource in RESOURCES:
-            # Determine how much more resource is needed to reach target level
             amount_needed = target_resource_level[resource] - self.resources[resource]
             if amount_needed <= 0:
                 continue  # No need to buy more of this resource
-            # Allocate budget for this resource
             amount_to_spend = total_budget * budget_allocation[resource]
-            # Determine how much can be bought
-            affordable_amount = amount_to_spend / market.prices[resource]
+            price_per_unit = market.prices[resource]
+            # Calculate how many whole units can be bought
+            affordable_amount = int(amount_to_spend // price_per_unit)
             amount_can_buy = min(
-                affordable_amount, market.supply[resource], amount_needed
+                affordable_amount, int(market.supply[resource]), amount_needed
             )
             if amount_can_buy > 0:
                 self.resources[resource] += amount_can_buy
-                self.money -= amount_can_buy * market.prices[resource]
+                self.money -= amount_can_buy * price_per_unit
                 market.supply[resource] -= amount_can_buy
 
     def reproduce(self):
@@ -184,7 +183,6 @@ class Person:
                 child.resources[resource] = self.resources[resource] / 2
             return child
         return None
-
 
 class Factory:
     def __init__(self, resource_type):
@@ -234,7 +232,7 @@ class Factory:
         person.factory = self
 
         # Decrease the wage slightly for the next worker
-        self.current_wage *= 0.99  # Decrease wage by 0.1%
+        self.current_wage *= 0.99  # Decrease wage by 1%
 
         # Ensure wage does not go below MINIMUM_WAGE
         self.current_wage = max(self.current_wage, MINIMUM_WAGE)
@@ -254,76 +252,76 @@ class Factory:
     def produce(self, market):
         total_workers = len(self.workers)
         production_amount = self.production_per_worker * total_workers
+        production_amount = int(production_amount)  # Ensure integer production
         if production_amount > 0:
             market.supply[self.resource_type] += production_amount
-        # Clear workers for the next day
         self.workers = []
 
     def reset_worker_count(self):
         # Reset the worker count to zero at the start of each day
         self.worker_count = 0
 
+def draw_panel(win, x, y, width, height, title, content_lines, bg_color, text_color):
+    # Draw panel background
+    pygame.draw.rect(win, bg_color, (x, y, width, height))
+    # Draw panel border
+    pygame.draw.rect(win, BLACK, (x, y, width, height), 2)
+    # Render title
+    title_surface = FONT.render(title, True, text_color)
+    win.blit(title_surface, (x + 10, y + 10))
+    # Render content lines
+    offset = 40
+    for line in content_lines:
+        line_surface = SMALL_FONT.render(line, True, text_color)
+        win.blit(line_surface, (x + 10, y + offset))
+        offset += 25
 
 def draw_window(win, people, factories, market, day, end_button):
     win.fill(WHITE)
-    y_offset = 10
-    # Display day
-    day_text = FONT.render(f"Day: {day}", True, BLACK)
-    win.blit(day_text, (10, y_offset))
-    y_offset += 25
-    # Display population count
-    population_text = FONT.render(f"Population: {len(people)}", True, BLACK)
-    win.blit(population_text, (10, y_offset))
-    y_offset += 25
-    if len(people) > 0:
-        # Display average money
-        avg_money = sum(person.money for person in people) / len(people)
-        avg_money_text = FONT.render(f"Average Money: ${avg_money:.2f}", True, BLACK)
-        win.blit(avg_money_text, (10, y_offset))
-        y_offset += 25
-        # Display average resources
-        avg_resources = {
-            resource: sum(person.resources[resource] for person in people) / len(people) for resource in RESOURCES
-        }
-        for resource in RESOURCES:
-            avg_resource_text = FONT.render(f"Avg {resource}: {avg_resources[resource]:.2f}", True, BLACK)
-            win.blit(avg_resource_text, (10, y_offset))
-            y_offset += 25
-    else:
-        avg_money_text = FONT.render("Average Money: N/A", True, BLACK)
-        win.blit(avg_money_text, (10, y_offset))
-        y_offset += 25
-    # Display resource prices
-    for resource in RESOURCES:
-        price_text = FONT.render(f"{resource} Price: ${market.prices[resource]:.2f}", True, BLACK)
-        win.blit(price_text, (10, y_offset))
-        y_offset += 25
-    # Display supply and demand for each resource
-    for resource in RESOURCES:
-        supply_text = FONT.render(f"{resource} Supply: {market.supply[resource]:.2f}", True, BLACK)
-        win.blit(supply_text, (10, y_offset))
-        y_offset += 25
 
-    # Display factory worker counts and wages
-    y_offset += 10
-    factory_header = FONT.render("Factories and Worker Counts:", True, BLACK)
-    win.blit(factory_header, (10, y_offset))
-    y_offset += 25
+    # Panel dimensions
+    panel_width = WIDTH // 2 - 30
+    panel_height = HEIGHT // 2 - 40
+
+    # Top Left Panel - General Info
+    general_info = [
+        f"Day: {day}",
+        f"Population: {len(people)}",
+    ]
+    if people:
+        avg_money = sum(person.money for person in people) / len(people)
+        general_info.append(f"Avg Money: ${avg_money:.2f}")
+    else:
+        general_info.append("Avg Money: N/A")
+    draw_panel(win, 20, 20, panel_width, panel_height, "General Info", general_info, GRAY, BLACK)
+
+    # Top Right Panel - Resource Prices
+    resource_prices = [f"{resource}: ${market.prices[resource]:.2f}" for resource in RESOURCES]
+    draw_panel(win, WIDTH // 2 + 10, 20, panel_width, panel_height, "Resource Prices", resource_prices, GRAY, BLACK)
+
+    # Bottom Left Panel - Factory Info
+    factory_info = []
     for factory in factories:
-        workers_text = FONT.render(
-            f"{factory.resource_type} Factory: {factory.worker_count} workers", True, BLACK
-        )
-        win.blit(workers_text, (10, y_offset))
-        y_offset += 25
-        wage_text = FONT.render(f"Starting Wage: ${factory.initial_wage:.2f}", True, BLACK)
-        win.blit(wage_text, (10, y_offset))
-        y_offset += 25
+        factory_info.append(f"{factory.resource_type} Workers: {factory.worker_count}")
+        factory_info.append(f"Wage: ${factory.initial_wage:.2f}")
+        factory_info.append("")  # Empty line for spacing
+    draw_panel(win, 20, HEIGHT // 2 + 10, panel_width, panel_height, "Factories", factory_info, GRAY, BLACK)
+
+    # Bottom Right Panel - Average Resources
+    if people:
+        avg_resources = {
+            resource: sum(person.resources[resource] for person in people) / len(people)
+            for resource in RESOURCES
+        }
+        avg_resources_lines = [f"{resource}: {avg_resources[resource]:.2f}" for resource in RESOURCES]
+    else:
+        avg_resources_lines = [f"{resource}: N/A" for resource in RESOURCES]
+    draw_panel(win, WIDTH // 2 + 10, HEIGHT // 2 + 10, panel_width, panel_height, "Average Resources", avg_resources_lines, GRAY, BLACK)
 
     # Draw the End Game button
     end_button.draw(win)
 
     pygame.display.update()
-
 
 def end_game(prices_history, population_history, avg_money_history, avg_resources_history, days):
     plt.figure(figsize=(10, 5))
@@ -360,7 +358,6 @@ def end_game(prices_history, population_history, avg_money_history, avg_resource
     pygame.quit()
     sys.exit()
 
-
 def main():
     clock = pygame.time.Clock()
     people = [Person() for _ in range(NUM_PEOPLE)]
@@ -376,7 +373,7 @@ def main():
     avg_resources_history = {resource: [] for resource in RESOURCES}
 
     # Create the End Game button
-    end_button = Button("End Game", WIDTH - 150, HEIGHT - 50, 130, 40, GRAY, RED, lambda: end_game(
+    end_button = Button("End Game", WIDTH - 150, HEIGHT - 70, 130, 40, ORANGE, RED, lambda: end_game(
         prices_history, population_history, avg_money_history, avg_resources_history, days))
 
     running = True
@@ -491,7 +488,6 @@ def main():
         # Drawing
         draw_window(WIN, people, factories, market, day, end_button)
         end_button.check_click()
-
 
 if __name__ == "__main__":
     main()
