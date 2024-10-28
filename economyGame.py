@@ -2,20 +2,11 @@
 import pygame
 import random
 import sys
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 import matplotlib.pyplot as plt
 import numpy as np
-=======
-import matplotlib.pyplot as pltssss
->>>>>>> 59ed3ff3538a1880d1e3892dc4147ab792ad41b4
-=======
-import matplotlib.pyplot as pltssss
->>>>>>> 59ed3ff3538a1880d1e3892dc4147ab792ad41b4
-=======
-import matplotlib.pyplot as pltssss
->>>>>>> 59ed3ff3538a1880d1e3892dc4147ab792ad41b4
+
+clock = pygame.time.Clock()
+FPS = 10
 
 # Initialize pygame
 pygame.init()
@@ -738,7 +729,7 @@ def main():
     selected_resource = "Food"
 
     while running:
-        clock.tick(60)
+        clock.tick(FPS)
 
         # Drawing
         draw_window(WIN, people, factories, market, player, day, end_button, selected_resource)
@@ -766,8 +757,7 @@ def main():
                     amount = 1  # Set the amount to 1 unit to sell
                     player.sell(market, selected_resource, amount)
 
-                #elif event.key == pygame.K_SPACE:
-                while day < 365:
+                elif event.key == pygame.K_SPACE:
                     # Advance day
                     day += 1
                     # Trigger random event with a 5% chance
