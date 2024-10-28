@@ -1,7 +1,17 @@
+#economyGame.py
 import pygame
 import random
 import sys
+<<<<<<< HEAD
+<<<<<<< HEAD
 import matplotlib.pyplot as plt
+import numpy as np
+=======
+import matplotlib.pyplot as pltssss
+>>>>>>> 59ed3ff3538a1880d1e3892dc4147ab792ad41b4
+=======
+import matplotlib.pyplot as pltssss
+>>>>>>> 59ed3ff3538a1880d1e3892dc4147ab792ad41b4
 
 # Initialize pygame
 pygame.init()
@@ -12,8 +22,8 @@ WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Simplified Economy Simulation with Player Interaction")
 
 # Fonts
-FONT = pygame.font.SysFont("arial", 20, bold=True)
-SMALL_FONT = pygame.font.SysFont("arial", 16)
+FONT = pygame.font.SysFont("arial", 24, bold=True)
+SMALL_FONT = pygame.font.SysFont("arial", 18)
 
 # Colours
 WHITE = (255, 255, 255)
@@ -24,6 +34,7 @@ RED = (255, 0, 0)
 GREEN = (34, 177, 76)
 BLUE = (0, 162, 232)
 ORANGE = (255, 127, 39)
+YELLOW = (255, 242, 0)
 
 RESOURCES = ["Food", "Fuel", "Clothes"]
 
@@ -48,6 +59,144 @@ WEIGHT = 0.15  # Weight for exponential moving average price smoothing
 # Reproduction chance
 REPRODUCTION_CHANCE = 0.007  # Chance for people to reproduce each day (0.01 = 1%)
 
+# Load images
+# Note: You should have the images in the 'images' directory.
+# For example, you can use any images you like for the background and resource icons.
+
+try:
+    # Background image (Replace 'background.png' with your background image)
+    BACKGROUND_IMAGE = pygame.image.load('images/background.png')
+    BACKGROUND_IMAGE = pygame.transform.scale(BACKGROUND_IMAGE, (WIDTH, HEIGHT))
+except:
+    BACKGROUND_IMAGE = None
+
+try:
+    # Resource icons (Replace with your own icons)
+    FOOD_ICON = pygame.image.load('images/food_icon.png')
+    FUEL_ICON = pygame.image.load('images/fuel_icon.png')
+    CLOTHES_ICON = pygame.image.load('images/clothes_icon.png')
+except:
+    FOOD_ICON = None
+    FUEL_ICON = None
+    CLOTHES_ICON = None
+
+RESOURCE_ICONS = {
+    'Food': FOOD_ICON,
+    'Fuel': FUEL_ICON,
+    'Clothes': CLOTHES_ICON
+}
+
+class Game:
+    def __init__(self):
+        pygame.init()
+        self.clock = pygame.time.Clock()
+        self.people = [Person() for _ in range(NUM_PEOPLE)]
+        self.factories = [Factory(resource) for resource in RESOURCES]
+        self.market = Market()
+        self.player = Player()
+        self.day = 0
+        self.random_event = RandomEvent()
+        self.selected_resource = "Food"
+
+        # Tracking variables for plotting (if needed)
+        self.days = []
+        self.prices_history = {resource: [] for resource in RESOURCES}
+        self.population_history = []
+        self.avg_money_history = []
+        self.avg_resources_history = {resource: [] for resource in RESOURCES}
+        self.daily_spending_history = {resource: [] for resource in RESOURCES}
+
+    def reset(self):
+        self.__init__()  # Re-initialize the game
+
+    def step(self, action):
+        # Process the AI's action
+        self.process_action(action)
+
+        # Advance the day
+        self.advance_day()
+
+        # Get the new observation
+        observation = self.get_observation()
+
+        # Calculate the reward
+        reward = self.calculate_reward()
+
+        # Check if the game is done
+        done = self.day >= 365  # For example, end after 365 days
+
+        # Additional info (can be empty)
+        info = {}
+
+        return observation, reward, done, info
+
+    def process_action(self, action):
+        # Define how the action affects the game
+        if action == 1:  # Buy selected resource
+            amount = 1
+            self.player.buy(self.market, self.selected_resource, amount)
+        elif action == 2:  # Sell selected resource
+            amount = 1
+            self.player.sell(self.market, self.selected_resource, amount)
+
+    def advance_day(self):
+        self.day += 1
+        self.random_event.trigger_random_event(self.market, self.factories)
+        random.shuffle(self.people)
+        for person in self.people:
+            person.buy_resources(self.market)
+        for person in self.people:
+            if person.is_alive:
+                person.consume_resources()
+        self.people = [person for person in self.people if person.is_alive]
+        for factory in self.factories:
+            factory.calculate_wage(self.market)
+        random.shuffle(self.people)
+        for person in self.people:
+            if person.decide_to_work(self.market) and not person.working:
+                self.assign_worker_to_factory(person)
+        for factory in self.factories:
+            factory.pay_workers()
+        for factory in self.factories:
+            factory.produce(self.market)
+        for resource in RESOURCES:
+            self.market.demand[resource] = len(self.people) * CONSUMPTION_RATES[resource]
+        self.market.adjust_prices(self.day)
+        new_people = []
+        for person in self.people:
+            child = person.reproduce()
+            if child:
+                new_people.append(child)
+        self.people.extend(new_people)
+
+    def assign_worker_to_factory(self, person):
+        factory_wages = {factory: factory.current_wage for factory in self.factories}
+        highest_wage_factory = max(factory_wages, key=lambda f: factory_wages[f])
+        highest_wage_factory.accept_worker(person)
+
+    def get_observation(self):
+        observation = np.array([
+            self.player.money,
+            self.market.prices['Food'],
+            self.player.inventory['Food'],
+            self.market.prices['Fuel'],
+            self.player.inventory['Fuel'],
+            self.market.prices['Clothes'],
+            self.player.inventory['Clothes']
+        ], dtype=np.float32)
+        return observation
+
+    def calculate_reward(self):
+        reward = self.player.money
+        return reward
+
+    # The render function for displaying the game state
+    def render(self):
+        # This is where we will use the draw_window function to display the current game state
+        draw_window(WIN, self.people, self.factories, self.market, self.player, self.day, None, self.selected_resource)
+        pygame.display.update()  # Update the display after drawing
+
+
 # Button to end the game
 class Button:
     def __init__(self, text, x, y, width, height, color, hover_color, action=None):
@@ -60,10 +209,10 @@ class Button:
     def draw(self, win):
         mouse_pos = pygame.mouse.get_pos()
         if self.rect.collidepoint(mouse_pos):
-            pygame.draw.rect(win, self.hover_color, self.rect)
+            pygame.draw.rect(win, self.hover_color, self.rect, border_radius=10)
         else:
-            pygame.draw.rect(win, self.color, self.rect)
-
+            pygame.draw.rect(win, self.color, self.rect, border_radius=10)
+        pygame.draw.rect(win, BLACK, self.rect, 2, border_radius=10)  # Add border
         text_surface = SMALL_FONT.render(self.text, True, BLACK)
         win.blit(text_surface, (self.rect.x + (self.rect.width - text_surface.get_width()) // 2,
                                 self.rect.y + (self.rect.height - text_surface.get_height()) // 2))
@@ -97,52 +246,52 @@ class RandomEvent:
             self.current_event["impact"](market, factories)
 
     def drought_event(self, market, factories):
-        print("Event: Drought! Reducing food supply.")
+        #print("Event: Drought! Reducing food supply.")
         market.supply["Food"] *= 0.7  # Reduce food supply by 30%
 
     def fuel_shortage_event(self, market, factories):
-        print("Event: Fuel Shortage! Reducing fuel supply.")
+        #print("Event: Fuel Shortage! Reducing fuel supply.")
         market.supply["Fuel"] *= 0.6  # Reduce fuel supply by 40%
 
     def clothes_shortage_event(self, market, factories):
-        print("Event: Clothes Shortage! Reducing Clothes supply.")
+        #print("Event: Clothes Shortage! Reducing Clothes supply.")
         market.supply["Clothes"] *= 0.5  # Reduce Clothes supply by 50%
 
     def recession_event(self, market, factories):
-        print("Event: Economic Recession! Reducing wages.")
+        #print("Event: Economic Recession! Reducing wages.")
         for factory in factories:
             factory.current_wage *= 0.8  # Reduce wages by 20%
 
     # Positive Events
 
     def tech_advancement_event(self, market, factories):
-        print("Event: Technological Advancement! Increasing production.")
+        #print("Event: Technological Advancement! Increasing production.")
         random_resource = random.choice(RESOURCES)
         for factory in factories:
             if factory.resource_type == random_resource:
                 factory.production_per_worker *= 1.2  # Increase production by 20%
 
     def fertile_season_event(self, market, factories):
-        print("Event: Fertile Season! Increasing food supply.")
-        market.supply["Food"] *= 1.6  # Increase food supply by 30%
+        #print("Event: Fertile Season! Increasing food supply.")
+        market.supply["Food"] *= 1.6  # Increase food supply by 60%
 
     def fuel_abundance_event(self, market, factories):
-        print("Event: Fuel Abundance! Increasing fuel supply.")
-        market.supply["Fuel"] *= 1.5  # Increase fuel supply by 40%
+        #print("Event: Fuel Abundance! Increasing fuel supply.")
+        market.supply["Fuel"] *= 1.5  # Increase fuel supply by 50%
 
     def clothing_boom_event(self, market, factories):
-        print("Event: Clothing Boom! Increasing clothes production.")
-        market.supply["Clothes"] *= 1.4  # Increase clothes supply by 50%
+        #print("Event: Clothing Boom! Increasing clothes production.")
+        market.supply["Clothes"] *= 1.4  # Increase clothes supply by 40%
 
     def economic_boom_event(self, market, factories):
-        print("Event: Economic Boom! Increasing wages and resource supply.")
+        #print("Event: Economic Boom! Increasing wages and resource supply.")
         for factory in factories:
             factory.current_wage *= 1.2  # Increase wages by 20%
         for resource in RESOURCES:
-            market.supply[resource] *= 1.5  # Increase resource supply by 20%
+            market.supply[resource] *= 1.5  # Increase resource supply by 50%
 
     def subsidy_event(self, market, factories):
-        print("Event: Government Subsidy! Reducing resource prices.")
+        #print("Event: Government Subsidy! Reducing resource prices.")
         random_resource = random.choice(RESOURCES)
         market.prices[random_resource] *= 0.8  # Reduce price by 20%
 
@@ -152,7 +301,7 @@ class Market:
         self.demand = {resource: NUM_PEOPLE * CONSUMPTION_RATES[resource] for resource in RESOURCES}
         self.prices = {resource: BASE_PRICES[resource] * (self.demand[resource] / self.supply[resource]) for resource in RESOURCES}
         self.price_history = {resource: [self.prices[resource]] for resource in RESOURCES}
-        self.inflation_rate = 0.003  # Define an inflation rate of 0.5% per day
+        self.inflation_rate = 0.003  # Define an inflation rate of 0.3% per day
 
     def adjust_prices(self, day):
         for resource in RESOURCES:
@@ -307,9 +456,9 @@ class Player:
             self.money -= total_cost
             self.inventory[resource] += amount
             market.supply[resource] -= amount
-            print(f"Bought {amount} units of {resource} for ${total_cost:.2f}")
-        else:
-            print("Cannot complete the purchase.")
+            #print(f"Bought {amount} units of {resource} for ${total_cost:.2f}")
+        #else:
+            #("Cannot complete the purchase.")
 
     def sell(self, market, resource, amount):
         if self.inventory[resource] >= amount:
@@ -318,24 +467,47 @@ class Player:
             self.money += total_earnings
             self.inventory[resource] -= amount
             market.supply[resource] += amount
-            print(f"Sold {amount} units of {resource} for ${total_earnings:.2f}")
-        else:
-            print("Cannot complete the sale.")
+            #print(f"Sold {amount} units of {resource} for ${total_earnings:.2f}")
+        #else:
+            #print("Cannot complete the sale.")
 
-def draw_panel(win, x, y, width, height, title, content_lines, bg_color, text_color):
-    # Draw panel background
+def draw_progress_bar(win, x, y, width, height, progress, bg_color, fg_color):
+    # Draw background
     pygame.draw.rect(win, bg_color, (x, y, width, height))
+    # Draw border
+    pygame.draw.rect(win, BLACK, (x, y, width, height), 1)
+    # Draw progress
+    inner_width = int(width * progress)
+    pygame.draw.rect(win, fg_color, (x, y, inner_width, height))
+
+def draw_panel(win, x, y, width, height, title, content_items, bg_color, text_color):
+    # Draw panel background with rounded corners
+    pygame.draw.rect(win, bg_color, (x, y, width, height), border_radius=15)
     # Draw panel border
-    pygame.draw.rect(win, BLACK, (x, y, width, height), 2)
+    pygame.draw.rect(win, BLACK, (x, y, width, height), 2, border_radius=15)
     # Render title
     title_surface = FONT.render(title, True, text_color)
-    win.blit(title_surface, (x + 10, y + 10))
+    win.blit(title_surface, (x + 20, y + 20))
     # Render content lines
-    offset = 40
-    for line in content_lines:
-        line_surface = SMALL_FONT.render(line, True, text_color)
-        win.blit(line_surface, (x + 10, y + offset))
-        offset += 25
+    offset = 60  # Increase offset for better spacing
+    for item in content_items:
+        if isinstance(item, tuple):
+            image, text = item
+            if image:
+                # Draw the image
+                win.blit(image, (x + 20, y + offset))
+                # Draw the text next to the image
+                line_surface = SMALL_FONT.render(text, True, text_color)
+                win.blit(line_surface, (x + 70, y + offset + 10))  # Adjust position
+            else:
+                # No image, just text
+                line_surface = SMALL_FONT.render(text, True, text_color)
+                win.blit(line_surface, (x + 20, y + offset))
+        else:
+            # item is just text
+            line_surface = SMALL_FONT.render(item, True, text_color)
+            win.blit(line_surface, (x + 20, y + offset))
+        offset += 40  # Increase offset for next line
 
 class Factory:
     def __init__(self, resource_type):
@@ -427,8 +599,31 @@ class Factory:
         # Reset the worker count to zero at the start of each day
         self.worker_count = 0
 
+def draw_player_inventory(win, x, y, width, height, player):
+    # Draw panel background with rounded corners
+    pygame.draw.rect(win, GRAY, (x, y, width, height), border_radius=15)
+    # Draw panel border
+    pygame.draw.rect(win, BLACK, (x, y, width, height), 2, border_radius=15)
+    # Render title
+    title_surface = FONT.render("Player Inventory", True, BLACK)
+    win.blit(title_surface, (x + 20, y + 20))
+    # Render money
+    money_surface = SMALL_FONT.render(f"Money: ${player.money:.2f}", True, BLACK)
+    win.blit(money_surface, (x + 20, y + 60))
+    # Render resources as simple counts
+    offset = 100
+    for resource in RESOURCES:
+        # Render resource count next to resource name
+        inventory_surface = SMALL_FONT.render(f"{resource}: {player.inventory[resource]:.2f}", True, BLACK)
+        win.blit(inventory_surface, (x + 20, y + offset))
+        offset += 40
+
+
 def draw_window(win, people, factories, market, player, day, end_button, selected_resource):
-    win.fill(WHITE)
+    if BACKGROUND_IMAGE:
+        win.blit(BACKGROUND_IMAGE, (0, 0))
+    else:
+        win.fill(WHITE)  # Fallback to white background if no background image
 
     # Panel dimensions
     panel_width = WIDTH // 2 - 30
@@ -447,29 +642,33 @@ def draw_window(win, people, factories, market, player, day, end_button, selecte
     draw_panel(win, 20, 20, panel_width, panel_height, "General Info", general_info, GRAY, BLACK)
 
     # Top Right Panel - Resource Prices
-    resource_prices = [f"{resource}: ${market.prices[resource]:.2f}" for resource in RESOURCES]
-    draw_panel(win, WIDTH // 2 + 10, 20, panel_width, panel_height, "Resource Prices", resource_prices, GRAY, BLACK)
+    resource_prices = []
+    for resource in RESOURCES:
+        icon = pygame.transform.scale(RESOURCE_ICONS[resource], (40, 40)) if RESOURCE_ICONS[resource] else None
+        text = f"${market.prices[resource]:.2f}"
+        resource_prices.append((icon, text))
+    draw_panel(win, WIDTH // 2 + 10, 20, panel_width, panel_height, "Market Prices", resource_prices, GRAY, BLACK)
 
     # Bottom Left Panel - Player Info
-    player_info = [f"Money: ${player.money:.2f}"]
-    for resource in RESOURCES:
-        player_info.append(f"{resource}: {player.inventory[resource]}")
-    draw_panel(win, 20, HEIGHT // 2 + 10, panel_width, panel_height, "Player Inventory", player_info, GRAY, BLACK)
+    draw_player_inventory(win, 20, HEIGHT // 2 + 10, panel_width, panel_height, player)
 
     # Bottom Right Panel - Instructions
     instructions = [
-        "1. Press 'I' for Food",
-        "2. Press 'O' for Fuel",
-        "3. Press 'P' for Clothes",
+        "Press 'I' for Food",
+        "Press 'O' for Fuel",
+        "Press 'P' for Clothes",
         "Press K to Buy or L to Sell resource.",
-        "Selected resource: ", selected_resource
+        f"Selected resource: {selected_resource}",
+        "Press SPACE to Advance Day"
     ]
     draw_panel(win, WIDTH // 2 + 10, HEIGHT // 2 + 10, panel_width, panel_height, "Instructions", instructions, GRAY, BLACK)
 
-    # Draw the End Game button
-    end_button.draw(win)
+    # Only draw the end game button if it's provided
+    if end_button:
+        end_button.draw(win)
 
     pygame.display.update()
+
 
 def end_game(prices_history, population_history, avg_money_history, avg_resources_history, daily_spending_history, days, player):
 
@@ -538,7 +737,7 @@ def main():
         clock.tick(60)
 
         # Drawing
-        draw_window(WIN, people, factories, market, player, day, end_button,selected_resource)
+        draw_window(WIN, people, factories, market, player, day, end_button, selected_resource)
         end_button.check_click()
 
         # Event handling
@@ -563,10 +762,8 @@ def main():
                     amount = 1  # Set the amount to 1 unit to sell
                     player.sell(market, selected_resource, amount)
 
-
-
-
-                elif event.key == pygame.K_SPACE:
+                #elif event.key == pygame.K_SPACE:
+                while day < 365:
                     # Advance day
                     day += 1
                     # Trigger random event with a 5% chance
@@ -672,6 +869,8 @@ def main():
                         avg_resources_history[resource].append(
                             sum(person.resources[resource] for person in people) / len(people) if people else 0
                         )
+
+                    pygame.event.pump()
 
                     # Check for simulation end after 1 year
                     if day >= 365:
