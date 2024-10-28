@@ -4,8 +4,12 @@ import random
 import sys
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import matplotlib.pyplot as plt
 import numpy as np
+=======
+import matplotlib.pyplot as pltssss
+>>>>>>> 59ed3ff3538a1880d1e3892dc4147ab792ad41b4
 =======
 import matplotlib.pyplot as pltssss
 >>>>>>> 59ed3ff3538a1880d1e3892dc4147ab792ad41b4
