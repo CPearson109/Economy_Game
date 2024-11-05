@@ -7,7 +7,6 @@ import pygame
 import csv
 from economyGame import Game, RESOURCES, BASE_PRICES
 from stable_baselines3 import PPO
-from stable_baselines3.common.vec_env import DummyVecEnv
 from stable_baselines3.common.callbacks import BaseCallback
 
 # Initialize Pygame
@@ -22,12 +21,14 @@ class EconomySimEnv(gym.Env):
         self.game = Game()
         max_amount = 100
         num_resources = len(RESOURCES)
+        #create action space, with 0 being no action and 1 advance day
         self.action_space = spaces.Box(
             low=np.array([0] * (2 * num_resources) + [0]),
             high=np.array([max_amount] * (2 * num_resources) + [1]),
             dtype=np.float32
         )
 
+        #observation space gives the information about the environment to the agent
         obs_low = np.array([0.0] * (1 + num_resources * 4), dtype=np.float32)
         obs_high = np.array([np.inf] * (1 + num_resources * 4), dtype=np.float32)
         self.observation_space = spaces.Box(low=obs_low, high=obs_high, dtype=np.float32)
@@ -67,34 +68,9 @@ class EconomySimEnv(gym.Env):
     def calculate_reward(self, observation):
         current_net_worth = self.calculate_net_worth(observation)
         net_worth_gain = current_net_worth - self.previous_net_worth
-        target_inventory = {"Food": 10, "Fuel": 5, "Clothes": 3}
-        inventory_balance_reward = sum(
-            -abs(observation[1 + i * 4] - target_inventory[RESOURCES[i]]) * 0.1
-            for i in range(len(RESOURCES))
-        )
-
-        unused_resource_penalty = sum(
-            -observation[1 + i * 4] * 0.05
-            for i in range(len(RESOURCES))
-        )
-
-        trade_efficiency_reward = 0
-        for i, resource in enumerate(RESOURCES):
-            inventory_level = observation[1 + i * 4]
-            market_price = observation[2 + i * 4]
-            if inventory_level > target_inventory[resource] and market_price > BASE_PRICES[resource] * 1.2:
-                trade_efficiency_reward += inventory_level * 0.1
-            elif inventory_level < target_inventory[resource] and market_price < BASE_PRICES[resource] * 0.8:
-                trade_efficiency_reward += (target_inventory[resource] - inventory_level) * 0.1
-
-        bankruptcy_penalty = -100 if current_net_worth <= 0 else 0
 
         total_reward = (
-                net_worth_gain +
-                inventory_balance_reward +
-                unused_resource_penalty +
-                trade_efficiency_reward +
-                bankruptcy_penalty
+                net_worth_gain
         )
 
         self.previous_net_worth = current_net_worth
@@ -102,6 +78,7 @@ class EconomySimEnv(gym.Env):
         return total_reward
 
     def step(self, action):
+        # good practice, stops the AI trying to do things outwith action space
         action = np.clip(action, self.action_space.low, self.action_space.high)
         resources = RESOURCES
         num_resources = len(resources)
@@ -157,8 +134,8 @@ class CSVLoggerCallback(BaseCallback):
             writer = csv.writer(file)
             writer.writerow([
                 'Term', 'Final Reward', 'Average Reward', 'Final Net Worth', 'Final Cash',
-                'Food Inventory', 'Food Value', 'Fuel Inventory', 'Fuel Value',
-                'Clothes Inventory', 'Clothes Value'
+                'Food Inventory','Fuel Inventory',
+                'Clothes Inventory'
             ])
 
     def _on_step(self) -> bool:
@@ -181,28 +158,18 @@ class CSVLoggerCallback(BaseCallback):
                 fuel_inventory = inventories['Fuel']
                 clothes_inventory = inventories['Clothes']
 
-                # Fetch final market prices at the end of the term (day 365)
-                food_price = self.locals['env'].envs[0].game.market.prices['Food']
-                fuel_price = self.locals['env'].envs[0].game.market.prices['Fuel']
-                clothes_price = self.locals['env'].envs[0].game.market.prices['Clothes']
-
-                # Calculate the final value of each resource
-                food_value = food_inventory * food_price
-                fuel_value = fuel_inventory * fuel_price
-                clothes_value = clothes_inventory * clothes_price
-
                 with open(self.csv_path, mode='a', newline='') as file:
                     writer = csv.writer(file)
                     writer.writerow([
                         self.term_count, final_reward, average_reward, net_worth, player_money,
-                        food_inventory, food_value, fuel_inventory, fuel_value,
-                        clothes_inventory, clothes_value
+                        food_inventory, fuel_inventory,
+                        clothes_inventory
                     ])
         return True
 
 
 if __name__ == "__main__":
-    env = DummyVecEnv([lambda: EconomySimEnv()])
+    env = EconomySimEnv()
     model = PPO("MlpPolicy", env, verbose=1)
     csv_path = "economy_sim_results.csv"
     csv_logger_callback = CSVLoggerCallback(csv_path=csv_path)
