@@ -1,0 +1,5357 @@
+Day 1
+Purchased 30 Food at 1.0 each
+Sold 2 Food at 1.0 each
+Purchased 36 Fuel at 2.0 each
+Sold 11 Fuel at 2.0 each
+Advance day
+Total Cash: 22.0
+Total Net Worth: 100.0
+Total Food: 28
+Total Fuel: 25
+Total Clothes: 0
+
+Day 2
+Purchased 20 Food at 1.07 each
+Sold 20 Food at 1.07 each
+Purchased 10 Fuel at 2.18 each
+Advance day
+Total Cash: 0.2
+Total Net Worth: 106.46
+Total Food: 28
+Total Fuel: 35
+Total Clothes: 0
+
+Day 3
+Sold 1 Food at 1.29 each
+Sold 5 Fuel at 2.64 each
+Purchased 5 Fuel at 2.64 each
+Sold 9 Fuel at 2.64 each
+Purchased 9 Fuel at 2.64 each
+Advance day
+Total Cash: 1.49
+Total Net Worth: 128.72
+Total Food: 27
+Total Fuel: 35
+Total Clothes: 0
+
+Day 4
+Sold 35 Fuel at 2.78 each
+Purchased 19 Clothes at 4.4 each
+Sold 8 Clothes at 4.4 each
+Advance day
+Total Cash: 50.39
+Total Net Worth: 140.64
+Total Food: 27
+Total Fuel: 0
+Total Clothes: 11
+
+Day 5
+Sold 3 Clothes at 4.64 each
+Sold 18 Food at 1.84 each
+Purchased 5 Fuel at 2.85 each
+Purchased 5 Clothes at 4.64 each
+Purchased 9 Food at 1.84 each
+Purchased 13 Fuel at 2.85 each
+Sold 8 Clothes at 4.64 each
+Advance day
+Total Cash: 43.49
+Total Net Worth: 151.11
+Total Food: 18
+Total Fuel: 18
+Total Clothes: 5
+
+Day 6
+Purchased 14 Food at 2.03 each
+Sold 8 Food at 2.03 each
+Purchased 10 Fuel at 2.93 each
+Sold 28 Fuel at 2.93 each
+Purchased 17 Clothes at 4.8 each
+Advance day
+Total Cash: 2.45
+Total Net Worth: 156.77
+Total Food: 24
+Total Fuel: 0
+Total Clothes: 22
+
+Day 7
+Sold 6 Food at 2.06 each
+Purchased 4 Fuel at 3.03 each
+Sold 22 Clothes at 4.79 each
+Purchased 22 Food at 2.06 each
+Sold 40 Food at 2.06 each
+Purchased 4 Fuel at 3.03 each
+Sold 8 Fuel at 3.03 each
+Purchased 32 Clothes at 4.79 each
+Sold 25 Clothes at 4.79 each
+Advance day
+Total Cash: 123.74
+Total Net Worth: 157.27
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 7
+
+Day 8
+Purchased 47 Food at 2.06 each
+Purchased 8 Fuel at 3.28 each
+Sold 7 Fuel at 3.28 each
+Sold 7 Clothes at 4.83 each
+Purchased 11 Food at 2.06 each
+Purchased 4 Fuel at 3.28 each
+Purchased 4 Clothes at 4.83 each
+Sold 3 Clothes at 4.83 each
+Advance day
+Total Cash: 16.84
+Total Net Worth: 157.55
+Total Food: 58
+Total Fuel: 5
+Total Clothes: 1
+
+Day 9
+Sold 7 Food at 1.97 each
+Purchased 15 Food at 1.97 each
+Advance day
+Total Cash: 1.08
+Total Net Worth: 152.98
+Total Food: 66
+Total Fuel: 5
+Total Clothes: 1
+
+Day 10
+Sold 38 Food at 1.92 each
+Purchased 21 Fuel at 3.4 each
+Sold 1 Clothes at 5.24 each
+Purchased 2 Food at 1.92 each
+Sold 30 Food at 1.92 each
+Purchased 10 Clothes at 5.24 each
+Purchased 2 Fuel at 3.4 each
+Advance day
+Total Cash: 2.44
+Total Net Worth: 150.04
+Total Food: 0
+Total Fuel: 28
+Total Clothes: 10
+
+Day 11
+Sold 28 Fuel at 3.31 each
+Sold 10 Clothes at 5.49 each
+Purchased 20 Fuel at 3.31 each
+Sold 20 Fuel at 3.31 each
+Purchased 63 Food at 1.98 each
+Purchased 5 Fuel at 3.31 each
+Sold 1 Fuel at 3.31 each
+Purchased 2 Fuel at 3.31 each
+Sold 6 Fuel at 3.31 each
+Purchased 1 Fuel at 3.31 each
+Purchased 4 Clothes at 5.49 each
+Advance day
+Total Cash: 0.01
+Total Net Worth: 150.02
+Total Food: 63
+Total Fuel: 1
+Total Clothes: 4
+
+Day 12
+Sold 63 Food at 2.08 each
+Sold 4 Clothes at 5.32 each
+Advance day
+Total Cash: 152.33
+Total Net Worth: 155.61
+Total Food: 0
+Total Fuel: 1
+Total Clothes: 0
+
+Day 13
+Purchased 18 Food at 2.03 each
+Sold 1 Fuel at 3.23 each
+Purchased 16 Clothes at 5.29 each
+Sold 14 Food at 2.03 each
+Purchased 12 Fuel at 3.23 each
+Sold 12 Fuel at 3.23 each
+Purchased 1 Clothes at 5.29 each
+Advance day
+Total Cash: 57.51
+Total Net Worth: 155.56
+Total Food: 4
+Total Fuel: 0
+Total Clothes: 17
+
+Day 14
+Purchased 26 Food at 2.17 each
+Sold 5 Clothes at 7.04 each
+Purchased 16 Food at 2.17 each
+Sold 1 Food at 2.17 each
+Sold 12 Clothes at 7.04 each
+Sold 4 Food at 2.17 each
+Purchased 15 Fuel at 3.67 each
+Purchased 1 Clothes at 7.04 each
+Advance day
+Total Cash: 34.81
+Total Net Worth: 185.87
+Total Food: 41
+Total Fuel: 15
+Total Clothes: 1
+
+Day 15
+Purchased 15 Food at 2.22 each
+Sold 22 Food at 2.22 each
+Advance day
+Total Cash: 50.35
+Total Net Worth: 192.92
+Total Food: 34
+Total Fuel: 15
+Total Clothes: 1
+
+Day 16
+Sold 2 Food at 2.25 each
+Sold 5 Fuel at 4.24 each
+Purchased 5 Clothes at 7.17 each
+Sold 6 Clothes at 7.17 each
+Sold 3 Food at 2.25 each
+Sold 7 Fuel at 4.24 each
+Purchased 16 Clothes at 7.17 each
+Sold 9 Clothes at 7.17 each
+Sold 29 Food at 2.25 each
+Sold 3 Fuel at 4.24 each
+Purchased 65 Food at 2.25 each
+Sold 35 Food at 2.25 each
+Purchased 6 Clothes at 7.17 each
+Sold 6 Clothes at 7.17 each
+Purchased 10 Fuel at 4.24 each
+Purchased 5 Clothes at 7.17 each
+Advance day
+Total Cash: 1.68
+Total Net Worth: 197.62
+Total Food: 30
+Total Fuel: 10
+Total Clothes: 12
+
+Day 17
+Sold 12 Clothes at 7.18 each
+Sold 14 Food at 2.43 each
+Purchased 4 Fuel at 4.41 each
+Purchased 7 Clothes at 7.18 each
+Sold 7 Clothes at 7.18 each
+Advance day
+Total Cash: 104.22
+Total Net Worth: 204.84
+Total Food: 16
+Total Fuel: 14
+Total Clothes: 0
+
+Day 18
+Purchased 41 Food at 2.53 each
+Sold 34 Food at 2.53 each
+Sold 14 Fuel at 4.43 each
+Purchased 58 Food at 2.53 each
+Advance day
+Total Cash: 1.79
+Total Net Worth: 206.72
+Total Food: 81
+Total Fuel: 0
+Total Clothes: 0
+
+Day 19
+Sold 60 Food at 2.66 each
+Purchased 1 Clothes at 6.69 each
+Purchased 37 Food at 2.66 each
+Sold 58 Food at 2.66 each
+Purchased 17 Fuel at 4.32 each
+Sold 7 Fuel at 4.32 each
+Purchased 15 Clothes at 6.69 each
+Sold 16 Clothes at 6.69 each
+Advance day
+Total Cash: 174.05
+Total Net Worth: 217.25
+Total Food: 0
+Total Fuel: 10
+Total Clothes: 0
+
+Day 20
+Purchased 40 Fuel at 4.26 each
+Sold 2 Fuel at 4.26 each
+Purchased 4 Food at 2.71 each
+Sold 1 Food at 2.71 each
+Advance day
+Total Cash: 4.04
+Total Net Worth: 216.65
+Total Food: 3
+Total Fuel: 48
+Total Clothes: 0
+
+Day 21
+Sold 1 Food at 2.66 each
+Advance day
+Total Cash: 6.7
+Total Net Worth: 213.14
+Total Food: 2
+Total Fuel: 48
+Total Clothes: 0
+
+Day 22
+Sold 12 Fuel at 4.15 each
+Purchased 15 Food at 2.55 each
+Purchased 3 Fuel at 4.15 each
+Sold 8 Fuel at 4.15 each
+Purchased 5 Clothes at 6.57 each
+Purchased 2 Food at 2.55 each
+Sold 1 Food at 2.55 each
+Purchased 1 Food at 2.55 each
+Sold 4 Food at 2.55 each
+Sold 5 Clothes at 6.57 each
+Purchased 10 Food at 2.55 each
+Purchased 1 Fuel at 4.15 each
+Purchased 2 Food at 2.55 each
+Sold 26 Food at 2.55 each
+Purchased 16 Fuel at 4.15 each
+Sold 48 Fuel at 4.15 each
+Advance day
+Total Cash: 208.45
+Total Net Worth: 211.0
+Total Food: 1
+Total Fuel: 0
+Total Clothes: 0
+
+Day 23
+Purchased 19 Fuel at 4.08 each
+Purchased 20 Clothes at 6.41 each
+Sold 5 Clothes at 6.41 each
+Advance day
+Total Cash: 34.78
+Total Net Worth: 210.86
+Total Food: 1
+Total Fuel: 19
+Total Clothes: 15
+
+Day 24
+Purchased 6 Food at 2.6 each
+Purchased 2 Clothes at 7.74 each
+Purchased 1 Food at 2.6 each
+Advance day
+Total Cash: 1.1
+Total Net Worth: 245.63
+Total Food: 8
+Total Fuel: 19
+Total Clothes: 17
+
+Day 25
+Sold 4 Food at 2.87 each
+Purchased 2 Fuel at 5.12 each
+Sold 10 Clothes at 7.37 each
+Advance day
+Total Cash: 76.04
+Total Net Worth: 246.63
+Total Food: 4
+Total Fuel: 21
+Total Clothes: 7
+
+Day 26
+Purchased 5 Fuel at 5.28 each
+Sold 4 Fuel at 5.28 each
+Purchased 2 Clothes at 6.97 each
+Purchased 10 Fuel at 5.28 each
+Advance day
+Total Cash: 4.02
+Total Net Worth: 247.87
+Total Food: 4
+Total Fuel: 32
+Total Clothes: 9
+
+Day 27
+Sold 6 Clothes at 6.74 each
+Purchased 7 Food at 2.98 each
+Sold 32 Fuel at 5.15 each
+Sold 1 Clothes at 6.74 each
+Advance day
+Total Cash: 195.14
+Total Net Worth: 241.4
+Total Food: 11
+Total Fuel: 0
+Total Clothes: 2
+
+Day 28
+Purchased 1 Clothes at 6.63 each
+Purchased 7 Food at 2.97 each
+Sold 18 Food at 2.97 each
+Purchased 27 Clothes at 6.63 each
+Sold 30 Clothes at 6.63 each
+Purchased 35 Clothes at 6.63 each
+Advance day
+Total Cash: 9.02
+Total Net Worth: 241.07
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 35
+
+Day 29
+Purchased 3 Food at 2.91 each
+Sold 2 Food at 2.91 each
+Sold 35 Clothes at 6.72 each
+Purchased 50 Fuel at 4.81 each
+Sold 1 Food at 2.91 each
+Sold 24 Fuel at 4.81 each
+Purchased 4 Clothes at 6.72 each
+Sold 3 Clothes at 6.72 each
+Advance day
+Total Cash: 112.44
+Total Net Worth: 244.22
+Total Food: 0
+Total Fuel: 26
+Total Clothes: 1
+
+Day 30
+Purchased 38 Food at 2.94 each
+Advance day
+Total Cash: 0.72
+Total Net Worth: 239.69
+Total Food: 38
+Total Fuel: 26
+Total Clothes: 1
+
+Day 31
+Sold 38 Food at 2.87 each
+Purchased 8 Fuel at 4.57 each
+Purchased 11 Clothes at 6.28 each
+Purchased 1 Food at 2.87 each
+Sold 12 Clothes at 6.28 each
+Sold 4 Fuel at 4.57 each
+Purchased 2 Fuel at 4.57 each
+Sold 19 Fuel at 4.57 each
+Purchased 60 Food at 2.87 each
+Sold 8 Fuel at 4.57 each
+Advance day
+Total Cash: 36.96
+Total Net Worth: 234.88
+Total Food: 61
+Total Fuel: 5
+Total Clothes: 0
+
+Day 32
+Purchased 1 Food at 2.72 each
+Sold 19 Food at 2.72 each
+Sold 3 Fuel at 4.4 each
+Advance day
+Total Cash: 99.12
+Total Net Worth: 224.88
+Total Food: 43
+Total Fuel: 2
+Total Clothes: 0
+
+Day 33
+Purchased 21 Fuel at 4.68 each
+Sold 14 Fuel at 4.68 each
+Purchased 22 Food at 2.89 each
+Sold 65 Food at 2.89 each
+Sold 9 Fuel at 4.68 each
+Purchased 4 Clothes at 7.49 each
+Sold 1 Clothes at 7.49 each
+Purchased 24 Fuel at 4.68 each
+Advance day
+Total Cash: 97.96
+Total Net Worth: 232.75
+Total Food: 0
+Total Fuel: 24
+Total Clothes: 3
+
+Day 34
+Purchased 5 Food at 2.88 each
+Sold 5 Food at 2.88 each
+Purchased 4 Fuel at 5.15 each
+Sold 9 Fuel at 5.15 each
+Purchased 21 Food at 2.88 each
+Purchased 8 Clothes at 7.3 each
+Sold 2 Clothes at 7.3 each
+Purchased 5 Food at 2.88 each
+Sold 9 Fuel at 5.15 each
+Purchased 7 Clothes at 7.3 each
+Sold 3 Clothes at 7.3 each
+Advance day
+Total Cash: 22.18
+Total Net Worth: 243.46
+Total Food: 26
+Total Fuel: 10
+Total Clothes: 13
+
+Day 35
+Sold 20 Food at 2.86 each
+Purchased 11 Clothes at 7.11 each
+Sold 6 Clothes at 7.11 each
+Sold 3 Food at 2.86 each
+Purchased 9 Fuel at 5.39 each
+Sold 3 Fuel at 5.39 each
+Sold 1 Clothes at 7.11 each
+Purchased 4 Food at 2.86 each
+Sold 1 Fuel at 5.39 each
+Purchased 1 Clothes at 7.11 each
+Purchased 4 Food at 2.86 each
+Sold 5 Food at 2.86 each
+Sold 6 Clothes at 7.11 each
+Purchased 11 Fuel at 5.39 each
+Sold 4 Clothes at 7.11 each
+Advance day
+Total Cash: 28.69
+Total Net Worth: 242.87
+Total Food: 6
+Total Fuel: 26
+Total Clothes: 8
+
+Day 36
+Purchased 10 Food at 2.84 each
+Sold 8 Clothes at 6.72 each
+Purchased 19 Food at 2.84 each
+Sold 7 Food at 2.84 each
+Purchased 2 Clothes at 6.72 each
+Sold 1 Clothes at 6.72 each
+Advance day
+Total Cash: 13.25
+Total Net Worth: 239.89
+Total Food: 28
+Total Fuel: 26
+Total Clothes: 1
+
+Day 37
+Sold 5 Food at 2.8 each
+Sold 18 Fuel at 5.32 each
+Sold 1 Clothes at 6.6 each
+Advance day
+Total Cash: 129.61
+Total Net Worth: 236.57
+Total Food: 23
+Total Fuel: 8
+Total Clothes: 0
+
+Day 38
+Purchased 18 Food at 2.68 each
+Sold 21 Food at 2.68 each
+Sold 8 Fuel at 5.07 each
+Purchased 26 Clothes at 6.74 each
+Sold 26 Clothes at 6.74 each
+Purchased 66 Food at 2.68 each
+Sold 20 Food at 2.68 each
+Purchased 10 Fuel at 5.07 each
+Sold 7 Fuel at 5.07 each
+Advance day
+Total Cash: 39.72
+Total Net Worth: 231.81
+Total Food: 66
+Total Fuel: 3
+Total Clothes: 0
+
+Day 39
+Sold 33 Food at 2.61 each
+Sold 2 Fuel at 4.91 each
+Advance day
+Total Cash: 135.67
+Total Net Worth: 226.71
+Total Food: 33
+Total Fuel: 1
+Total Clothes: 0
+
+Day 40
+Purchased 6 Clothes at 6.47 each
+Purchased 31 Food at 2.54 each
+Sold 45 Food at 2.54 each
+Sold 1 Fuel at 4.7 each
+Purchased 5 Clothes at 6.47 each
+Sold 10 Clothes at 6.47 each
+Purchased 56 Food at 2.54 each
+Purchased 10 Food at 2.54 each
+Sold 85 Food at 2.54 each
+Advance day
+Total Cash: 217.72
+Total Net Worth: 224.19
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 1
+
+Day 41
+Purchased 9 Fuel at 5.04 each
+Sold 9 Fuel at 5.04 each
+Advance day
+Total Cash: 217.72
+Total Net Worth: 224.64
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 1
+
+Day 42
+Purchased 72 Food at 3.02 each
+Sold 72 Food at 3.02 each
+Purchased 43 Fuel at 5.01 each
+Sold 43 Fuel at 5.01 each
+Purchased 72 Food at 3.02 each
+Sold 1 Clothes at 7.35 each
+Purchased 1 Food at 3.02 each
+Sold 11 Food at 3.02 each
+Purchased 4 Fuel at 5.01 each
+Sold 4 Fuel at 5.01 each
+Sold 62 Food at 3.02 each
+Purchased 26 Clothes at 7.35 each
+Sold 8 Clothes at 7.35 each
+Advance day
+Total Cash: 92.77
+Total Net Worth: 225.07
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 18
+
+Day 43
+Purchased 13 Fuel at 4.94 each
+Sold 18 Clothes at 7.51 each
+Sold 13 Fuel at 4.94 each
+Purchased 1 Fuel at 4.94 each
+Purchased 23 Clothes at 7.51 each
+Sold 23 Clothes at 7.51 each
+Advance day
+Total Cash: 223.01
+Total Net Worth: 227.95
+Total Food: 0
+Total Fuel: 1
+Total Clothes: 0
+
+Day 44
+Purchased 28 Food at 3.08 each
+Purchased 28 Fuel at 4.76 each
+Sold 11 Fuel at 4.76 each
+Purchased 4 Clothes at 7.28 each
+Sold 3 Clothes at 7.28 each
+Purchased 15 Food at 3.08 each
+Sold 43 Food at 3.08 each
+Sold 17 Fuel at 4.76 each
+Purchased 29 Clothes at 7.28 each
+Sold 30 Clothes at 7.28 each
+Purchased 5 Clothes at 7.28 each
+Purchased 21 Food at 3.08 each
+Purchased 16 Fuel at 4.76 each
+Sold 8 Fuel at 4.76 each
+Advance day
+Total Cash: 83.85
+Total Net Worth: 227.77
+Total Food: 21
+Total Fuel: 9
+Total Clothes: 5
+
+Day 45
+Purchased 27 Food at 3.05 each
+Sold 4 Fuel at 4.74 each
+Purchased 1 Clothes at 6.95 each
+Advance day
+Total Cash: 13.51
+Total Net Worth: 225.31
+Total Food: 48
+Total Fuel: 5
+Total Clothes: 6
+
+Day 46
+Purchased 3 Food at 2.9 each
+Sold 5 Fuel at 4.63 each
+Purchased 2 Clothes at 6.82 each
+Sold 8 Clothes at 6.82 each
+Purchased 16 Food at 2.9 each
+Purchased 2 Clothes at 6.82 each
+Purchased 1 Fuel at 4.63 each
+Purchased 1 Food at 2.9 each
+Sold 68 Food at 2.9 each
+Purchased 8 Clothes at 6.82 each
+Purchased 49 Food at 2.9 each
+Sold 44 Food at 2.9 each
+Purchased 13 Clothes at 6.82 each
+Advance day
+Total Cash: 40.79
+Total Net Worth: 216.78
+Total Food: 5
+Total Fuel: 1
+Total Clothes: 23
+
+Day 47
+Sold 5 Food at 3.25 each
+Purchased 4 Fuel at 5.61 each
+Sold 3 Fuel at 5.61 each
+Advance day
+Total Cash: 51.43
+Total Net Worth: 262.06
+Total Food: 0
+Total Fuel: 2
+Total Clothes: 23
+
+Day 48
+Purchased 9 Fuel at 5.68 each
+Sold 4 Fuel at 5.68 each
+Purchased 1 Clothes at 8.69 each
+Sold 24 Clothes at 8.69 each
+Purchased 25 Clothes at 8.69 each
+Sold 23 Clothes at 8.69 each
+Purchased 19 Food at 3.2 each
+Sold 7 Fuel at 5.68 each
+Purchased 21 Clothes at 8.69 each
+Sold 19 Food at 3.2 each
+Purchased 2 Clothes at 8.69 each
+Purchased 5 Clothes at 8.69 each
+Sold 16 Clothes at 8.69 each
+Purchased 14 Fuel at 5.68 each
+Sold 14 Fuel at 5.68 each
+Purchased 16 Clothes at 8.69 each
+Sold 1 Clothes at 8.69 each
+Purchased 3 Food at 3.2 each
+Sold 2 Food at 3.2 each
+Advance day
+Total Cash: 7.45
+Total Net Worth: 262.66
+Total Food: 1
+Total Fuel: 0
+Total Clothes: 29
+
+Day 49
+Advance day
+Total Cash: 7.45
+Total Net Worth: 255.38
+Total Food: 1
+Total Fuel: 0
+Total Clothes: 29
+
+Day 50
+Purchased 1 Fuel at 5.91 each
+Sold 1 Food at 3.24 each
+Sold 6 Clothes at 8.15 each
+Purchased 16 Food at 3.24 each
+Advance day
+Total Cash: 1.84
+Total Net Worth: 247.04
+Total Food: 16
+Total Fuel: 1
+Total Clothes: 23
+
+Day 51
+Sold 16 Food at 3.33 each
+Purchased 6 Food at 3.33 each
+Sold 1 Food at 3.33 each
+Advance day
+Total Cash: 38.47
+Total Net Worth: 236.99
+Total Food: 5
+Total Fuel: 1
+Total Clothes: 23
+
+Day 52
+Sold 5 Food at 3.21 each
+Purchased 1 Clothes at 7.52 each
+Sold 9 Clothes at 7.52 each
+Purchased 35 Food at 3.21 each
+Sold 31 Food at 3.21 each
+Purchased 13 Clothes at 7.52 each
+Sold 3 Food at 3.21 each
+Sold 4 Clothes at 7.52 each
+Advance day
+Total Cash: 43.79
+Total Net Worth: 233.2
+Total Food: 1
+Total Fuel: 1
+Total Clothes: 24
+
+Day 53
+Purchased 5 Clothes at 7.61 each
+Advance day
+Total Cash: 5.74
+Total Net Worth: 234.96
+Total Food: 1
+Total Fuel: 1
+Total Clothes: 29
+
+Day 54
+Sold 12 Clothes at 7.55 each
+Purchased 11 Fuel at 5.13 each
+Sold 12 Fuel at 5.13 each
+Purchased 19 Fuel at 5.13 each
+Sold 2 Fuel at 5.13 each
+Advance day
+Total Cash: 14.26
+Total Net Worth: 232.79
+Total Food: 1
+Total Fuel: 17
+Total Clothes: 17
+
+Day 55
+Sold 12 Fuel at 5.67 each
+Purchased 7 Clothes at 9.0 each
+Sold 1 Food at 3.26 each
+Sold 1 Fuel at 5.67 each
+Sold 7 Clothes at 9.0 each
+Purchased 27 Food at 3.26 each
+Sold 3 Fuel at 5.67 each
+Sold 17 Clothes at 9.0 each
+Purchased 27 Food at 3.26 each
+Purchased 9 Clothes at 9.0 each
+Purchased 1 Food at 3.26 each
+Sold 1 Fuel at 5.67 each
+Purchased 1 Food at 3.26 each
+Sold 9 Clothes at 9.0 each
+Advance day
+Total Cash: 84.35
+Total Net Worth: 266.91
+Total Food: 56
+Total Fuel: 0
+Total Clothes: 0
+
+Day 56
+Purchased 2 Clothes at 8.53 each
+Purchased 3 Food at 3.48 each
+Sold 2 Food at 3.48 each
+Purchased 11 Fuel at 5.78 each
+Sold 9 Fuel at 5.78 each
+Purchased 4 Clothes at 8.53 each
+Sold 17 Food at 3.48 each
+Purchased 13 Fuel at 5.78 each
+Sold 8 Fuel at 5.78 each
+Purchased 2 Clothes at 8.53 each
+Sold 1 Clothes at 8.53 each
+Purchased 6 Fuel at 5.78 each
+Sold 6 Clothes at 8.53 each
+Advance day
+Total Cash: 56.36
+Total Net Worth: 279.23
+Total Food: 40
+Total Fuel: 13
+Total Clothes: 1
+
+Day 57
+Sold 40 Food at 3.6 each
+Purchased 31 Fuel at 5.89 each
+Purchased 4 Food at 3.6 each
+Sold 10 Fuel at 5.89 each
+Purchased 7 Food at 3.6 each
+Purchased 10 Food at 3.6 each
+Sold 1 Clothes at 8.02 each
+Purchased 2 Food at 3.6 each
+Sold 25 Fuel at 5.89 each
+Purchased 8 Food at 3.6 each
+Sold 2 Food at 3.6 each
+Purchased 2 Clothes at 8.02 each
+Sold 29 Food at 3.6 each
+Purchased 36 Fuel at 5.89 each
+Sold 10 Fuel at 5.89 each
+Purchased 10 Fuel at 5.89 each
+Sold 1 Clothes at 8.02 each
+Advance day
+Total Cash: 11.88
+Total Net Worth: 284.95
+Total Food: 0
+Total Fuel: 45
+Total Clothes: 1
+
+Day 58
+Advance day
+Total Cash: 11.88
+Total Net Worth: 277.94
+Total Food: 0
+Total Fuel: 45
+Total Clothes: 1
+
+Day 59
+Purchased 3 Food at 3.38 each
+Sold 16 Fuel at 5.48 each
+Sold 1 Clothes at 7.65 each
+Purchased 25 Food at 3.38 each
+Purchased 2 Food at 3.38 each
+Sold 30 Food at 3.38 each
+Sold 22 Fuel at 5.48 each
+Advance day
+Total Cash: 227.77
+Total Net Worth: 266.13
+Total Food: 0
+Total Fuel: 7
+Total Clothes: 0
+
+Day 60
+Purchased 64 Food at 3.24 each
+Sold 64 Food at 3.24 each
+Purchased 15 Fuel at 5.25 each
+Sold 15 Fuel at 5.25 each
+Purchased 63 Food at 3.24 each
+Sold 52 Food at 3.24 each
+Purchased 28 Fuel at 5.25 each
+Sold 16 Fuel at 5.25 each
+Purchased 1 Clothes at 7.37 each
+Sold 1 Clothes at 7.37 each
+Sold 4 Food at 3.24 each
+Purchased 11 Fuel at 5.25 each
+Sold 15 Fuel at 5.25 each
+Purchased 22 Clothes at 7.37 each
+Sold 21 Clothes at 7.37 each
+Purchased 48 Food at 3.24 each
+Sold 31 Food at 3.24 each
+Purchased 9 Fuel at 5.25 each
+Purchased 5 Clothes at 7.37 each
+Sold 5 Clothes at 7.37 each
+Advance day
+Total Cash: 53.39
+Total Net Worth: 264.52
+Total Food: 24
+Total Fuel: 24
+Total Clothes: 1
+
+Day 61
+Purchased 5 Clothes at 7.11 each
+Sold 6 Clothes at 7.11 each
+Purchased 19 Food at 3.09 each
+Sold 20 Fuel at 5.14 each
+Purchased 1 Fuel at 5.14 each
+Sold 5 Fuel at 5.14 each
+Advance day
+Total Cash: 125.15
+Total Net Worth: 258.02
+Total Food: 43
+Total Fuel: 0
+Total Clothes: 0
+
+Day 62
+Sold 43 Food at 3.47 each
+Purchased 6 Fuel at 6.47 each
+Purchased 30 Clothes at 7.85 each
+Sold 25 Clothes at 7.85 each
+Purchased 34 Food at 3.47 each
+Purchased 8 Fuel at 6.47 each
+Purchased 3 Clothes at 7.85 each
+Sold 6 Fuel at 6.47 each
+Sold 3 Clothes at 7.85 each
+Purchased 18 Food at 3.47 each
+Sold 4 Fuel at 6.47 each
+Sold 3 Clothes at 7.85 each
+Advance day
+Total Cash: 52.34
+Total Net Worth: 274.36
+Total Food: 52
+Total Fuel: 4
+Total Clothes: 2
+
+Day 63
+Purchased 10 Food at 3.43 each
+Sold 62 Food at 3.43 each
+Purchased 36 Fuel at 6.33 each
+Sold 1 Clothes at 8.3 each
+Purchased 1 Fuel at 6.33 each
+Sold 17 Fuel at 6.33 each
+Purchased 1 Food at 3.43 each
+Purchased 7 Clothes at 8.3 each
+Sold 8 Clothes at 8.3 each
+Purchased 29 Food at 3.43 each
+Purchased 2 Clothes at 8.3 each
+Advance day
+Total Cash: 1.2
+Total Net Worth: 272.62
+Total Food: 30
+Total Fuel: 24
+Total Clothes: 2
+
+Day 64
+Sold 19 Food at 3.4 each
+Sold 2 Clothes at 8.29 each
+Advance day
+Total Cash: 82.38
+Total Net Worth: 270.5
+Total Food: 11
+Total Fuel: 24
+Total Clothes: 0
+
+Day 65
+Sold 11 Food at 3.45 each
+Purchased 5 Fuel at 6.17 each
+Sold 29 Fuel at 6.17 each
+Advance day
+Total Cash: 268.41
+Total Net Worth: 268.41
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 0
+
+Day 66
+Purchased 14 Fuel at 5.84 each
+Purchased 12 Clothes at 7.91 each
+Purchased 26 Food at 3.46 each
+Sold 12 Clothes at 7.91 each
+Purchased 1 Food at 3.46 each
+Sold 2 Food at 3.46 each
+Purchased 14 Fuel at 5.84 each
+Sold 28 Fuel at 5.84 each
+Purchased 22 Clothes at 7.91 each
+Sold 9 Clothes at 7.91 each
+Sold 8 Clothes at 7.91 each
+Purchased 13 Food at 3.46 each
+Sold 15 Food at 3.46 each
+Purchased 25 Fuel at 5.84 each
+Sold 15 Fuel at 5.84 each
+Advance day
+Total Cash: 90.88
+Total Net Worth: 268.41
+Total Food: 23
+Total Fuel: 10
+Total Clothes: 5
+
+Day 67
+Sold 10 Fuel at 5.58 each
+Advance day
+Total Cash: 146.68
+Total Net Worth: 262.37
+Total Food: 23
+Total Fuel: 0
+Total Clothes: 5
+
+Day 68
+Purchased 6 Food at 3.27 each
+Sold 29 Food at 3.27 each
+Purchased 30 Clothes at 7.32 each
+Sold 6 Clothes at 7.32 each
+Advance day
+Total Cash: 46.21
+Total Net Worth: 258.49
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 29
+
+Day 69
+Purchased 7 Fuel at 5.65 each
+Sold 29 Clothes at 7.22 each
+Advance day
+Total Cash: 216.04
+Total Net Worth: 255.59
+Total Food: 0
+Total Fuel: 7
+Total Clothes: 0
+
+Day 70
+Purchased 34 Food at 3.03 each
+Sold 31 Food at 3.03 each
+Purchased 14 Fuel at 5.49 each
+Sold 19 Fuel at 5.49 each
+Purchased 4 Clothes at 7.08 each
+Sold 4 Clothes at 7.08 each
+Purchased 42 Fuel at 5.49 each
+Sold 23 Fuel at 5.49 each
+Advance day
+Total Cash: 130.09
+Total Net Worth: 254.47
+Total Food: 3
+Total Fuel: 21
+Total Clothes: 0
+
+Day 71
+Purchased 39 Food at 3.33 each
+Sold 29 Food at 3.33 each
+Purchased 1 Fuel at 6.3 each
+Sold 15 Fuel at 6.3 each
+Advance day
+Total Cash: 184.99
+Total Net Worth: 272.38
+Total Food: 13
+Total Fuel: 7
+Total Clothes: 0
+
+Day 72
+Sold 6 Food at 3.59 each
+Purchased 8 Fuel at 6.16 each
+Sold 4 Fuel at 6.16 each
+Advance day
+Total Cash: 181.89
+Total Net Worth: 274.78
+Total Food: 7
+Total Fuel: 11
+Total Clothes: 0
+
+Day 73
+Sold 7 Food at 3.69 each
+Purchased 23 Clothes at 8.73 each
+Advance day
+Total Cash: 6.93
+Total Net Worth: 273.61
+Total Food: 0
+Total Fuel: 11
+Total Clothes: 23
+
+Day 74
+Purchased 1 Food at 3.79 each
+Sold 4 Fuel at 5.77 each
+Sold 23 Clothes at 8.74 each
+Advance day
+Total Cash: 227.24
+Total Net Worth: 271.42
+Total Food: 1
+Total Fuel: 7
+Total Clothes: 0
+
+Day 75
+Purchased 38 Food at 3.68 each
+Purchased 3 Food at 3.68 each
+Sold 13 Food at 3.68 each
+Purchased 22 Fuel at 5.61 each
+Sold 29 Fuel at 5.61 each
+Purchased 37 Food at 3.68 each
+Purchased 1 Food at 3.68 each
+Advance day
+Total Cash: 23.63
+Total Net Worth: 270.19
+Total Food: 67
+Total Fuel: 0
+Total Clothes: 0
+
+Day 76
+Sold 43 Food at 3.56 each
+Purchased 32 Fuel at 5.47 each
+Sold 2 Fuel at 5.47 each
+Purchased 1 Fuel at 5.47 each
+Advance day
+Total Cash: 7.14
+Total Net Worth: 262.15
+Total Food: 24
+Total Fuel: 31
+Total Clothes: 0
+
+Day 77
+Advance day
+Total Cash: 7.14
+Total Net Worth: 254.31
+Total Food: 24
+Total Fuel: 31
+Total Clothes: 0
+
+Day 78
+Purchased 2 Food at 3.28 each
+Sold 15 Food at 3.28 each
+Purchased 3 Fuel at 5.06 each
+Sold 34 Fuel at 5.06 each
+Purchased 14 Clothes at 7.64 each
+Sold 5 Food at 3.28 each
+Purchased 3 Clothes at 7.64 each
+Sold 17 Clothes at 7.64 each
+Purchased 20 Food at 3.28 each
+Sold 3 Food at 3.28 each
+Purchased 5 Fuel at 5.06 each
+Sold 5 Fuel at 5.06 each
+Purchased 51 Food at 3.28 each
+Sold 65 Food at 3.28 each
+Purchased 52 Food at 3.28 each
+Purchased 4 Clothes at 7.64 each
+Purchased 3 Food at 3.28 each
+Sold 31 Food at 3.28 each
+Purchased 6 Fuel at 5.06 each
+Sold 1 Fuel at 5.06 each
+Purchased 7 Clothes at 7.64 each
+Sold 9 Clothes at 7.64 each
+Advance day
+Total Cash: 93.9
+Total Net Worth: 242.72
+Total Food: 33
+Total Fuel: 5
+Total Clothes: 2
+
+Day 79
+Purchased 1 Food at 3.05 each
+Purchased 18 Fuel at 4.96 each
+Sold 23 Fuel at 4.96 each
+Advance day
+Total Cash: 115.65
+Total Net Worth: 234.37
+Total Food: 34
+Total Fuel: 0
+Total Clothes: 2
+
+Day 80
+Sold 2 Clothes at 9.14 each
+Advance day
+Total Cash: 133.93
+Total Net Worth: 237.63
+Total Food: 34
+Total Fuel: 0
+Total Clothes: 0
+
+Day 81
+Sold 34 Food at 3.1 each
+Purchased 17 Fuel at 5.9 each
+Advance day
+Total Cash: 139.03
+Total Net Worth: 239.33
+Total Food: 0
+Total Fuel: 17
+Total Clothes: 0
+
+Day 82
+Sold 17 Fuel at 5.84 each
+Purchased 29 Clothes at 8.02 each
+Sold 29 Clothes at 8.02 each
+Purchased 40 Fuel at 5.84 each
+Advance day
+Total Cash: 4.71
+Total Net Worth: 238.31
+Total Food: 0
+Total Fuel: 40
+Total Clothes: 0
+
+Day 83
+Advance day
+Total Cash: 4.71
+Total Net Worth: 229.91
+Total Food: 0
+Total Fuel: 40
+Total Clothes: 0
+
+Day 84
+Purchased 1 Food at 3.13 each
+Sold 20 Fuel at 5.31 each
+Sold 1 Food at 3.13 each
+Sold 2 Fuel at 5.31 each
+Purchased 11 Clothes at 7.24 each
+Advance day
+Total Cash: 41.89
+Total Net Worth: 217.11
+Total Food: 0
+Total Fuel: 18
+Total Clothes: 11
+
+Day 85
+Sold 18 Fuel at 5.04 each
+Purchased 11 Clothes at 6.99 each
+Sold 13 Clothes at 6.99 each
+Purchased 12 Fuel at 5.04 each
+Sold 10 Fuel at 5.04 each
+Purchased 1 Food at 2.94 each
+Purchased 26 Fuel at 5.04 each
+Sold 6 Clothes at 6.99 each
+Sold 1 Food at 2.94 each
+Purchased 9 Fuel at 5.04 each
+Sold 22 Fuel at 5.04 each
+Purchased 13 Clothes at 6.99 each
+Advance day
+Total Cash: 22.06
+Total Net Worth: 209.5
+Total Food: 0
+Total Fuel: 15
+Total Clothes: 16
+
+Day 86
+Purchased 6 Food at 3.16 each
+Sold 2 Food at 3.16 each
+Sold 16 Clothes at 7.74 each
+Purchased 20 Food at 3.16 each
+Sold 24 Food at 3.16 each
+Sold 6 Fuel at 5.31 each
+Purchased 22 Clothes at 7.74 each
+Sold 3 Fuel at 5.31 each
+Sold 1 Clothes at 7.74 each
+Purchased 6 Food at 3.16 each
+Sold 6 Food at 3.16 each
+Purchased 3 Clothes at 7.74 each
+Sold 24 Clothes at 7.74 each
+Advance day
+Total Cash: 193.69
+Total Net Worth: 225.55
+Total Food: 0
+Total Fuel: 6
+Total Clothes: 0
+
+Day 87
+Purchased 11 Fuel at 5.63 each
+Purchased 7 Clothes at 7.68 each
+Sold 2 Clothes at 7.68 each
+Purchased 2 Fuel at 5.63 each
+Purchased 10 Clothes at 7.68 each
+Advance day
+Total Cash: 5.3
+Total Net Worth: 227.47
+Total Food: 0
+Total Fuel: 19
+Total Clothes: 15
+
+Day 88
+Sold 19 Fuel at 6.06 each
+Purchased 19 Fuel at 6.06 each
+Sold 19 Fuel at 6.06 each
+Purchased 1 Clothes at 7.51 each
+Advance day
+Total Cash: 112.93
+Total Net Worth: 233.09
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 16
+
+Day 89
+Purchased 23 Food at 3.39 each
+Purchased 5 Fuel at 6.11 each
+Sold 3 Fuel at 6.11 each
+Advance day
+Total Cash: 22.74
+Total Net Worth: 229.73
+Total Food: 23
+Total Fuel: 2
+Total Clothes: 16
+
+Day 90
+Sold 23 Food at 3.45 each
+Purchased 4 Fuel at 6.16 each
+Purchased 10 Clothes at 7.18 each
+Purchased 1 Food at 3.45 each
+Sold 2 Fuel at 6.16 each
+Purchased 1 Clothes at 7.18 each
+Sold 27 Clothes at 7.18 each
+Advance day
+Total Cash: 201.2
+Total Net Worth: 229.29
+Total Food: 1
+Total Fuel: 4
+Total Clothes: 0
+
+Day 91
+Purchased 15 Clothes at 7.21 each
+Sold 15 Clothes at 7.21 each
+Purchased 45 Food at 3.41 each
+Purchased 8 Fuel at 5.96 each
+Advance day
+Total Cash: 0.07
+Total Net Worth: 228.45
+Total Food: 46
+Total Fuel: 12
+Total Clothes: 0
+
+Day 92
+Sold 2 Fuel at 5.75 each
+Sold 5 Food at 3.41 each
+Sold 40 Food at 3.41 each
+Purchased 25 Food at 3.41 each
+Sold 26 Food at 3.41 each
+Advance day
+Total Cash: 168.43
+Total Net Worth: 225.93
+Total Food: 0
+Total Fuel: 10
+Total Clothes: 0
+
+Day 93
+Advance day
+Total Cash: 168.43
+Total Net Worth: 223.93
+Total Food: 0
+Total Fuel: 10
+Total Clothes: 0
+
+Day 94
+Purchased 42 Food at 3.17 each
+Sold 10 Fuel at 5.33 each
+Advance day
+Total Cash: 88.59
+Total Net Worth: 221.73
+Total Food: 42
+Total Fuel: 0
+Total Clothes: 0
+
+Day 95
+Purchased 24 Food at 3.62 each
+Sold 66 Food at 3.62 each
+Purchased 20 Fuel at 6.0 each
+Sold 20 Fuel at 6.0 each
+Purchased 20 Clothes at 7.8 each
+Purchased 23 Food at 3.62 each
+Sold 5 Clothes at 7.8 each
+Purchased 5 Food at 3.62 each
+Sold 28 Food at 3.62 each
+Sold 13 Clothes at 7.8 each
+Advance day
+Total Cash: 225.03
+Total Net Worth: 240.63
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 2
+
+Day 96
+Purchased 34 Food at 3.49 each
+Purchased 29 Food at 3.49 each
+Sold 1 Clothes at 8.27 each
+Purchased 3 Food at 3.49 each
+Sold 35 Food at 3.49 each
+Purchased 3 Fuel at 6.14 each
+Sold 31 Food at 3.49 each
+Sold 1 Fuel at 6.14 each
+Purchased 63 Food at 3.49 each
+Sold 63 Food at 3.49 each
+Purchased 3 Fuel at 6.14 each
+Advance day
+Total Cash: 202.6
+Total Net Worth: 241.57
+Total Food: 0
+Total Fuel: 5
+Total Clothes: 1
+
+Day 97
+Purchased 15 Food at 3.44 each
+Sold 6 Food at 3.44 each
+Purchased 21 Fuel at 6.35 each
+Advance day
+Total Cash: 38.29
+Total Net Worth: 242.85
+Total Food: 9
+Total Fuel: 26
+Total Clothes: 1
+
+Day 98
+Sold 9 Food at 3.38 each
+Purchased 3 Food at 3.38 each
+Sold 10 Fuel at 6.51 each
+Purchased 36 Food at 3.38 each
+Sold 1 Clothes at 8.65 each
+Advance day
+Total Cash: 10.64
+Total Net Worth: 246.62
+Total Food: 39
+Total Fuel: 16
+Total Clothes: 0
+
+Day 99
+Purchased 3 Food at 3.35 each
+Sold 38 Food at 3.35 each
+Purchased 10 Clothes at 8.5 each
+Sold 2 Clothes at 8.5 each
+Purchased 17 Food at 3.35 each
+Sold 5 Clothes at 8.5 each
+Advance day
+Total Cash: 45.44
+Total Net Worth: 244.49
+Total Food: 21
+Total Fuel: 16
+Total Clothes: 3
+
+Day 100
+Purchased 7 Fuel at 6.32 each
+Sold 18 Fuel at 6.32 each
+Purchased 1 Clothes at 8.15 each
+Advance day
+Total Cash: 106.81
+Total Net Worth: 239.68
+Total Food: 21
+Total Fuel: 5
+Total Clothes: 4
+
+Day 101
+Sold 6 Food at 3.23 each
+Purchased 21 Fuel at 5.97 each
+Sold 16 Fuel at 5.97 each
+Advance day
+Total Cash: 96.34
+Total Net Worth: 235.93
+Total Food: 15
+Total Fuel: 10
+Total Clothes: 4
+
+Day 102
+Sold 4 Food at 3.15 each
+Sold 11 Food at 3.15 each
+Purchased 9 Fuel at 5.69 each
+Sold 1 Fuel at 5.69 each
+Sold 2 Clothes at 7.5 each
+Advance day
+Total Cash: 113.07
+Total Net Worth: 230.49
+Total Food: 0
+Total Fuel: 18
+Total Clothes: 2
+
+Day 103
+Purchased 13 Clothes at 7.76 each
+Sold 1 Clothes at 7.76 each
+Advance day
+Total Cash: 19.95
+Total Net Worth: 238.39
+Total Food: 0
+Total Fuel: 18
+Total Clothes: 14
+
+Day 104
+Sold 14 Clothes at 8.63 each
+Advance day
+Total Cash: 140.77
+Total Net Worth: 251.65
+Total Food: 0
+Total Fuel: 18
+Total Clothes: 0
+
+Day 105
+Purchased 2 Clothes at 9.03 each
+Sold 2 Clothes at 9.03 each
+Purchased 10 Food at 3.58 each
+Purchased 6 Clothes at 9.03 each
+Purchased 2 Food at 3.58 each
+Purchased 7 Fuel at 6.22 each
+Sold 13 Fuel at 6.22 each
+Sold 3 Clothes at 9.03 each
+Purchased 6 Fuel at 6.22 each
+Sold 10 Fuel at 6.22 each
+Purchased 37 Food at 3.58 each
+Sold 1 Clothes at 9.03 each
+Purchased 1 Food at 3.58 each
+Sold 47 Food at 3.58 each
+Purchased 28 Fuel at 6.22 each
+Sold 3 Food at 3.58 each
+Purchased 1 Fuel at 6.22 each
+Sold 11 Fuel at 6.22 each
+Purchased 2 Clothes at 9.03 each
+Purchased 11 Food at 3.58 each
+Purchased 2 Fuel at 6.22 each
+Sold 24 Fuel at 6.22 each
+Purchased 5 Clothes at 9.03 each
+Sold 3 Clothes at 9.03 each
+Sold 6 Clothes at 9.03 each
+Purchased 52 Food at 3.58 each
+Sold 4 Fuel at 6.22 each
+Purchased 3 Food at 3.58 each
+Sold 25 Food at 3.58 each
+Advance day
+Total Cash: 105.95
+Total Net Worth: 252.73
+Total Food: 41
+Total Fuel: 0
+Total Clothes: 0
+
+Day 106
+Purchased 11 Clothes at 9.22 each
+Advance day
+Total Cash: 4.53
+Total Net Worth: 252.32
+Total Food: 41
+Total Fuel: 0
+Total Clothes: 11
+
+Day 107
+Sold 11 Clothes at 8.97 each
+Purchased 14 Food at 3.57 each
+Purchased 9 Fuel at 5.84 each
+Sold 9 Fuel at 5.84 each
+Purchased 4 Clothes at 8.97 each
+Sold 49 Food at 3.57 each
+Purchased 15 Fuel at 5.84 each
+Purchased 4 Clothes at 8.97 each
+Sold 6 Clothes at 8.97 each
+Sold 6 Fuel at 5.84 each
+Purchased 9 Clothes at 8.97 each
+Sold 4 Clothes at 8.97 each
+Sold 1 Food at 3.57 each
+Sold 7 Clothes at 8.97 each
+Purchased 50 Food at 3.57 each
+Sold 55 Food at 3.57 each
+Purchased 1 Fuel at 5.84 each
+Purchased 8 Clothes at 8.97 each
+Sold 7 Clothes at 8.97 each
+Purchased 50 Food at 3.57 each
+Sold 50 Food at 3.57 each
+Purchased 20 Clothes at 8.97 each
+Sold 10 Fuel at 5.84 each
+Purchased 3 Clothes at 8.97 each
+Sold 9 Clothes at 8.97 each
+Advance day
+Total Cash: 115.02
+Total Net Worth: 249.57
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 15
+
+Day 108
+Purchased 19 Fuel at 5.68 each
+Sold 19 Fuel at 5.68 each
+Purchased 13 Clothes at 8.66 each
+Sold 5 Clothes at 8.66 each
+Advance day
+Total Cash: 45.74
+Total Net Worth: 244.92
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 23
+
+Day 109
+Purchased 13 Food at 3.35 each
+Sold 13 Food at 3.35 each
+Purchased 2 Clothes at 8.22 each
+Sold 25 Clothes at 8.22 each
+Purchased 42 Fuel at 5.57 each
+Advance day
+Total Cash: 0.86
+Total Net Worth: 234.8
+Total Food: 0
+Total Fuel: 42
+Total Clothes: 0
+
+Day 110
+Sold 42 Fuel at 6.97 each
+Purchased 35 Clothes at 8.38 each
+Sold 35 Clothes at 8.38 each
+Purchased 10 Food at 3.71 each
+Sold 10 Food at 3.71 each
+Purchased 34 Clothes at 8.38 each
+Sold 30 Clothes at 8.38 each
+Purchased 21 Food at 3.71 each
+Purchased 49 Food at 3.71 each
+Sold 70 Food at 3.71 each
+Purchased 37 Fuel at 6.97 each
+Sold 37 Fuel at 6.97 each
+Sold 4 Clothes at 8.38 each
+Purchased 79 Food at 3.71 each
+Sold 43 Food at 3.71 each
+Sold 1 Food at 3.71 each
+Purchased 4 Fuel at 6.97 each
+Purchased 3 Food at 3.71 each
+Sold 11 Food at 3.71 each
+Purchased 16 Fuel at 6.97 each
+Advance day
+Total Cash: 54.03
+Total Net Worth: 293.6
+Total Food: 27
+Total Fuel: 20
+Total Clothes: 0
+
+Day 111
+Sold 10 Fuel at 7.0 each
+Purchased 3 Clothes at 8.69 each
+Sold 1 Clothes at 8.69 each
+Advance day
+Total Cash: 106.65
+Total Net Worth: 293.39
+Total Food: 27
+Total Fuel: 10
+Total Clothes: 2
+
+Day 112
+Sold 27 Food at 3.65 each
+Purchased 3 Fuel at 6.9 each
+Sold 2 Clothes at 8.99 each
+Purchased 48 Food at 3.65 each
+Sold 32 Food at 3.65 each
+Purchased 39 Food at 3.65 each
+Sold 13 Fuel at 6.9 each
+Advance day
+Total Cash: 91.43
+Total Net Worth: 292.18
+Total Food: 55
+Total Fuel: 0
+Total Clothes: 0
+
+Day 113
+Purchased 15 Food at 3.64 each
+Sold 26 Food at 3.64 each
+Purchased 14 Clothes at 9.1 each
+Advance day
+Total Cash: 4.07
+Total Net Worth: 291.63
+Total Food: 44
+Total Fuel: 0
+Total Clothes: 14
+
+Day 114
+Sold 44 Food at 3.63 each
+Purchased 6 Fuel at 6.37 each
+Sold 6 Fuel at 6.37 each
+Purchased 1 Clothes at 8.89 each
+Advance day
+Total Cash: 154.9
+Total Net Worth: 288.25
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 15
+
+Day 115
+Purchased 39 Food at 3.59 each
+Sold 4 Food at 3.59 each
+Sold 2 Clothes at 8.56 each
+Advance day
+Total Cash: 46.37
+Total Net Worth: 283.3
+Total Food: 35
+Total Fuel: 0
+Total Clothes: 13
+
+Day 116
+Purchased 1 Food at 3.47 each
+Sold 36 Food at 3.47 each
+Purchased 22 Fuel at 5.78 each
+Purchased 3 Clothes at 8.24 each
+Purchased 2 Fuel at 5.78 each
+Sold 2 Clothes at 8.24 each
+Sold 24 Fuel at 5.78 each
+Purchased 3 Food at 3.47 each
+Purchased 25 Fuel at 5.78 each
+Sold 25 Fuel at 5.78 each
+Purchased 12 Food at 3.47 each
+Sold 4 Clothes at 8.24 each
+Sold 9 Food at 3.47 each
+Purchased 15 Fuel at 5.78 each
+Purchased 6 Clothes at 8.24 each
+Sold 16 Clothes at 8.24 each
+Purchased 48 Food at 3.47 each
+Sold 27 Food at 3.47 each
+Sold 15 Fuel at 5.78 each
+Advance day
+Total Cash: 181.25
+Total Net Worth: 274.94
+Total Food: 27
+Total Fuel: 0
+Total Clothes: 0
+
+Day 117
+Purchased 45 Food at 3.95 each
+Sold 14 Food at 3.95 each
+Purchased 8 Food at 3.95 each
+Sold 37 Food at 3.95 each
+Purchased 13 Food at 3.95 each
+Sold 42 Food at 3.95 each
+Advance day
+Total Cash: 287.9
+Total Net Worth: 287.9
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 0
+
+Day 118
+Purchased 37 Fuel at 6.87 each
+Purchased 3 Clothes at 8.92 each
+Advance day
+Total Cash: 6.95
+Total Net Worth: 287.9
+Total Food: 0
+Total Fuel: 37
+Total Clothes: 3
+
+Day 119
+Advance day
+Total Cash: 6.95
+Total Net Worth: 301.12
+Total Food: 0
+Total Fuel: 37
+Total Clothes: 3
+
+Day 120
+Sold 35 Fuel at 7.25 each
+Purchased 11 Fuel at 7.25 each
+Purchased 21 Clothes at 8.37 each
+Sold 13 Clothes at 8.37 each
+Purchased 11 Food at 3.72 each
+Purchased 5 Fuel at 7.25 each
+Sold 15 Fuel at 7.25 each
+Purchased 17 Clothes at 8.37 each
+Advance day
+Total Cash: 3.28
+Total Net Worth: 300.31
+Total Food: 11
+Total Fuel: 3
+Total Clothes: 28
+
+Day 121
+Sold 9 Food at 3.58 each
+Sold 1 Fuel at 7.14 each
+Purchased 4 Fuel at 7.14 each
+Sold 13 Clothes at 8.3 each
+Purchased 17 Fuel at 7.14 each
+Sold 13 Fuel at 7.14 each
+Advance day
+Total Cash: 93.42
+Total Net Worth: 296.48
+Total Food: 2
+Total Fuel: 10
+Total Clothes: 15
+
+Day 122
+Purchased 27 Food at 3.45 each
+Sold 29 Food at 3.45 each
+Purchased 10 Fuel at 7.04 each
+Purchased 3 Clothes at 8.13 each
+Advance day
+Total Cash: 5.53
+Total Net Worth: 292.67
+Total Food: 0
+Total Fuel: 20
+Total Clothes: 18
+
+Day 123
+Sold 1 Clothes at 7.88 each
+Advance day
+Total Cash: 13.41
+Total Net Worth: 279.97
+Total Food: 0
+Total Fuel: 20
+Total Clothes: 17
+
+Day 124
+Purchased 4 Food at 3.25 each
+Advance day
+Total Cash: 0.41
+Total Net Worth: 269.3
+Total Food: 4
+Total Fuel: 20
+Total Clothes: 17
+
+Day 125
+Sold 4 Food at 3.11 each
+Purchased 1 Fuel at 5.85 each
+Sold 10 Clothes at 7.73 each
+Purchased 10 Clothes at 7.73 each
+Advance day
+Total Cash: 7.0
+Total Net Worth: 261.26
+Total Food: 0
+Total Fuel: 21
+Total Clothes: 17
+
+Day 126
+Sold 15 Clothes at 9.37 each
+Purchased 4 Food at 3.28 each
+Sold 3 Fuel at 6.07 each
+Sold 1 Clothes at 9.37 each
+Purchased 11 Clothes at 9.37 each
+Sold 4 Food at 3.28 each
+Purchased 3 Fuel at 6.07 each
+Sold 4 Clothes at 9.37 each
+Purchased 11 Food at 3.28 each
+Purchased 9 Fuel at 6.07 each
+Sold 3 Clothes at 9.37 each
+Advance day
+Total Cash: 28.73
+Total Net Worth: 293.76
+Total Food: 11
+Total Fuel: 30
+Total Clothes: 5
+
+Day 127
+Purchased 1 Food at 3.47 each
+Sold 11 Fuel at 6.24 each
+Sold 7 Food at 3.47 each
+Purchased 6 Fuel at 6.24 each
+Purchased 7 Clothes at 9.31 each
+Sold 6 Clothes at 9.31 each
+Advance day
+Total Cash: 71.44
+Total Net Worth: 300.65
+Total Food: 5
+Total Fuel: 25
+Total Clothes: 6
+
+Day 128
+Purchased 3 Food at 3.66 each
+Sold 6 Food at 3.66 each
+Sold 5 Clothes at 9.07 each
+Purchased 11 Food at 3.66 each
+Purchased 12 Fuel at 6.44 each
+Sold 18 Fuel at 6.44 each
+Purchased 1 Clothes at 9.07 each
+Sold 2 Clothes at 9.07 each
+Sold 13 Food at 3.66 each
+Purchased 20 Fuel at 6.44 each
+Purchased 1 Clothes at 9.07 each
+Sold 1 Clothes at 9.07 each
+Purchased 8 Fuel at 6.44 each
+Sold 47 Fuel at 6.44 each
+Purchased 22 Clothes at 9.07 each
+Advance day
+Total Cash: 105.62
+Total Net Worth: 305.16
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 22
+
+Day 129
+Purchased 6 Fuel at 6.55 each
+Purchased 10 Food at 3.81 each
+Sold 10 Food at 3.81 each
+Sold 6 Fuel at 6.55 each
+Sold 7 Clothes at 8.7 each
+Purchased 25 Fuel at 6.55 each
+Sold 18 Fuel at 6.55 each
+Purchased 13 Clothes at 8.7 each
+Sold 7 Fuel at 6.55 each
+Purchased 14 Food at 3.81 each
+Sold 28 Clothes at 8.7 each
+Purchased 30 Food at 3.81 each
+Purchased 14 Clothes at 8.7 each
+Purchased 1 Food at 3.81 each
+Sold 34 Food at 3.81 each
+Purchased 20 Fuel at 6.55 each
+Advance day
+Total Cash: 2.31
+Total Net Worth: 297.02
+Total Food: 11
+Total Fuel: 20
+Total Clothes: 14
+
+Day 130
+Sold 5 Food at 3.84 each
+Sold 3 Fuel at 6.57 each
+Purchased 3 Clothes at 8.33 each
+Advance day
+Total Cash: 16.23
+Total Net Worth: 292.57
+Total Food: 6
+Total Fuel: 17
+Total Clothes: 17
+
+Day 131
+Purchased 1 Food at 3.81 each
+Purchased 1 Clothes at 8.13 each
+Sold 18 Clothes at 8.13 each
+Advance day
+Total Cash: 150.63
+Total Net Worth: 285.93
+Total Food: 7
+Total Fuel: 17
+Total Clothes: 0
+
+Day 132
+Purchased 6 Food at 3.69 each
+Sold 13 Food at 3.69 each
+Purchased 14 Fuel at 6.09 each
+Sold 18 Fuel at 6.09 each
+Purchased 20 Clothes at 8.0 each
+Purchased 4 Fuel at 6.09 each
+Purchased 4 Food at 3.69 each
+Sold 17 Fuel at 6.09 each
+Purchased 13 Clothes at 8.0 each
+Sold 4 Food at 3.69 each
+Advance day
+Total Cash: 15.99
+Total Net Worth: 279.99
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 33
+
+Day 133
+Purchased 4 Food at 3.48 each
+Sold 1 Food at 3.48 each
+Sold 12 Clothes at 7.93 each
+Purchased 13 Food at 3.48 each
+Purchased 2 Fuel at 5.93 each
+Sold 1 Fuel at 5.93 each
+Purchased 6 Clothes at 7.93 each
+Sold 27 Clothes at 7.93 each
+Advance day
+Total Cash: 216.07
+Total Net Worth: 277.68
+Total Food: 16
+Total Fuel: 1
+Total Clothes: 0
+
+Day 134
+Purchased 37 Food at 3.64 each
+Advance day
+Total Cash: 81.39
+Total Net Worth: 281.21
+Total Food: 53
+Total Fuel: 1
+Total Clothes: 0
+
+Day 135
+Purchased 3 Fuel at 6.94 each
+Sold 3 Fuel at 6.94 each
+Purchased 4 Food at 3.64 each
+Sold 56 Food at 3.64 each
+Purchased 39 Fuel at 6.94 each
+Sold 40 Fuel at 6.94 each
+Purchased 28 Clothes at 9.18 each
+Purchased 2 Clothes at 9.18 each
+Sold 5 Clothes at 9.18 each
+Advance day
+Total Cash: 48.11
+Total Net Worth: 281.25
+Total Food: 1
+Total Fuel: 0
+Total Clothes: 25
+
+Day 136
+Purchased 1 Fuel at 7.05 each
+Sold 25 Clothes at 9.52 each
+Purchased 45 Food at 3.6 each
+Sold 10 Food at 3.6 each
+Purchased 8 Clothes at 9.52 each
+Sold 10 Food at 3.6 each
+Purchased 16 Fuel at 7.05 each
+Sold 7 Clothes at 9.52 each
+Sold 1 Food at 3.6 each
+Purchased 1 Clothes at 9.52 each
+Advance day
+Total Cash: 60.82
+Total Net Worth: 289.71
+Total Food: 25
+Total Fuel: 17
+Total Clothes: 2
+
+Day 137
+Purchased 2 Fuel at 7.07 each
+Purchased 4 Clothes at 9.38 each
+Sold 11 Food at 3.68 each
+Purchased 4 Fuel at 7.07 each
+Sold 20 Fuel at 7.07 each
+Purchased 15 Clothes at 9.38 each
+Advance day
+Total Cash: 22.06
+Total Net Worth: 291.77
+Total Food: 14
+Total Fuel: 3
+Total Clothes: 21
+
+Day 138
+Sold 14 Food at 3.8 each
+Purchased 2 Fuel at 6.95 each
+Purchased 6 Clothes at 9.04 each
+Sold 7 Clothes at 9.04 each
+Purchased 10 Food at 3.8 each
+Purchased 2 Fuel at 6.95 each
+Sold 7 Fuel at 6.95 each
+Purchased 6 Clothes at 9.04 each
+Advance day
+Total Cash: 12.91
+Total Net Worth: 285.95
+Total Food: 10
+Total Fuel: 0
+Total Clothes: 26
+
+Day 139
+Sold 26 Clothes at 8.77 each
+Purchased 7 Clothes at 8.77 each
+Sold 1 Clothes at 8.77 each
+Purchased 28 Fuel at 6.65 each
+Advance day
+Total Cash: 2.11
+Total Net Worth: 279.33
+Total Food: 10
+Total Fuel: 28
+Total Clothes: 6
+
+Day 140
+Advance day
+Total Cash: 2.11
+Total Net Worth: 269.53
+Total Food: 10
+Total Fuel: 28
+Total Clothes: 6
+
+Day 141
+Sold 1 Clothes at 8.24 each
+Sold 7 Food at 3.55 each
+Sold 25 Fuel at 6.17 each
+Purchased 22 Clothes at 8.24 each
+Sold 1 Clothes at 8.24 each
+Purchased 1 Fuel at 6.17 each
+Sold 4 Fuel at 6.17 each
+Sold 3 Food at 3.55 each
+Purchased 3 Clothes at 8.24 each
+Sold 29 Clothes at 8.24 each
+Purchased 42 Fuel at 6.17 each
+Sold 6 Fuel at 6.17 each
+Purchased 6 Fuel at 6.17 each
+Sold 32 Fuel at 6.17 each
+Purchased 37 Food at 3.55 each
+Sold 3 Fuel at 6.17 each
+Advance day
+Total Cash: 85.27
+Total Net Worth: 259.81
+Total Food: 37
+Total Fuel: 7
+Total Clothes: 0
+
+Day 142
+Purchased 1 Food at 4.09 each
+Sold 22 Food at 4.09 each
+Purchased 10 Fuel at 6.72 each
+Sold 13 Fuel at 6.72 each
+Advance day
+Total Cash: 191.32
+Total Net Worth: 283.64
+Total Food: 16
+Total Fuel: 4
+Total Clothes: 0
+
+Day 143
+Sold 16 Food at 4.07 each
+Purchased 56 Food at 4.07 each
+Sold 46 Food at 4.07 each
+Purchased 12 Clothes at 9.68 each
+Sold 7 Clothes at 9.68 each
+Sold 3 Food at 4.07 each
+Purchased 26 Fuel at 6.85 each
+Sold 30 Fuel at 6.85 each
+Purchased 6 Clothes at 9.68 each
+Purchased 13 Food at 4.07 each
+Sold 20 Food at 4.07 each
+Purchased 10 Fuel at 6.85 each
+Sold 1 Fuel at 6.85 each
+Purchased 3 Clothes at 9.68 each
+Sold 11 Clothes at 9.68 each
+Advance day
+Total Cash: 193.15
+Total Net Worth: 283.84
+Total Food: 0
+Total Fuel: 9
+Total Clothes: 3
+
+Day 144
+Purchased 27 Fuel at 6.91 each
+Sold 3 Clothes at 9.78 each
+Advance day
+Total Cash: 35.92
+Total Net Worth: 284.68
+Total Food: 0
+Total Fuel: 36
+Total Clothes: 0
+
+Day 145
+Purchased 1 Food at 3.9 each
+Sold 1 Food at 3.9 each
+Advance day
+Total Cash: 35.92
+Total Net Worth: 289.72
+Total Food: 0
+Total Fuel: 36
+Total Clothes: 0
+
+Day 146
+Sold 36 Fuel at 7.09 each
+Purchased 16 Clothes at 9.22 each
+Sold 4 Clothes at 9.22 each
+Sold 12 Clothes at 9.22 each
+Purchased 77 Food at 3.78 each
+Advance day
+Total Cash: 0.1
+Total Net Worth: 291.16
+Total Food: 77
+Total Fuel: 0
+Total Clothes: 0
+
+Day 147
+Sold 6 Food at 3.67 each
+Purchased 2 Fuel at 6.83 each
+Purchased 1 Fuel at 6.83 each
+Sold 48 Food at 3.67 each
+Advance day
+Total Cash: 177.79
+Total Net Worth: 282.69
+Total Food: 23
+Total Fuel: 3
+Total Clothes: 0
+
+Day 148
+Purchased 6 Fuel at 6.54 each
+Sold 9 Fuel at 6.54 each
+Advance day
+Total Cash: 197.41
+Total Net Worth: 280.44
+Total Food: 23
+Total Fuel: 0
+Total Clothes: 0
+
+Day 149
+Sold 9 Food at 3.53 each
+Purchased 4 Clothes at 8.48 each
+Sold 2 Food at 3.53 each
+Purchased 8 Fuel at 6.27 each
+Purchased 5 Clothes at 8.48 each
+Sold 6 Food at 3.53 each
+Purchased 18 Fuel at 6.27 each
+Purchased 2 Clothes at 8.48 each
+Sold 5 Clothes at 8.48 each
+Purchased 5 Food at 3.53 each
+Sold 6 Clothes at 8.48 each
+Purchased 21 Food at 3.53 each
+Advance day
+Total Cash: 2.62
+Total Net Worth: 278.6
+Total Food: 32
+Total Fuel: 26
+Total Clothes: 0
+
+Day 150
+Sold 32 Food at 3.46 each
+Advance day
+Total Cash: 113.34
+Total Net Worth: 272.2
+Total Food: 0
+Total Fuel: 26
+Total Clothes: 0
+
+Day 151
+Purchased 6 Fuel at 6.96 each
+Sold 11 Fuel at 6.96 each
+Purchased 1 Clothes at 9.46 each
+Sold 1 Clothes at 9.46 each
+Advance day
+Total Cash: 148.14
+Total Net Worth: 294.3
+Total Food: 0
+Total Fuel: 21
+Total Clothes: 0
+
+Day 152
+Purchased 37 Food at 3.94 each
+Sold 21 Fuel at 7.06 each
+Purchased 14 Clothes at 9.52 each
+Advance day
+Total Cash: 17.34
+Total Net Worth: 296.4
+Total Food: 37
+Total Fuel: 0
+Total Clothes: 14
+
+Day 153
+Sold 37 Food at 3.96 each
+Purchased 11 Fuel at 7.27 each
+Purchased 11 Fuel at 7.27 each
+Sold 19 Fuel at 7.27 each
+Sold 7 Clothes at 9.51 each
+Purchased 52 Food at 3.96 each
+Sold 5 Food at 3.96 each
+Sold 1 Fuel at 7.27 each
+Advance day
+Total Cash: 29.77
+Total Net Worth: 297.0
+Total Food: 47
+Total Fuel: 2
+Total Clothes: 7
+
+Day 154
+Purchased 2 Food at 4.08 each
+Sold 33 Food at 4.08 each
+Purchased 3 Clothes at 9.26 each
+Purchased 19 Food at 4.08 each
+Sold 30 Food at 4.08 each
+Sold 1 Fuel at 7.18 each
+Purchased 19 Clothes at 9.26 each
+Sold 29 Clothes at 9.26 each
+Purchased 66 Food at 4.08 each
+Sold 71 Food at 4.08 each
+Purchased 39 Fuel at 7.18 each
+Sold 4 Fuel at 7.18 each
+Purchased 4 Clothes at 9.26 each
+Sold 2 Clothes at 9.26 each
+Sold 36 Fuel at 7.18 each
+Purchased 7 Clothes at 9.26 each
+Sold 3 Clothes at 9.26 each
+Purchased 13 Fuel at 7.18 each
+Sold 7 Fuel at 7.18 each
+Purchased 21 Clothes at 9.26 each
+Sold 10 Clothes at 9.26 each
+Sold 2 Fuel at 7.18 each
+Purchased 6 Clothes at 9.26 each
+Purchased 11 Food at 4.08 each
+Sold 23 Clothes at 9.26 each
+Purchased 39 Food at 4.08 each
+Purchased 9 Fuel at 7.18 each
+Sold 13 Fuel at 7.18 each
+Purchased 23 Food at 4.08 each
+Sold 73 Food at 4.08 each
+Purchased 28 Clothes at 9.26 each
+Sold 5 Clothes at 9.26 each
+Purchased 8 Fuel at 7.18 each
+Sold 5 Fuel at 7.18 each
+Sold 23 Clothes at 9.26 each
+Purchased 15 Fuel at 7.18 each
+Advance day
+Total Cash: 171.47
+Total Net Worth: 300.71
+Total Food: 0
+Total Fuel: 18
+Total Clothes: 0
+
+Day 155
+Purchased 24 Fuel at 7.05 each
+Sold 10 Fuel at 7.05 each
+Purchased 8 Clothes at 8.97 each
+Advance day
+Total Cash: 1.01
+Total Net Worth: 298.37
+Total Food: 0
+Total Fuel: 32
+Total Clothes: 8
+
+Day 156
+Sold 8 Clothes at 8.72 each
+Purchased 7 Fuel at 6.75 each
+Sold 13 Fuel at 6.75 each
+Purchased 11 Clothes at 8.72 each
+Sold 6 Clothes at 8.72 each
+Purchased 16 Food at 4.07 each
+Sold 5 Clothes at 8.72 each
+Advance day
+Total Cash: 46.15
+Total Net Worth: 286.77
+Total Food: 16
+Total Fuel: 26
+Total Clothes: 0
+
+Day 157
+Purchased 7 Food at 3.93 each
+Advance day
+Total Cash: 18.64
+Total Net Worth: 279.33
+Total Food: 23
+Total Fuel: 26
+Total Clothes: 0
+
+Day 158
+Sold 20 Food at 3.82 each
+Purchased 14 Food at 3.82 each
+Sold 12 Food at 3.82 each
+Purchased 6 Fuel at 6.45 each
+Purchased 5 Clothes at 8.2 each
+Advance day
+Total Cash: 7.7
+Total Net Worth: 274.2
+Total Food: 5
+Total Fuel: 32
+Total Clothes: 5
+
+Day 159
+Purchased 1 Food at 4.38 each
+Sold 5 Clothes at 8.98 each
+Advance day
+Total Cash: 48.22
+Total Net Worth: 337.54
+Total Food: 6
+Total Fuel: 32
+Total Clothes: 0
+
+Day 160
+Purchased 7 Food at 4.33 each
+Purchased 2 Fuel at 8.1 each
+Sold 21 Fuel at 8.1 each
+Purchased 10 Clothes at 10.11 each
+Purchased 16 Food at 4.33 each
+Sold 8 Food at 4.33 each
+Purchased 4 Fuel at 8.1 each
+Sold 10 Clothes at 10.11 each
+Advance day
+Total Cash: 104.77
+Total Net Worth: 333.4
+Total Food: 21
+Total Fuel: 17
+Total Clothes: 0
+
+Day 161
+Sold 21 Food at 4.33 each
+Sold 5 Fuel at 7.91 each
+Purchased 4 Food at 4.33 each
+Purchased 27 Fuel at 7.91 each
+Advance day
+Total Cash: 4.36
+Total Net Worth: 330.17
+Total Food: 4
+Total Fuel: 39
+Total Clothes: 0
+
+Day 162
+Sold 34 Fuel at 7.84 each
+Purchased 23 Clothes at 10.98 each
+Sold 21 Clothes at 10.98 each
+Advance day
+Total Cash: 248.96
+Total Net Worth: 327.84
+Total Food: 4
+Total Fuel: 5
+Total Clothes: 2
+
+Day 163
+Purchased 44 Food at 4.53 each
+Purchased 1 Fuel at 7.53 each
+Sold 1 Clothes at 11.03 each
+Advance day
+Total Cash: 53.14
+Total Net Worth: 326.79
+Total Food: 48
+Total Fuel: 6
+Total Clothes: 1
+
+Day 164
+Purchased 5 Food at 4.5 each
+Sold 11 Food at 4.5 each
+Purchased 5 Fuel at 7.22 each
+Sold 3 Fuel at 7.22 each
+Purchased 4 Food at 4.5 each
+Sold 6 Food at 4.5 each
+Purchased 4 Fuel at 7.22 each
+Purchased 1 Clothes at 11.0 each
+Purchased 2 Fuel at 7.22 each
+Purchased 4 Food at 4.5 each
+Sold 36 Food at 4.5 each
+Sold 14 Fuel at 7.22 each
+Purchased 39 Food at 4.5 each
+Sold 47 Food at 4.5 each
+Purchased 27 Clothes at 11.0 each
+Sold 29 Clothes at 11.0 each
+Advance day
+Total Cash: 323.46
+Total Net Worth: 323.46
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 0
+
+Day 165
+Purchased 42 Food at 4.37 each
+Purchased 2 Clothes at 10.46 each
+Advance day
+Total Cash: 119.0
+Total Net Worth: 323.46
+Total Food: 42
+Total Fuel: 0
+Total Clothes: 2
+
+Day 166
+Purchased 4 Fuel at 6.78 each
+Purchased 9 Clothes at 9.89 each
+Sold 1 Fuel at 6.78 each
+Sold 6 Clothes at 9.89 each
+Sold 28 Food at 4.22 each
+Purchased 27 Fuel at 6.78 each
+Sold 30 Fuel at 6.78 each
+Purchased 20 Clothes at 9.89 each
+Sold 25 Clothes at 9.89 each
+Purchased 60 Food at 4.22 each
+Sold 63 Food at 4.22 each
+Purchased 34 Fuel at 6.78 each
+Sold 7 Fuel at 6.78 each
+Purchased 6 Clothes at 9.89 each
+Advance day
+Total Cash: 27.2
+Total Net Worth: 316.02
+Total Food: 11
+Total Fuel: 27
+Total Clothes: 6
+
+Day 167
+Purchased 6 Food at 4.02 each
+Sold 15 Fuel at 6.65 each
+Purchased 6 Food at 4.02 each
+Sold 6 Clothes at 9.49 each
+Purchased 28 Food at 4.02 each
+Advance day
+Total Cash: 23.09
+Total Net Worth: 307.91
+Total Food: 51
+Total Fuel: 12
+Total Clothes: 0
+
+Day 168
+Purchased 4 Food at 4.52 each
+Sold 12 Fuel at 7.6 each
+Advance day
+Total Cash: 96.21
+Total Net Worth: 344.81
+Total Food: 55
+Total Fuel: 0
+Total Clothes: 0
+
+Day 169
+Sold 55 Food at 4.5 each
+Purchased 7 Fuel at 7.6 each
+Purchased 21 Fuel at 7.6 each
+Sold 11 Fuel at 7.6 each
+Purchased 35 Food at 4.5 each
+Sold 17 Fuel at 7.6 each
+Purchased 10 Clothes at 10.16 each
+Sold 10 Clothes at 10.16 each
+Purchased 24 Fuel at 7.6 each
+Sold 35 Food at 4.5 each
+Purchased 5 Clothes at 10.16 each
+Sold 10 Fuel at 7.6 each
+Sold 5 Clothes at 10.16 each
+Advance day
+Total Cash: 237.31
+Total Net Worth: 343.71
+Total Food: 0
+Total Fuel: 14
+Total Clothes: 0
+
+Day 170
+Purchased 31 Fuel at 7.51 each
+Sold 17 Fuel at 7.51 each
+Purchased 8 Clothes at 9.96 each
+Sold 8 Clothes at 9.96 each
+Purchased 4 Fuel at 7.51 each
+Purchased 2 Clothes at 9.96 each
+Purchased 10 Fuel at 7.51 each
+Advance day
+Total Cash: 7.11
+Total Net Worth: 342.45
+Total Food: 0
+Total Fuel: 42
+Total Clothes: 2
+
+Day 171
+Sold 16 Fuel at 7.32 each
+Purchased 16 Fuel at 7.32 each
+Advance day
+Total Cash: 7.11
+Total Net Worth: 333.95
+Total Food: 0
+Total Fuel: 42
+Total Clothes: 2
+
+Day 172
+Sold 31 Fuel at 7.07 each
+Purchased 23 Clothes at 9.5 each
+Advance day
+Total Cash: 7.78
+Total Net Worth: 323.05
+Total Food: 0
+Total Fuel: 11
+Total Clothes: 25
+
+Day 173
+Purchased 1 Fuel at 6.88 each
+Sold 25 Clothes at 9.27 each
+Purchased 55 Food at 4.18 each
+Sold 9 Fuel at 6.88 each
+Purchased 9 Fuel at 6.88 each
+Sold 12 Fuel at 6.88 each
+Sold 55 Food at 4.18 each
+Advance day
+Total Cash: 315.21
+Total Net Worth: 315.21
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 0
+
+Day 174
+Purchased 63 Food at 4.94 each
+Advance day
+Total Cash: 3.99
+Total Net Worth: 315.21
+Total Food: 63
+Total Fuel: 0
+Total Clothes: 0
+
+Day 175
+Sold 18 Food at 4.76 each
+Purchased 10 Fuel at 7.98 each
+Sold 15 Food at 4.76 each
+Purchased 8 Fuel at 7.98 each
+Sold 2 Fuel at 7.98 each
+Sold 5 Fuel at 7.98 each
+Sold 30 Food at 4.76 each
+Purchased 12 Fuel at 7.98 each
+Sold 20 Fuel at 7.98 each
+Purchased 43 Food at 4.76 each
+Sold 43 Food at 4.76 each
+Purchased 3 Fuel at 7.98 each
+Purchased 23 Clothes at 10.73 each
+Advance day
+Total Cash: 9.2
+Total Net Worth: 303.87
+Total Food: 0
+Total Fuel: 6
+Total Clothes: 23
+
+Day 176
+Sold 7 Clothes at 11.35 each
+Purchased 10 Fuel at 8.21 each
+Sold 4 Fuel at 8.21 each
+Purchased 3 Clothes at 11.35 each
+Sold 19 Clothes at 11.35 each
+Purchased 47 Food at 4.64 each
+Sold 12 Fuel at 8.21 each
+Purchased 15 Food at 4.64 each
+Purchased 3 Fuel at 8.21 each
+Sold 3 Fuel at 8.21 each
+Advance day
+Total Cash: 31.83
+Total Net Worth: 319.51
+Total Food: 62
+Total Fuel: 0
+Total Clothes: 0
+
+Day 177
+Purchased 6 Food at 4.56 each
+Advance day
+Total Cash: 4.47
+Total Net Worth: 314.55
+Total Food: 68
+Total Fuel: 0
+Total Clothes: 0
+
+Day 178
+Sold 17 Food at 4.48 each
+Purchased 9 Fuel at 8.49 each
+Sold 51 Food at 4.48 each
+Purchased 18 Food at 4.48 each
+Purchased 17 Fuel at 8.49 each
+Sold 18 Food at 4.48 each
+Purchased 6 Fuel at 8.49 each
+Advance day
+Total Cash: 37.43
+Total Net Worth: 309.11
+Total Food: 0
+Total Fuel: 32
+Total Clothes: 0
+
+Day 179
+Purchased 5 Food at 4.35 each
+Sold 1 Food at 4.35 each
+Sold 3 Food at 4.35 each
+Purchased 1 Fuel at 8.67 each
+Sold 5 Fuel at 8.67 each
+Purchased 5 Food at 4.35 each
+Advance day
+Total Cash: 46.01
+Total Net Worth: 314.87
+Total Food: 6
+Total Fuel: 28
+Total Clothes: 0
+
+Day 180
+Purchased 10 Food at 4.3 each
+Advance day
+Total Cash: 3.01
+Total Net Worth: 310.09
+Total Food: 16
+Total Fuel: 28
+Total Clothes: 0
+
+Day 181
+Sold 3 Food at 4.23 each
+Purchased 1 Clothes at 10.11 each
+Sold 8 Food at 4.23 each
+Purchased 4 Fuel at 8.23 each
+Sold 3 Food at 4.23 each
+Purchased 2 Fuel at 8.23 each
+Sold 22 Fuel at 8.23 each
+Advance day
+Total Cash: 183.8
+Total Net Worth: 301.13
+Total Food: 2
+Total Fuel: 12
+Total Clothes: 1
+
+Day 182
+Purchased 34 Food at 4.21 each
+Advance day
+Total Cash: 40.66
+Total Net Worth: 296.17
+Total Food: 36
+Total Fuel: 12
+Total Clothes: 1
+
+Day 183
+Sold 36 Food at 4.13 each
+Sold 3 Fuel at 7.41 each
+Purchased 29 Food at 4.13 each
+Purchased 12 Fuel at 7.41 each
+Advance day
+Total Cash: 2.88
+Total Net Worth: 287.84
+Total Food: 29
+Total Fuel: 21
+Total Clothes: 1
+
+Day 184
+Sold 14 Food at 4.79 each
+Sold 21 Fuel at 7.82 each
+Purchased 21 Clothes at 10.69 each
+Purchased 2 Food at 4.79 each
+Sold 12 Food at 4.79 each
+Purchased 7 Fuel at 7.82 each
+Sold 10 Clothes at 10.69 each
+Purchased 22 Food at 4.79 each
+Sold 5 Fuel at 7.82 each
+Purchased 1 Clothes at 10.69 each
+Sold 13 Clothes at 10.69 each
+Sold 22 Food at 4.79 each
+Purchased 35 Fuel at 7.82 each
+Advance day
+Total Cash: 3.41
+Total Net Worth: 316.7
+Total Food: 5
+Total Fuel: 37
+Total Clothes: 0
+
+Day 185
+Advance day
+Total Cash: 3.41
+Total Net Worth: 333.59
+Total Food: 5
+Total Fuel: 37
+Total Clothes: 0
+
+Day 186
+Sold 3 Food at 4.66 each
+Purchased 1 Fuel at 8.78 each
+Advance day
+Total Cash: 8.61
+Total Net Worth: 351.57
+Total Food: 2
+Total Fuel: 38
+Total Clothes: 0
+
+Day 187
+Sold 38 Fuel at 8.67 each
+Purchased 24 Clothes at 9.27 each
+Sold 24 Clothes at 9.27 each
+Sold 2 Food at 4.58 each
+Purchased 14 Fuel at 8.67 each
+Purchased 3 Fuel at 8.67 each
+Sold 7 Fuel at 8.67 each
+Purchased 16 Clothes at 9.27 each
+Advance day
+Total Cash: 112.21
+Total Net Worth: 347.23
+Total Food: 0
+Total Fuel: 10
+Total Clothes: 16
+
+Day 188
+Purchased 12 Clothes at 8.89 each
+Sold 28 Clothes at 8.89 each
+Purchased 57 Food at 4.44 each
+Sold 2 Food at 4.44 each
+Sold 10 Fuel at 8.64 each
+Purchased 8 Fuel at 8.64 each
+Advance day
+Total Cash: 27.53
+Total Net Worth: 340.85
+Total Food: 55
+Total Fuel: 8
+Total Clothes: 0
+
+Day 189
+Purchased 5 Food at 4.23 each
+Sold 3 Fuel at 8.32 each
+Purchased 3 Clothes at 8.51 each
+Sold 3 Clothes at 8.51 each
+Sold 2 Fuel at 8.32 each
+Purchased 2 Clothes at 8.51 each
+Advance day
+Total Cash: 30.96
+Total Net Worth: 326.74
+Total Food: 60
+Total Fuel: 3
+Total Clothes: 2
+
+Day 190
+Sold 3 Fuel at 9.16 each
+Purchased 6 Clothes at 8.9 each
+Advance day
+Total Cash: 5.04
+Total Net Worth: 372.04
+Total Food: 60
+Total Fuel: 0
+Total Clothes: 8
+
+Day 191
+Sold 4 Clothes at 9.1 each
+Advance day
+Total Cash: 41.44
+Total Net Worth: 368.84
+Total Food: 60
+Total Fuel: 0
+Total Clothes: 4
+
+Day 192
+Purchased 1 Clothes at 9.01 each
+Purchased 6 Food at 4.87 each
+Sold 66 Food at 4.87 each
+Purchased 37 Fuel at 8.67 each
+Sold 37 Fuel at 8.67 each
+Purchased 31 Clothes at 9.01 each
+Sold 36 Clothes at 9.01 each
+Purchased 71 Food at 4.87 each
+Sold 6 Food at 4.87 each
+Purchased 5 Fuel at 8.67 each
+Sold 1 Fuel at 8.67 each
+Advance day
+Total Cash: 18.45
+Total Net Worth: 369.68
+Total Food: 65
+Total Fuel: 4
+Total Clothes: 0
+
+Day 193
+Sold 49 Food at 4.88 each
+Purchased 29 Clothes at 8.74 each
+Sold 4 Fuel at 8.31 each
+Sold 29 Clothes at 8.74 each
+Purchased 6 Fuel at 8.31 each
+Purchased 2 Clothes at 8.74 each
+Advance day
+Total Cash: 223.47
+Total Net Worth: 368.89
+Total Food: 16
+Total Fuel: 6
+Total Clothes: 2
+
+Day 194
+Purchased 37 Food at 4.81 each
+Sold 6 Fuel at 7.92 each
+Advance day
+Total Cash: 93.02
+Total Net Worth: 365.05
+Total Food: 53
+Total Fuel: 0
+Total Clothes: 2
+
+Day 195
+Purchased 3 Food at 4.65 each
+Sold 56 Food at 4.65 each
+Purchased 40 Clothes at 8.37 each
+Sold 42 Clothes at 8.37 each
+Purchased 76 Food at 4.65 each
+Sold 36 Food at 4.65 each
+Purchased 13 Fuel at 7.58 each
+Sold 13 Fuel at 7.58 each
+Purchased 20 Clothes at 8.37 each
+Sold 35 Food at 4.65 each
+Purchased 15 Fuel at 7.58 each
+Sold 5 Food at 4.65 each
+Purchased 9 Fuel at 7.58 each
+Sold 4 Clothes at 8.37 each
+Purchased 3 Food at 4.65 each
+Sold 1 Food at 4.65 each
+Purchased 1 Fuel at 7.58 each
+Sold 6 Fuel at 7.58 each
+Purchased 1 Clothes at 8.37 each
+Purchased 7 Fuel at 7.58 each
+Advance day
+Total Cash: 7.54
+Total Net Worth: 356.21
+Total Food: 2
+Total Fuel: 26
+Total Clothes: 17
+
+Day 196
+Purchased 1 Food at 5.19 each
+Sold 2 Food at 5.19 each
+Sold 17 Clothes at 9.48 each
+Purchased 3 Fuel at 8.81 each
+Sold 29 Fuel at 8.81 each
+Purchased 38 Clothes at 9.48 each
+Sold 24 Clothes at 9.48 each
+Advance day
+Total Cash: 270.23
+Total Net Worth: 408.14
+Total Food: 1
+Total Fuel: 0
+Total Clothes: 14
+
+Day 197
+Purchased 53 Food at 5.03 each
+Advance day
+Total Cash: 3.64
+Total Net Worth: 412.04
+Total Food: 54
+Total Fuel: 0
+Total Clothes: 14
+
+Day 198
+Advance day
+Total Cash: 3.64
+Total Net Worth: 402.36
+Total Food: 54
+Total Fuel: 0
+Total Clothes: 14
+
+Day 199
+Sold 54 Food at 4.79 each
+Purchased 20 Fuel at 8.77 each
+Purchased 1 Clothes at 9.25 each
+Sold 7 Clothes at 9.25 each
+Advance day
+Total Cash: 142.4
+Total Net Worth: 391.8
+Total Food: 0
+Total Fuel: 20
+Total Clothes: 8
+
+Day 200
+Purchased 21 Food at 4.61 each
+Sold 9 Food at 4.61 each
+Sold 20 Fuel at 8.42 each
+Sold 8 Clothes at 9.01 each
+Purchased 71 Food at 4.61 each
+Sold 37 Food at 4.61 each
+Purchased 6 Fuel at 8.42 each
+Purchased 5 Clothes at 9.01 each
+Sold 3 Clothes at 9.01 each
+Sold 42 Food at 4.61 each
+Purchased 8 Fuel at 8.42 each
+Sold 1 Clothes at 9.01 each
+Advance day
+Total Cash: 237.55
+Total Net Worth: 382.88
+Total Food: 4
+Total Fuel: 14
+Total Clothes: 1
+
+Day 201
+Sold 4 Food at 4.4 each
+Purchased 31 Fuel at 8.01 each
+Sold 45 Fuel at 8.01 each
+Purchased 41 Clothes at 8.76 each
+Sold 34 Clothes at 8.76 each
+Advance day
+Total Cash: 305.97
+Total Net Worth: 376.05
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 8
+
+Day 202
+Purchased 35 Food at 4.77 each
+Sold 9 Food at 4.77 each
+Purchased 14 Fuel at 8.41 each
+Purchased 3 Fuel at 8.41 each
+Sold 17 Fuel at 8.41 each
+Purchased 19 Clothes at 9.46 each
+Sold 27 Clothes at 9.46 each
+Advance day
+Total Cash: 257.63
+Total Net Worth: 381.65
+Total Food: 26
+Total Fuel: 0
+Total Clothes: 0
+
+Day 203
+Purchased 53 Food at 4.86 each
+Sold 79 Food at 4.86 each
+Purchased 27 Fuel at 8.31 each
+Sold 27 Fuel at 8.31 each
+Purchased 46 Fuel at 8.31 each
+Sold 46 Fuel at 8.31 each
+Purchased 14 Food at 4.86 each
+Sold 13 Food at 4.86 each
+Purchased 19 Fuel at 8.31 each
+Purchased 23 Clothes at 9.41 each
+Sold 23 Clothes at 9.41 each
+Purchased 38 Food at 4.86 each
+Purchased 1 Fuel at 8.31 each
+Sold 1 Fuel at 8.31 each
+Purchased 1 Clothes at 9.41 each
+Advance day
+Total Cash: 27.15
+Total Net Worth: 383.99
+Total Food: 39
+Total Fuel: 19
+Total Clothes: 1
+
+Day 204
+Sold 4 Fuel at 8.12 each
+Purchased 6 Clothes at 8.94 each
+Sold 7 Clothes at 8.94 each
+Purchased 9 Food at 4.93 each
+Sold 18 Food at 4.93 each
+Purchased 6 Fuel at 8.12 each
+Sold 8 Fuel at 8.12 each
+Sold 13 Fuel at 8.12 each
+Advance day
+Total Cash: 234.74
+Total Net Worth: 382.64
+Total Food: 30
+Total Fuel: 0
+Total Clothes: 0
+
+Day 205
+Purchased 12 Fuel at 7.86 each
+Purchased 10 Clothes at 8.34 each
+Purchased 2 Food at 4.95 each
+Sold 32 Food at 4.95 each
+Purchased 14 Fuel at 7.86 each
+Purchased 19 Food at 4.95 each
+Sold 1 Clothes at 8.34 each
+Sold 7 Food at 4.95 each
+Purchased 5 Fuel at 7.86 each
+Sold 25 Fuel at 7.86 each
+Sold 9 Clothes at 8.34 each
+Purchased 22 Food at 4.95 each
+Sold 34 Food at 4.95 each
+Purchased 18 Clothes at 8.34 each
+Purchased 12 Food at 4.95 each
+Sold 6 Fuel at 7.86 each
+Purchased 8 Food at 4.95 each
+Purchased 6 Clothes at 8.34 each
+Purchased 2 Food at 4.95 each
+Purchased 1 Fuel at 7.86 each
+Purchased 2 Clothes at 8.34 each
+Purchased 10 Food at 4.95 each
+Sold 25 Food at 4.95 each
+Purchased 14 Clothes at 8.34 each
+Sold 6 Clothes at 8.34 each
+Purchased 11 Food at 4.95 each
+Sold 8 Food at 4.95 each
+Sold 7 Clothes at 8.34 each
+Sold 1 Fuel at 7.86 each
+Purchased 8 Clothes at 8.34 each
+Purchased 8 Food at 4.95 each
+Sold 13 Food at 4.95 each
+Purchased 8 Fuel at 7.86 each
+Sold 4 Fuel at 7.86 each
+Purchased 4 Clothes at 8.34 each
+Advance day
+Total Cash: 1.79
+Total Net Worth: 383.24
+Total Food: 5
+Total Fuel: 4
+Total Clothes: 39
+
+Day 206
+Sold 39 Clothes at 7.73 each
+Purchased 28 Food at 4.84 each
+Sold 12 Food at 4.84 each
+Purchased 10 Fuel at 7.61 each
+Sold 7 Fuel at 7.61 each
+Sold 4 Food at 4.84 each
+Purchased 4 Food at 4.84 each
+Sold 4 Fuel at 7.61 each
+Sold 2 Fuel at 7.61 each
+Sold 11 Food at 4.84 each
+Purchased 27 Clothes at 7.73 each
+Sold 2 Clothes at 7.73 each
+Purchased 22 Food at 4.84 each
+Sold 1 Fuel at 7.61 each
+Purchased 1 Clothes at 7.73 each
+Advance day
+Total Cash: 2.04
+Total Net Worth: 357.9
+Total Food: 32
+Total Fuel: 0
+Total Clothes: 26
+
+Day 207
+Sold 26 Food at 4.75 each
+Purchased 25 Food at 4.75 each
+Sold 31 Food at 4.75 each
+Purchased 20 Fuel at 7.41 each
+Sold 11 Fuel at 7.41 each
+Purchased 16 Food at 4.75 each
+Sold 13 Food at 4.75 each
+Purchased 5 Fuel at 7.41 each
+Purchased 5 Clothes at 7.14 each
+Sold 1 Fuel at 7.41 each
+Purchased 1 Food at 4.75 each
+Sold 1 Fuel at 7.41 each
+Purchased 1 Clothes at 7.14 each
+Advance day
+Total Cash: 3.28
+Total Net Worth: 339.68
+Total Food: 4
+Total Fuel: 12
+Total Clothes: 32
+
+Day 208
+Sold 3 Food at 4.56 each
+Sold 2 Fuel at 7.15 each
+Purchased 4 Clothes at 6.58 each
+Sold 36 Clothes at 6.58 each
+Purchased 25 Fuel at 7.15 each
+Purchased 8 Clothes at 6.58 each
+Purchased 2 Food at 4.56 each
+Sold 35 Fuel at 7.15 each
+Purchased 34 Clothes at 6.58 each
+Advance day
+Total Cash: 27.84
+Total Net Worth: 317.88
+Total Food: 3
+Total Fuel: 0
+Total Clothes: 42
+
+Day 209
+Purchased 4 Clothes at 6.27 each
+Advance day
+Total Cash: 2.76
+Total Net Worth: 305.76
+Total Food: 3
+Total Fuel: 0
+Total Clothes: 46
+
+Day 210
+Sold 30 Clothes at 5.96 each
+Purchased 6 Food at 4.7 each
+Purchased 14 Clothes at 5.96 each
+Sold 30 Clothes at 5.96 each
+Advance day
+Total Cash: 248.72
+Total Net Worth: 291.02
+Total Food: 9
+Total Fuel: 0
+Total Clothes: 0
+
+Day 211
+Sold 5 Food at 4.52 each
+Purchased 18 Clothes at 5.67 each
+Sold 5 Clothes at 5.67 each
+Purchased 5 Food at 4.52 each
+Sold 4 Food at 4.52 each
+Purchased 16 Food at 4.52 each
+Purchased 20 Clothes at 5.67 each
+Sold 26 Clothes at 5.67 each
+Advance day
+Total Cash: 154.79
+Total Net Worth: 289.4
+Total Food: 21
+Total Fuel: 0
+Total Clothes: 7
+
+Day 212
+Sold 21 Food at 5.11 each
+Purchased 27 Fuel at 9.4 each
+Sold 27 Fuel at 9.4 each
+Purchased 46 Clothes at 5.65 each
+Sold 53 Clothes at 5.65 each
+Purchased 59 Food at 5.11 each
+Sold 59 Food at 5.11 each
+Purchased 53 Clothes at 5.65 each
+Advance day
+Total Cash: 2.2
+Total Net Worth: 301.65
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 53
+
+Day 213
+Advance day
+Total Cash: 2.2
+Total Net Worth: 310.13
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 53
+
+Day 214
+Sold 53 Clothes at 6.06 each
+Purchased 18 Food at 4.8 each
+Purchased 23 Fuel at 9.02 each
+Purchased 6 Food at 4.8 each
+Sold 23 Fuel at 9.02 each
+Sold 15 Food at 4.8 each
+Purchased 6 Fuel at 9.02 each
+Sold 6 Fuel at 9.02 each
+Purchased 46 Clothes at 6.06 each
+Sold 7 Food at 4.8 each
+Purchased 1 Fuel at 9.02 each
+Purchased 1 Clothes at 6.06 each
+Sold 1 Fuel at 9.02 each
+Sold 2 Food at 4.8 each
+Purchased 4 Fuel at 9.02 each
+Sold 47 Clothes at 6.06 each
+Purchased 59 Food at 4.8 each
+Sold 51 Food at 4.8 each
+Sold 4 Fuel at 9.02 each
+Purchased 22 Clothes at 6.06 each
+Purchased 1 Food at 4.8 each
+Purchased 30 Food at 4.8 each
+Advance day
+Total Cash: 2.86
+Total Net Worth: 323.38
+Total Food: 39
+Total Fuel: 0
+Total Clothes: 22
+
+Day 215
+Sold 22 Clothes at 6.43 each
+Advance day
+Total Cash: 144.32
+Total Net Worth: 321.38
+Total Food: 39
+Total Fuel: 0
+Total Clothes: 0
+
+Day 216
+Purchased 12 Fuel at 9.03 each
+Sold 12 Fuel at 9.03 each
+Purchased 1 Clothes at 7.9 each
+Sold 1 Clothes at 7.9 each
+Sold 17 Food at 5.03 each
+Purchased 22 Clothes at 7.9 each
+Sold 22 Food at 5.03 each
+Purchased 18 Fuel at 9.03 each
+Sold 1 Fuel at 9.03 each
+Sold 9 Clothes at 7.9 each
+Advance day
+Total Cash: 84.28
+Total Net Worth: 340.49
+Total Food: 0
+Total Fuel: 17
+Total Clothes: 13
+
+Day 217
+Purchased 10 Clothes at 8.41 each
+Sold 17 Fuel at 8.99 each
+Purchased 13 Clothes at 8.41 each
+Advance day
+Total Cash: 43.68
+Total Net Worth: 346.44
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 36
+
+Day 218
+Purchased 3 Food at 5.07 each
+Sold 31 Clothes at 8.45 each
+Sold 3 Food at 5.07 each
+Sold 1 Clothes at 8.45 each
+Advance day
+Total Cash: 314.08
+Total Net Worth: 347.88
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 4
+
+Day 219
+Purchased 21 Food at 5.12 each
+Purchased 20 Fuel at 8.51 each
+Sold 9 Fuel at 8.51 each
+Advance day
+Total Cash: 112.95
+Total Net Worth: 346.56
+Total Food: 21
+Total Fuel: 11
+Total Clothes: 4
+
+Day 220
+Purchased 22 Food at 5.0 each
+Sold 1 Clothes at 7.74 each
+Sold 11 Fuel at 8.19 each
+Sold 20 Food at 5.0 each
+Purchased 24 Fuel at 8.19 each
+Sold 11 Fuel at 8.19 each
+Purchased 2 Clothes at 7.74 each
+Sold 8 Fuel at 8.19 each
+Purchased 16 Clothes at 7.74 each
+Sold 21 Clothes at 7.74 each
+Sold 23 Food at 5.0 each
+Purchased 9 Clothes at 7.74 each
+Purchased 13 Food at 5.0 each
+Sold 9 Clothes at 7.74 each
+Purchased 46 Food at 5.0 each
+Sold 2 Fuel at 8.19 each
+Advance day
+Total Cash: 19.43
+Total Net Worth: 339.0
+Total Food: 59
+Total Fuel: 3
+Total Clothes: 0
+
+Day 221
+Sold 42 Food at 4.83 each
+Purchased 28 Fuel at 7.85 each
+Advance day
+Total Cash: 2.49
+Total Net Worth: 327.95
+Total Food: 17
+Total Fuel: 31
+Total Clothes: 0
+
+Day 222
+Sold 17 Food at 4.58 each
+Sold 2 Fuel at 7.53 each
+Purchased 14 Clothes at 6.79 each
+Sold 14 Clothes at 6.79 each
+Purchased 20 Food at 4.58 each
+Sold 20 Food at 4.58 each
+Sold 29 Fuel at 7.53 each
+Purchased 32 Clothes at 6.79 each
+Sold 7 Clothes at 6.79 each
+Purchased 31 Food at 4.58 each
+Sold 25 Clothes at 6.79 each
+Advance day
+Total Cash: 171.8
+Total Net Worth: 313.78
+Total Food: 31
+Total Fuel: 0
+Total Clothes: 0
+
+Day 223
+Purchased 8 Food at 4.8 each
+Sold 31 Food at 4.8 each
+Advance day
+Total Cash: 282.2
+Total Net Worth: 320.6
+Total Food: 8
+Total Fuel: 0
+Total Clothes: 0
+
+Day 224
+Purchased 59 Food at 4.77 each
+Sold 47 Food at 4.77 each
+Purchased 1 Fuel at 8.22 each
+Purchased 34 Clothes at 6.36 each
+Sold 12 Food at 4.77 each
+Sold 5 Food at 4.77 each
+Purchased 2 Fuel at 8.22 each
+Sold 2 Fuel at 8.22 each
+Purchased 9 Clothes at 6.36 each
+Advance day
+Total Cash: 24.35
+Total Net Worth: 320.36
+Total Food: 3
+Total Fuel: 1
+Total Clothes: 43
+
+Day 225
+Purchased 2 Food at 4.61 each
+Sold 1 Food at 4.61 each
+Sold 1 Fuel at 8.24 each
+Purchased 1 Fuel at 8.24 each
+Advance day
+Total Cash: 19.74
+Total Net Worth: 309.15
+Total Food: 4
+Total Fuel: 1
+Total Clothes: 43
+
+Day 226
+Purchased 1 Fuel at 8.09 each
+Sold 43 Clothes at 5.91 each
+Purchased 40 Clothes at 5.91 each
+Advance day
+Total Cash: 29.38
+Total Net Worth: 299.52
+Total Food: 4
+Total Fuel: 2
+Total Clothes: 40
+
+Day 227
+Purchased 1 Food at 4.73 each
+Sold 22 Clothes at 6.05 each
+Sold 5 Food at 4.73 each
+Sold 18 Clothes at 6.05 each
+Advance day
+Total Cash: 290.3
+Total Net Worth: 308.18
+Total Food: 0
+Total Fuel: 2
+Total Clothes: 0
+
+Day 228
+Purchased 47 Clothes at 6.12 each
+Sold 1 Fuel at 8.86 each
+Purchased 1 Clothes at 6.12 each
+Sold 26 Clothes at 6.12 each
+Purchased 2 Clothes at 6.12 each
+Purchased 4 Clothes at 6.12 each
+Sold 1 Clothes at 6.12 each
+Purchased 15 Fuel at 8.86 each
+Sold 2 Clothes at 6.12 each
+Advance day
+Total Cash: 13.26
+Total Net Worth: 308.02
+Total Food: 0
+Total Fuel: 16
+Total Clothes: 25
+
+Day 229
+Advance day
+Total Cash: 13.26
+Total Net Worth: 307.42
+Total Food: 0
+Total Fuel: 16
+Total Clothes: 25
+
+Day 230
+Purchased 1 Fuel at 8.33 each
+Sold 17 Fuel at 8.33 each
+Purchased 23 Clothes at 6.18 each
+Advance day
+Total Cash: 4.4
+Total Net Worth: 301.04
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 48
+
+Day 231
+Sold 40 Clothes at 6.07 each
+Purchased 45 Food at 4.45 each
+Sold 27 Food at 4.45 each
+Sold 8 Clothes at 6.07 each
+Purchased 48 Food at 4.45 each
+Sold 18 Food at 4.45 each
+Purchased 13 Clothes at 6.07 each
+Advance day
+Total Cash: 3.25
+Total Net Worth: 295.76
+Total Food: 48
+Total Fuel: 0
+Total Clothes: 13
+
+Day 232
+Sold 6 Clothes at 6.27 each
+Advance day
+Total Cash: 40.87
+Total Net Worth: 307.0
+Total Food: 48
+Total Fuel: 0
+Total Clothes: 7
+
+Day 233
+Sold 48 Food at 4.65 each
+Purchased 18 Fuel at 8.45 each
+Sold 17 Fuel at 8.45 each
+Purchased 16 Clothes at 6.26 each
+Advance day
+Total Cash: 155.46
+Total Net Worth: 307.89
+Total Food: 0
+Total Fuel: 1
+Total Clothes: 23
+
+Day 234
+Purchased 4 Food at 4.59 each
+Sold 1 Fuel at 8.32 each
+Sold 5 Clothes at 6.22 each
+Advance day
+Total Cash: 176.52
+Total Net Worth: 306.84
+Total Food: 4
+Total Fuel: 0
+Total Clothes: 18
+
+Day 235
+Purchased 21 Fuel at 8.06 each
+Sold 7 Fuel at 8.06 each
+Purchased 4 Fuel at 8.06 each
+Sold 2 Fuel at 8.06 each
+Purchased 7 Clothes at 6.12 each
+Sold 19 Clothes at 6.12 each
+Advance day
+Total Cash: 121.0
+Total Net Worth: 304.56
+Total Food: 4
+Total Fuel: 16
+Total Clothes: 6
+
+Day 236
+Purchased 13 Fuel at 8.71 each
+Sold 4 Food at 4.97 each
+Purchased 2 Fuel at 8.71 each
+Sold 31 Fuel at 8.71 each
+Sold 4 Clothes at 6.41 each
+Purchased 23 Clothes at 6.41 each
+Sold 25 Clothes at 6.41 each
+Purchased 15 Food at 4.97 each
+Sold 2 Food at 4.97 each
+Purchased 22 Fuel at 8.71 each
+Sold 6 Fuel at 8.71 each
+Sold 8 Fuel at 8.71 each
+Purchased 28 Clothes at 6.41 each
+Sold 13 Clothes at 6.41 each
+Purchased 2 Clothes at 6.41 each
+Purchased 15 Food at 4.97 each
+Advance day
+Total Cash: 0.89
+Total Net Worth: 318.7
+Total Food: 28
+Total Fuel: 8
+Total Clothes: 17
+
+Day 237
+Sold 8 Food at 4.95 each
+Purchased 4 Fuel at 8.96 each
+Sold 1 Fuel at 8.96 each
+Purchased 2 Clothes at 6.59 each
+Sold 5 Clothes at 6.59 each
+Advance day
+Total Cash: 33.38
+Total Net Worth: 323.2
+Total Food: 20
+Total Fuel: 11
+Total Clothes: 14
+
+Day 238
+Sold 4 Food at 4.89 each
+Sold 1 Fuel at 8.97 each
+Sold 6 Clothes at 6.66 each
+Advance day
+Total Cash: 101.87
+Total Net Worth: 323.09
+Total Food: 16
+Total Fuel: 10
+Total Clothes: 8
+
+Day 239
+Purchased 21 Food at 4.82 each
+Sold 32 Food at 4.82 each
+Purchased 2 Fuel at 8.68 each
+Sold 12 Fuel at 8.68 each
+Purchased 18 Clothes at 6.7 each
+Sold 11 Clothes at 6.7 each
+Purchased 29 Food at 4.82 each
+Advance day
+Total Cash: 55.01
+Total Net Worth: 319.39
+Total Food: 34
+Total Fuel: 0
+Total Clothes: 15
+
+Day 240
+Purchased 11 Food at 4.66 each
+Sold 45 Food at 4.66 each
+Purchased 32 Clothes at 6.67 each
+Sold 30 Clothes at 6.67 each
+Advance day
+Total Cash: 200.11
+Total Net Worth: 313.5
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 17
+
+Day 241
+Purchased 23 Fuel at 8.57 each
+Sold 17 Clothes at 7.21 each
+Purchased 9 Food at 5.05 each
+Sold 3 Food at 5.05 each
+Purchased 11 Fuel at 8.57 each
+Sold 6 Food at 5.05 each
+Sold 16 Fuel at 8.57 each
+Purchased 33 Food at 5.05 each
+Sold 14 Fuel at 8.57 each
+Advance day
+Total Cash: 121.75
+Total Net Worth: 322.68
+Total Food: 33
+Total Fuel: 4
+Total Clothes: 0
+
+Day 242
+Purchased 2 Fuel at 8.54 each
+Sold 11 Food at 5.1 each
+Purchased 18 Fuel at 8.54 each
+Sold 20 Fuel at 8.54 each
+Advance day
+Total Cash: 177.85
+Total Net Worth: 324.21
+Total Food: 22
+Total Fuel: 4
+Total Clothes: 0
+
+Day 243
+Purchased 1 Food at 5.1 each
+Sold 15 Food at 5.1 each
+Advance day
+Total Cash: 249.25
+Total Net Worth: 323.57
+Total Food: 8
+Total Fuel: 4
+Total Clothes: 0
+
+Day 244
+Sold 6 Food at 5.05 each
+Purchased 14 Clothes at 6.86 each
+Sold 5 Clothes at 6.86 each
+Advance day
+Total Cash: 217.81
+Total Net Worth: 321.89
+Total Food: 2
+Total Fuel: 4
+Total Clothes: 9
+
+Day 245
+Sold 2 Food at 4.84 each
+Sold 3 Fuel at 7.74 each
+Purchased 23 Clothes at 6.64 each
+Purchased 20 Food at 4.84 each
+Sold 20 Food at 4.84 each
+Purchased 12 Fuel at 7.74 each
+Sold 1 Fuel at 7.74 each
+Sold 3 Clothes at 6.64 each
+Sold 6 Fuel at 7.74 each
+Sold 11 Clothes at 6.64 each
+Purchased 7 Food at 4.84 each
+Sold 6 Fuel at 7.74 each
+Purchased 2 Clothes at 6.64 each
+Purchased 6 Food at 4.84 each
+Purchased 2 Fuel at 7.74 each
+Sold 1 Fuel at 7.74 each
+Purchased 23 Food at 4.84 each
+Sold 4 Food at 4.84 each
+Purchased 2 Fuel at 7.74 each
+Sold 1 Fuel at 7.74 each
+Advance day
+Total Cash: 15.05
+Total Net Worth: 318.21
+Total Food: 32
+Total Fuel: 2
+Total Clothes: 20
+
+Day 246
+Purchased 1 Food at 5.08 each
+Sold 2 Fuel at 8.32 each
+Sold 10 Clothes at 6.79 each
+Purchased 1 Food at 5.08 each
+Sold 34 Food at 5.08 each
+Purchased 18 Clothes at 6.79 each
+Sold 1 Clothes at 6.79 each
+Advance day
+Total Cash: 146.72
+Total Net Worth: 330.05
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 27
+
+Day 247
+Purchased 8 Food at 4.96 each
+Sold 27 Clothes at 6.82 each
+Advance day
+Total Cash: 291.18
+Total Net Worth: 330.86
+Total Food: 8
+Total Fuel: 0
+Total Clothes: 0
+
+Day 248
+Purchased 2 Clothes at 6.7 each
+Purchased 14 Food at 4.74 each
+Sold 6 Food at 4.74 each
+Purchased 27 Fuel at 8.73 each
+Sold 4 Fuel at 8.73 each
+Sold 1 Clothes at 6.7 each
+Advance day
+Total Cash: 45.77
+Total Net Worth: 329.1
+Total Food: 16
+Total Fuel: 23
+Total Clothes: 1
+
+Day 249
+Purchased 5 Fuel at 8.5 each
+Sold 5 Fuel at 8.5 each
+Sold 11 Food at 4.51 each
+Purchased 11 Fuel at 8.5 each
+Sold 4 Food at 4.51 each
+Sold 13 Fuel at 8.5 each
+Purchased 19 Clothes at 6.53 each
+Advance day
+Total Cash: 6.35
+Total Net Worth: 319.96
+Total Food: 1
+Total Fuel: 21
+Total Clothes: 20
+
+Day 250
+Sold 14 Clothes at 6.79 each
+Advance day
+Total Cash: 101.41
+Total Net Worth: 332.33
+Total Food: 1
+Total Fuel: 21
+Total Clothes: 6
+
+Day 251
+Purchased 3 Food at 4.97 each
+Sold 2 Food at 4.97 each
+Sold 4 Fuel at 8.84 each
+Sold 3 Clothes at 6.8 each
+Advance day
+Total Cash: 152.2
+Total Net Worth: 332.82
+Total Food: 2
+Total Fuel: 17
+Total Clothes: 3
+
+Day 252
+Purchased 11 Fuel at 8.5 each
+Sold 28 Fuel at 8.5 each
+Purchased 44 Clothes at 6.66 each
+Sold 47 Clothes at 6.66 each
+Purchased 48 Food at 5.03 each
+Purchased 8 Fuel at 8.5 each
+Sold 8 Fuel at 8.5 each
+Purchased 8 Clothes at 6.66 each
+Sold 1 Clothes at 6.66 each
+Purchased 5 Food at 5.03 each
+Advance day
+Total Cash: 3.47
+Total Net Worth: 326.74
+Total Food: 55
+Total Fuel: 0
+Total Clothes: 7
+
+Day 253
+Sold 55 Food at 5.11 each
+Purchased 25 Fuel at 8.15 each
+Sold 25 Fuel at 8.15 each
+Sold 5 Clothes at 6.47 each
+Purchased 20 Fuel at 8.15 each
+Sold 20 Fuel at 8.15 each
+Purchased 7 Clothes at 6.47 each
+Sold 3 Clothes at 6.47 each
+Purchased 35 Fuel at 8.15 each
+Sold 15 Fuel at 8.15 each
+Purchased 9 Clothes at 6.47 each
+Sold 5 Clothes at 6.47 each
+Purchased 12 Fuel at 8.15 each
+Sold 15 Fuel at 8.15 each
+Purchased 1 Clothes at 6.47 each
+Sold 11 Clothes at 6.47 each
+Purchased 37 Food at 5.11 each
+Sold 7 Food at 5.11 each
+Purchased 7 Food at 5.11 each
+Sold 37 Food at 5.11 each
+Purchased 22 Fuel at 8.15 each
+Sold 11 Fuel at 8.15 each
+Purchased 2 Clothes at 6.47 each
+Sold 2 Clothes at 6.47 each
+Advance day
+Total Cash: 101.61
+Total Net Worth: 329.81
+Total Food: 0
+Total Fuel: 28
+Total Clothes: 0
+
+Day 254
+Purchased 10 Food at 4.99 each
+Sold 10 Food at 4.99 each
+Sold 5 Fuel at 7.89 each
+Purchased 12 Clothes at 6.18 each
+Sold 12 Clothes at 6.18 each
+Purchased 13 Fuel at 7.89 each
+Purchased 2 Clothes at 6.18 each
+Advance day
+Total Cash: 26.13
+Total Net Worth: 322.53
+Total Food: 0
+Total Fuel: 36
+Total Clothes: 2
+
+Day 255
+Purchased 3 Food at 4.78 each
+Sold 3 Food at 4.78 each
+Sold 25 Fuel at 7.65 each
+Sold 2 Clothes at 5.89 each
+Purchased 47 Food at 4.78 each
+Sold 17 Food at 4.78 each
+Purchased 7 Clothes at 5.89 each
+Purchased 5 Food at 4.78 each
+Sold 23 Food at 4.78 each
+Purchased 6 Clothes at 5.89 each
+Sold 1 Clothes at 5.89 each
+Purchased 11 Fuel at 7.65 each
+Sold 22 Fuel at 7.65 each
+Purchased 31 Clothes at 5.89 each
+Sold 12 Food at 4.78 each
+Purchased 4 Clothes at 5.89 each
+Sold 29 Clothes at 5.89 each
+Advance day
+Total Cash: 207.29
+Total Net Worth: 313.31
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 18
+
+Day 256
+Purchased 41 Food at 4.93 each
+Sold 37 Food at 4.93 each
+Advance day
+Total Cash: 187.57
+Total Net Worth: 312.59
+Total Food: 4
+Total Fuel: 0
+Total Clothes: 18
+
+Day 257
+Purchased 27 Food at 4.9 each
+Purchased 6 Clothes at 5.73 each
+Advance day
+Total Cash: 20.89
+Total Net Worth: 310.31
+Total Food: 31
+Total Fuel: 0
+Total Clothes: 24
+
+Day 258
+Purchased 4 Food at 4.78 each
+Sold 16 Food at 4.78 each
+Sold 11 Clothes at 5.62 each
+Advance day
+Total Cash: 140.07
+Total Net Worth: 303.95
+Total Food: 19
+Total Fuel: 0
+Total Clothes: 13
+
+Day 259
+Purchased 23 Food at 4.56 each
+Sold 4 Clothes at 5.45 each
+Purchased 10 Clothes at 5.45 each
+Sold 40 Food at 4.56 each
+Purchased 3 Fuel at 8.23 each
+Sold 1 Fuel at 8.23 each
+Purchased 10 Clothes at 5.45 each
+Sold 6 Clothes at 5.45 each
+Purchased 32 Food at 4.56 each
+Sold 5 Clothes at 5.45 each
+Sold 34 Food at 4.56 each
+Purchased 7 Fuel at 8.23 each
+Sold 18 Clothes at 5.45 each
+Purchased 27 Fuel at 8.23 each
+Sold 10 Fuel at 8.23 each
+Purchased 6 Clothes at 5.45 each
+Sold 11 Fuel at 8.23 each
+Purchased 25 Clothes at 5.45 each
+Sold 31 Clothes at 5.45 each
+Purchased 38 Food at 4.56 each
+Sold 38 Food at 4.56 each
+Purchased 21 Fuel at 8.23 each
+Sold 7 Fuel at 8.23 each
+Advance day
+Total Cash: 58.89
+Total Net Worth: 297.56
+Total Food: 0
+Total Fuel: 29
+Total Clothes: 0
+
+Day 260
+Purchased 12 Food at 4.69 each
+Advance day
+Total Cash: 2.61
+Total Net Worth: 312.64
+Total Food: 12
+Total Fuel: 29
+Total Clothes: 0
+
+Day 261
+Sold 12 Food at 4.74 each
+Sold 9 Fuel at 8.89 each
+Purchased 6 Fuel at 8.89 each
+Purchased 6 Clothes at 5.51 each
+Purchased 11 Food at 4.74 each
+Sold 8 Food at 4.74 each
+Purchased 4 Fuel at 8.89 each
+Advance day
+Total Cash: 3.32
+Total Net Worth: 317.3
+Total Food: 3
+Total Fuel: 30
+Total Clothes: 6
+
+Day 262
+Sold 2 Food at 4.7 each
+Sold 30 Fuel at 8.73 each
+Purchased 50 Clothes at 5.48 each
+Advance day
+Total Cash: 0.62
+Total Net Worth: 312.2
+Total Food: 1
+Total Fuel: 0
+Total Clothes: 56
+
+Day 263
+Sold 35 Clothes at 5.8 each
+Advance day
+Total Cash: 203.62
+Total Net Worth: 330.63
+Total Food: 1
+Total Fuel: 0
+Total Clothes: 21
+
+Day 264
+Purchased 12 Food at 5.16 each
+Purchased 15 Fuel at 9.33 each
+Sold 5 Fuel at 9.33 each
+Purchased 8 Food at 5.16 each
+Sold 5 Fuel at 9.33 each
+Sold 17 Clothes at 6.05 each
+Purchased 21 Food at 5.16 each
+Sold 10 Food at 5.16 each
+Sold 2 Clothes at 6.05 each
+Advance day
+Total Cash: 111.96
+Total Net Worth: 335.83
+Total Food: 32
+Total Fuel: 5
+Total Clothes: 2
+
+Day 265
+Purchased 2 Food at 5.11 each
+Purchased 3 Clothes at 6.22 each
+Advance day
+Total Cash: 83.08
+Total Net Worth: 333.57
+Total Food: 34
+Total Fuel: 5
+Total Clothes: 5
+
+Day 266
+Sold 5 Fuel at 8.77 each
+Purchased 20 Clothes at 6.3 each
+Sold 15 Clothes at 6.3 each
+Advance day
+Total Cash: 95.43
+Total Net Worth: 326.39
+Total Food: 34
+Total Fuel: 0
+Total Clothes: 10
+
+Day 267
+Purchased 20 Food at 4.69 each
+Sold 6 Clothes at 6.87 each
+Sold 8 Food at 4.69 each
+Sold 3 Clothes at 6.87 each
+Sold 1 Clothes at 6.87 each
+Purchased 12 Food at 4.69 each
+Sold 25 Food at 4.69 each
+Purchased 13 Fuel at 8.73 each
+Advance day
+Total Cash: 55.33
+Total Net Worth: 323.59
+Total Food: 33
+Total Fuel: 13
+Total Clothes: 0
+
+Day 268
+Purchased 11 Food at 4.82 each
+Sold 39 Food at 4.82 each
+Purchased 21 Fuel at 9.01 each
+Advance day
+Total Cash: 1.08
+Total Net Worth: 331.52
+Total Food: 5
+Total Fuel: 34
+Total Clothes: 0
+
+Day 269
+Sold 1 Food at 5.0 each
+Sold 2 Food at 5.0 each
+Sold 1 Fuel at 9.03 each
+Purchased 3 Clothes at 8.31 each
+Sold 24 Fuel at 9.03 each
+Sold 1 Clothes at 8.31 each
+Purchased 24 Fuel at 9.03 each
+Sold 10 Fuel at 9.03 each
+Purchased 11 Clothes at 8.31 each
+Sold 4 Clothes at 8.31 each
+Purchased 2 Food at 5.0 each
+Sold 3 Food at 5.0 each
+Sold 23 Fuel at 9.03 each
+Purchased 17 Clothes at 8.31 each
+Sold 25 Clothes at 8.31 each
+Advance day
+Total Cash: 319.79
+Total Net Worth: 333.1
+Total Food: 1
+Total Fuel: 0
+Total Clothes: 1
+
+Day 270
+Purchased 57 Food at 5.11 each
+Purchased 3 Clothes at 8.16 each
+Sold 4 Clothes at 8.16 each
+Advance day
+Total Cash: 36.68
+Total Net Worth: 333.06
+Total Food: 58
+Total Fuel: 0
+Total Clothes: 0
+
+Day 271
+Purchased 3 Food at 5.11 each
+Sold 3 Food at 5.11 each
+Purchased 3 Fuel at 8.7 each
+Sold 26 Food at 5.11 each
+Purchased 5 Fuel at 8.7 each
+Sold 8 Fuel at 8.7 each
+Purchased 21 Clothes at 7.78 each
+Sold 19 Clothes at 7.78 each
+Advance day
+Total Cash: 153.98
+Total Net Worth: 333.06
+Total Food: 32
+Total Fuel: 0
+Total Clothes: 2
+
+Day 272
+Purchased 30 Food at 5.01 each
+Sold 14 Food at 5.01 each
+Sold 1 Clothes at 7.32 each
+Sold 48 Food at 5.01 each
+Purchased 30 Food at 5.01 each
+Sold 29 Food at 5.01 each
+Purchased 43 Clothes at 7.32 each
+Sold 12 Clothes at 7.32 each
+Advance day
+Total Cash: 89.69
+Total Net Worth: 328.94
+Total Food: 1
+Total Fuel: 0
+Total Clothes: 32
+
+Day 273
+Purchased 3 Clothes at 7.15 each
+Advance day
+Total Cash: 68.24
+Total Net Worth: 323.69
+Total Food: 1
+Total Fuel: 0
+Total Clothes: 35
+
+Day 274
+Purchased 1 Food at 5.21 each
+Purchased 3 Clothes at 6.88 each
+Sold 23 Clothes at 6.88 each
+Purchased 16 Clothes at 6.88 each
+Sold 6 Clothes at 6.88 each
+Purchased 10 Food at 5.21 each
+Sold 6 Food at 5.21 each
+Sold 8 Clothes at 6.88 each
+Advance day
+Total Cash: 166.03
+Total Net Worth: 314.25
+Total Food: 6
+Total Fuel: 0
+Total Clothes: 17
+
+Day 275
+Purchased 7 Food at 5.06 each
+Sold 17 Clothes at 6.56 each
+Purchased 27 Fuel at 8.72 each
+Sold 27 Fuel at 8.72 each
+Purchased 36 Clothes at 6.56 each
+Purchased 1 Food at 5.06 each
+Sold 6 Food at 5.06 each
+Purchased 2 Clothes at 6.56 each
+Sold 38 Clothes at 6.56 each
+Purchased 28 Clothes at 6.56 each
+Sold 27 Clothes at 6.56 each
+Advance day
+Total Cash: 260.87
+Total Net Worth: 307.91
+Total Food: 8
+Total Fuel: 0
+Total Clothes: 1
+
+Day 276
+Sold 3 Food at 5.34 each
+Purchased 29 Fuel at 9.33 each
+Sold 2 Food at 5.34 each
+Purchased 1 Fuel at 9.33 each
+Purchased 1 Clothes at 6.55 each
+Sold 1 Clothes at 6.55 each
+Sold 23 Fuel at 9.33 each
+Purchased 7 Clothes at 6.55 each
+Purchased 3 Fuel at 9.33 each
+Sold 9 Fuel at 9.33 each
+Purchased 3 Clothes at 6.55 each
+Sold 9 Clothes at 6.55 each
+Advance day
+Total Cash: 271.69
+Total Net Worth: 310.14
+Total Food: 3
+Total Fuel: 1
+Total Clothes: 2
+
+Day 277
+Purchased 9 Fuel at 9.46 each
+Sold 1 Clothes at 6.48 each
+Purchased 36 Food at 5.33 each
+Sold 24 Food at 5.33 each
+Purchased 10 Fuel at 9.46 each
+Sold 2 Fuel at 9.46 each
+Purchased 8 Clothes at 6.48 each
+Sold 15 Food at 5.33 each
+Purchased 8 Fuel at 9.46 each
+Sold 14 Fuel at 9.46 each
+Sold 5 Clothes at 6.48 each
+Purchased 18 Fuel at 9.46 each
+Advance day
+Total Cash: 0.38
+Total Net Worth: 310.1
+Total Food: 0
+Total Fuel: 30
+Total Clothes: 4
+
+Day 278
+Sold 11 Fuel at 9.34 each
+Sold 1 Clothes at 6.34 each
+Purchased 6 Food at 5.23 each
+Purchased 10 Clothes at 6.34 each
+Sold 8 Clothes at 6.34 each
+Advance day
+Total Cash: 65.4
+Total Net Worth: 305.94
+Total Food: 6
+Total Fuel: 19
+Total Clothes: 5
+
+Day 279
+Purchased 2 Fuel at 9.03 each
+Sold 17 Fuel at 9.03 each
+Purchased 23 Clothes at 6.19 each
+Sold 28 Clothes at 6.19 each
+Advance day
+Total Cash: 231.8
+Total Net Worth: 298.28
+Total Food: 6
+Total Fuel: 4
+Total Clothes: 0
+
+Day 280
+Purchased 33 Food at 5.21 each
+Purchased 2 Food at 5.21 each
+Purchased 7 Clothes at 6.37 each
+Sold 11 Food at 5.21 each
+Sold 2 Fuel at 9.31 each
+Purchased 2 Clothes at 6.37 each
+Purchased 10 Clothes at 6.37 each
+Sold 4 Clothes at 6.37 each
+Purchased 3 Fuel at 9.31 each
+Sold 2 Fuel at 9.31 each
+Purchased 3 Clothes at 6.37 each
+Advance day
+Total Cash: 1.41
+Total Net Worth: 300.3
+Total Food: 30
+Total Fuel: 3
+Total Clothes: 18
+
+Day 281
+Sold 4 Food at 5.22 each
+Purchased 3 Clothes at 6.42 each
+Sold 3 Clothes at 6.42 each
+Purchased 2 Fuel at 9.31 each
+Sold 12 Clothes at 6.42 each
+Purchased 13 Food at 5.22 each
+Advance day
+Total Cash: 12.85
+Total Net Worth: 301.5
+Total Food: 39
+Total Fuel: 5
+Total Clothes: 6
+
+Day 282
+Purchased 2 Food at 5.16 each
+Sold 3 Fuel at 9.12 each
+Advance day
+Total Cash: 29.89
+Total Net Worth: 297.97
+Total Food: 41
+Total Fuel: 2
+Total Clothes: 6
+
+Day 283
+Purchased 5 Food at 5.39 each
+Sold 46 Food at 5.39 each
+Sold 1 Fuel at 9.54 each
+Purchased 46 Food at 5.39 each
+Sold 1 Fuel at 9.54 each
+Purchased 2 Food at 5.39 each
+Sold 48 Food at 5.39 each
+Purchased 28 Fuel at 9.54 each
+Sold 21 Fuel at 9.54 each
+Purchased 30 Clothes at 6.72 each
+Sold 22 Clothes at 6.72 each
+Advance day
+Total Cash: 149.42
+Total Net Worth: 310.28
+Total Food: 0
+Total Fuel: 7
+Total Clothes: 14
+
+Day 284
+Sold 5 Fuel at 9.56 each
+Purchased 8 Fuel at 9.56 each
+Purchased 17 Clothes at 6.83 each
+Advance day
+Total Cash: 4.63
+Total Net Worth: 311.96
+Total Food: 0
+Total Fuel: 10
+Total Clothes: 31
+
+Day 285
+Sold 5 Fuel at 9.42 each
+Sold 31 Clothes at 6.76 each
+Advance day
+Total Cash: 261.29
+Total Net Worth: 308.39
+Total Food: 0
+Total Fuel: 5
+Total Clothes: 0
+
+Day 286
+Purchased 49 Food at 5.27 each
+Advance day
+Total Cash: 3.06
+Total Net Worth: 309.74
+Total Food: 49
+Total Fuel: 5
+Total Clothes: 0
+
+Day 287
+Sold 22 Food at 5.4 each
+Sold 17 Food at 5.4 each
+Purchased 19 Fuel at 9.66 each
+Sold 6 Fuel at 9.66 each
+Purchased 12 Clothes at 7.21 each
+Sold 10 Clothes at 7.21 each
+Purchased 10 Clothes at 7.21 each
+Sold 12 Clothes at 7.21 each
+Purchased 16 Food at 5.4 each
+Sold 26 Food at 5.4 each
+Purchased 18 Clothes at 7.21 each
+Purchased 1 Fuel at 9.66 each
+Sold 19 Fuel at 9.66 each
+Purchased 15 Clothes at 7.21 each
+Purchased 2 Clothes at 7.21 each
+Purchased 6 Fuel at 9.66 each
+Sold 21 Clothes at 7.21 each
+Purchased 15 Food at 5.4 each
+Sold 13 Food at 5.4 each
+Purchased 15 Clothes at 7.21 each
+Purchased 6 Food at 5.4 each
+Sold 8 Food at 5.4 each
+Sold 29 Clothes at 7.21 each
+Purchased 47 Food at 5.4 each
+Sold 2 Fuel at 9.66 each
+Advance day
+Total Cash: 23.52
+Total Net Worth: 315.96
+Total Food: 47
+Total Fuel: 4
+Total Clothes: 0
+
+Day 288
+Purchased 4 Food at 5.34 each
+Advance day
+Total Cash: 2.16
+Total Net Worth: 311.86
+Total Food: 51
+Total Fuel: 4
+Total Clothes: 0
+
+Day 289
+Sold 48 Food at 5.2 each
+Sold 4 Fuel at 8.95 each
+Purchased 22 Clothes at 7.04 each
+Advance day
+Total Cash: 132.68
+Total Net Worth: 303.16
+Total Food: 3
+Total Fuel: 0
+Total Clothes: 22
+
+Day 290
+Purchased 25 Food at 5.23 each
+Sold 6 Clothes at 7.19 each
+Sold 11 Food at 5.23 each
+Purchased 13 Food at 5.23 each
+Sold 17 Food at 5.23 each
+Purchased 12 Clothes at 7.19 each
+Purchased 7 Food at 5.23 each
+Sold 13 Food at 5.23 each
+Purchased 9 Clothes at 7.19 each
+Sold 7 Food at 5.23 each
+Purchased 4 Fuel at 9.04 each
+Advance day
+Total Cash: 4.36
+Total Net Worth: 306.55
+Total Food: 0
+Total Fuel: 4
+Total Clothes: 37
+
+Day 291
+Sold 34 Clothes at 7.16 each
+Purchased 23 Food at 5.17 each
+Sold 7 Food at 5.17 each
+Sold 4 Fuel at 8.95 each
+Sold 5 Food at 5.17 each
+Purchased 25 Fuel at 8.95 each
+Sold 25 Fuel at 8.95 each
+Purchased 16 Clothes at 7.16 each
+Sold 9 Food at 5.17 each
+Purchased 14 Clothes at 7.16 each
+Sold 25 Clothes at 7.16 each
+Purchased 45 Food at 5.17 each
+Sold 47 Food at 5.17 each
+Purchased 27 Fuel at 8.95 each
+Sold 7 Fuel at 8.95 each
+Purchased 9 Clothes at 7.16 each
+Sold 17 Clothes at 7.16 each
+Purchased 14 Fuel at 8.95 each
+Sold 34 Fuel at 8.95 each
+Purchased 18 Food at 5.17 each
+Sold 18 Food at 5.17 each
+Purchased 3 Fuel at 8.95 each
+Purchased 42 Food at 5.17 each
+Sold 42 Food at 5.17 each
+Purchased 21 Fuel at 8.95 each
+Sold 24 Fuel at 8.95 each
+Advance day
+Total Cash: 305.08
+Total Net Worth: 305.08
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 0
+
+Day 292
+Purchased 34 Fuel at 8.75 each
+Purchased 1 Clothes at 6.98 each
+Advance day
+Total Cash: 0.6
+Total Net Worth: 305.08
+Total Food: 0
+Total Fuel: 34
+Total Clothes: 1
+
+Day 293
+Sold 19 Fuel at 9.04 each
+Purchased 24 Clothes at 7.01 each
+Sold 12 Clothes at 7.01 each
+Purchased 2 Food at 5.09 each
+Purchased 6 Fuel at 9.04 each
+Sold 2 Fuel at 9.04 each
+Sold 13 Clothes at 7.01 each
+Purchased 21 Food at 5.09 each
+Purchased 2 Fuel at 9.04 each
+Purchased 1 Clothes at 7.01 each
+Sold 17 Food at 5.09 each
+Purchased 1 Fuel at 9.04 each
+Advance day
+Total Cash: 78.54
+Total Net Worth: 314.97
+Total Food: 6
+Total Fuel: 22
+Total Clothes: 1
+
+Day 294
+Purchased 13 Food at 5.09 each
+Sold 15 Food at 5.09 each
+Sold 8 Fuel at 8.99 each
+Purchased 8 Clothes at 6.92 each
+Sold 2 Food at 5.09 each
+Purchased 4 Fuel at 8.99 each
+Sold 18 Fuel at 8.99 each
+Sold 2 Clothes at 6.92 each
+Purchased 39 Food at 5.09 each
+Purchased 8 Clothes at 6.92 each
+Sold 4 Clothes at 6.92 each
+Purchased 1 Food at 5.09 each
+Sold 42 Food at 5.09 each
+Purchased 6 Clothes at 6.92 each
+Sold 17 Clothes at 6.92 each
+Purchased 6 Fuel at 8.99 each
+Purchased 5 Food at 5.09 each
+Sold 6 Fuel at 8.99 each
+Purchased 56 Food at 5.09 each
+Sold 8 Food at 5.09 each
+Purchased 6 Clothes at 6.92 each
+Sold 53 Food at 5.09 each
+Sold 6 Clothes at 6.92 each
+Purchased 30 Fuel at 8.99 each
+Sold 25 Fuel at 8.99 each
+Advance day
+Total Cash: 268.83
+Total Net Worth: 313.78
+Total Food: 0
+Total Fuel: 5
+Total Clothes: 0
+
+Day 295
+Purchased 18 Clothes at 6.73 each
+Sold 16 Clothes at 6.73 each
+Purchased 10 Fuel at 8.79 each
+Sold 1 Clothes at 6.73 each
+Purchased 34 Food at 4.99 each
+Sold 15 Fuel at 8.79 each
+Purchased 2 Fuel at 8.79 each
+Sold 2 Fuel at 8.79 each
+Purchased 27 Food at 4.99 each
+Sold 20 Food at 4.99 each
+Purchased 4 Fuel at 8.79 each
+Sold 1 Fuel at 8.79 each
+Purchased 8 Food at 4.99 each
+Sold 14 Food at 4.99 each
+Purchased 11 Clothes at 6.73 each
+Purchased 5 Food at 4.99 each
+Sold 11 Food at 4.99 each
+Purchased 6 Fuel at 8.79 each
+Sold 9 Fuel at 8.79 each
+Sold 2 Clothes at 6.73 each
+Advance day
+Total Cash: 100.77
+Total Net Worth: 312.78
+Total Food: 29
+Total Fuel: 0
+Total Clothes: 10
+
+Day 296
+Purchased 14 Clothes at 6.73 each
+Sold 11 Food at 5.07 each
+Purchased 7 Fuel at 8.88 each
+Sold 3 Clothes at 6.73 each
+Purchased 4 Food at 5.07 each
+Sold 3 Food at 5.07 each
+Sold 6 Fuel at 8.88 each
+Advance day
+Total Cash: 68.56
+Total Net Worth: 315.1
+Total Food: 19
+Total Fuel: 1
+Total Clothes: 21
+
+Day 297
+Sold 17 Food at 4.96 each
+Purchased 12 Clothes at 6.6 each
+Purchased 8 Fuel at 8.71 each
+Sold 9 Fuel at 8.71 each
+Purchased 8 Clothes at 6.6 each
+Sold 41 Clothes at 6.6 each
+Purchased 14 Fuel at 8.71 each
+Purchased 24 Clothes at 6.6 each
+Sold 24 Clothes at 6.6 each
+Advance day
+Total Cash: 178.25
+Total Net Worth: 310.11
+Total Food: 2
+Total Fuel: 14
+Total Clothes: 0
+
+Day 298
+Purchased 35 Food at 5.0 each
+Sold 17 Food at 5.0 each
+Sold 1 Fuel at 8.99 each
+Purchased 2 Clothes at 6.64 each
+Sold 20 Food at 5.0 each
+Sold 2 Clothes at 6.64 each
+Purchased 39 Food at 5.0 each
+Sold 13 Fuel at 8.99 each
+Advance day
+Total Cash: 119.11
+Total Net Worth: 314.11
+Total Food: 39
+Total Fuel: 0
+Total Clothes: 0
+
+Day 299
+Sold 21 Food at 4.98 each
+Purchased 7 Fuel at 9.02 each
+Sold 7 Fuel at 9.02 each
+Purchased 27 Clothes at 6.53 each
+Purchased 7 Clothes at 6.53 each
+Sold 14 Food at 4.98 each
+Purchased 5 Fuel at 9.02 each
+Sold 4 Food at 4.98 each
+Sold 1 Fuel at 9.02 each
+Purchased 8 Clothes at 6.53 each
+Sold 29 Clothes at 6.53 each
+Advance day
+Total Cash: 192.36
+Total Net Worth: 313.33
+Total Food: 0
+Total Fuel: 4
+Total Clothes: 13
+
+Day 300
+Purchased 29 Clothes at 6.62 each
+Advance day
+Total Cash: 0.38
+Total Net Worth: 315.58
+Total Food: 0
+Total Fuel: 4
+Total Clothes: 42
+
+Day 301
+Sold 2 Clothes at 6.59 each
+Purchased 1 Fuel at 9.23 each
+Advance day
+Total Cash: 4.33
+Total Net Worth: 314.08
+Total Food: 0
+Total Fuel: 5
+Total Clothes: 40
+
+Day 302
+Sold 22 Clothes at 6.8 each
+Purchased 16 Fuel at 9.48 each
+Sold 19 Fuel at 9.48 each
+Sold 5 Clothes at 6.8 each
+Sold 2 Fuel at 9.48 each
+Purchased 11 Clothes at 6.8 each
+Sold 17 Clothes at 6.8 each
+Advance day
+Total Cash: 276.13
+Total Net Worth: 323.73
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 7
+
+Day 303
+Purchased 2 Fuel at 9.5 each
+Purchased 37 Clothes at 6.78 each
+Advance day
+Total Cash: 6.27
+Total Net Worth: 323.59
+Total Food: 0
+Total Fuel: 2
+Total Clothes: 44
+
+Day 304
+Purchased 1 Food at 5.06 each
+Sold 33 Clothes at 6.65 each
+Advance day
+Total Cash: 220.66
+Total Net Worth: 317.57
+Total Food: 1
+Total Fuel: 2
+Total Clothes: 11
+
+Day 305
+Purchased 6 Fuel at 9.59 each
+Sold 7 Fuel at 9.59 each
+Sold 11 Clothes at 6.7 each
+Advance day
+Total Cash: 303.95
+Total Net Worth: 318.7
+Total Food: 1
+Total Fuel: 1
+Total Clothes: 0
+
+Day 306
+Purchased 30 Food at 5.12 each
+Sold 27 Food at 5.12 each
+Purchased 15 Fuel at 9.43 each
+Sold 10 Fuel at 9.43 each
+Advance day
+Total Cash: 241.44
+Total Net Worth: 318.5
+Total Food: 4
+Total Fuel: 6
+Total Clothes: 0
+
+Day 307
+Purchased 16 Fuel at 9.64 each
+Purchased 9 Clothes at 6.62 each
+Sold 3 Food at 5.27 each
+Purchased 3 Fuel at 9.64 each
+Sold 6 Fuel at 9.64 each
+Purchased 10 Clothes at 6.62 each
+Sold 19 Fuel at 9.64 each
+Purchased 15 Clothes at 6.62 each
+Sold 13 Clothes at 6.62 each
+Purchased 33 Food at 5.27 each
+Sold 34 Food at 5.27 each
+Purchased 34 Food at 5.27 each
+Sold 16 Clothes at 6.62 each
+Advance day
+Total Cash: 108.08
+Total Net Worth: 320.36
+Total Food: 34
+Total Fuel: 0
+Total Clothes: 5
+
+Day 308
+Sold 2 Clothes at 6.53 each
+Purchased 12 Food at 5.21 each
+Purchased 1 Fuel at 9.53 each
+Sold 3 Clothes at 6.53 each
+Purchased 13 Food at 5.21 each
+Sold 59 Food at 5.21 each
+Purchased 31 Food at 5.21 each
+Sold 2 Food at 5.21 each
+Sold 1 Fuel at 9.53 each
+Advance day
+Total Cash: 166.78
+Total Net Worth: 317.87
+Total Food: 29
+Total Fuel: 0
+Total Clothes: 0
+
+Day 309
+Purchased 32 Food at 5.13 each
+Sold 61 Food at 5.13 each
+Purchased 34 Fuel at 9.28 each
+Sold 34 Fuel at 9.28 each
+Purchased 30 Clothes at 6.35 each
+Purchased 19 Clothes at 6.35 each
+Advance day
+Total Cash: 4.4
+Total Net Worth: 315.55
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 49
+
+Day 310
+Sold 49 Clothes at 6.34 each
+Advance day
+Total Cash: 315.06
+Total Net Worth: 315.06
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 0
+
+Day 311
+Advance day
+Total Cash: 315.06
+Total Net Worth: 315.06
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 0
+
+Day 312
+Advance day
+Total Cash: 315.06
+Total Net Worth: 315.06
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 0
+
+Day 313
+Advance day
+Total Cash: 315.06
+Total Net Worth: 315.06
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 0
+
+Day 314
+Purchased 62 Food at 4.95 each
+Sold 50 Food at 4.95 each
+Purchased 22 Fuel at 8.92 each
+Sold 22 Fuel at 8.92 each
+Sold 8 Food at 4.95 each
+Advance day
+Total Cash: 295.26
+Total Net Worth: 315.06
+Total Food: 4
+Total Fuel: 0
+Total Clothes: 0
+
+Day 315
+Purchased 1 Fuel at 8.82 each
+Sold 1 Fuel at 8.82 each
+Purchased 48 Clothes at 6.04 each
+Sold 43 Clothes at 6.04 each
+Purchased 34 Food at 4.89 each
+Sold 21 Food at 4.89 each
+Sold 6 Food at 4.89 each
+Purchased 11 Fuel at 8.82 each
+Sold 3 Clothes at 6.04 each
+Advance day
+Total Cash: 151.93
+Total Net Worth: 314.82
+Total Food: 11
+Total Fuel: 11
+Total Clothes: 2
+
+Day 316
+Purchased 18 Food at 4.92 each
+Sold 9 Food at 4.92 each
+Purchased 4 Fuel at 8.89 each
+Purchased 3 Clothes at 6.05 each
+Advance day
+Total Cash: 53.94
+Total Net Worth: 315.94
+Total Food: 20
+Total Fuel: 15
+Total Clothes: 5
+
+Day 317
+Sold 20 Food at 5.02 each
+Purchased 16 Fuel at 9.12 each
+Purchased 1 Food at 5.02 each
+Sold 1 Food at 5.02 each
+Sold 7 Fuel at 9.12 each
+Purchased 11 Clothes at 6.14 each
+Sold 15 Clothes at 6.14 each
+Advance day
+Total Cash: 96.82
+Total Net Worth: 321.84
+Total Food: 0
+Total Fuel: 24
+Total Clothes: 1
+
+Day 318
+Purchased 19 Food at 4.95 each
+Advance day
+Total Cash: 2.77
+Total Net Worth: 324.21
+Total Food: 19
+Total Fuel: 24
+Total Clothes: 1
+
+Day 319
+Advance day
+Total Cash: 2.77
+Total Net Worth: 327.73
+Total Food: 19
+Total Fuel: 24
+Total Clothes: 1
+
+Day 320
+Sold 1 Fuel at 9.29 each
+Purchased 1 Food at 4.9 each
+Purchased 1 Clothes at 6.17 each
+Sold 1 Clothes at 6.17 each
+Purchased 1 Food at 4.9 each
+Sold 5 Fuel at 9.29 each
+Purchased 5 Fuel at 9.29 each
+Sold 21 Food at 4.9 each
+Purchased 11 Fuel at 9.29 each
+Sold 34 Fuel at 9.29 each
+Purchased 49 Clothes at 6.17 each
+Purchased 1 Fuel at 9.29 each
+Sold 1 Fuel at 9.29 each
+Sold 49 Clothes at 6.17 each
+Purchased 36 Food at 4.9 each
+Purchased 7 Fuel at 9.29 each
+Purchased 12 Clothes at 6.17 each
+Sold 12 Clothes at 6.17 each
+Purchased 14 Food at 4.9 each
+Sold 50 Food at 4.9 each
+Sold 7 Fuel at 9.29 each
+Purchased 22 Fuel at 9.29 each
+Sold 14 Fuel at 9.29 each
+Purchased 33 Food at 4.9 each
+Sold 22 Food at 4.9 each
+Sold 3 Fuel at 9.29 each
+Purchased 8 Fuel at 9.29 each
+Sold 5 Fuel at 9.29 each
+Sold 1 Clothes at 6.17 each
+Sold 1 Fuel at 9.29 each
+Advance day
+Total Cash: 206.07
+Total Net Worth: 325.0
+Total Food: 11
+Total Fuel: 7
+Total Clothes: 0
+
+Day 321
+Purchased 19 Food at 4.9 each
+Sold 30 Food at 4.9 each
+Purchased 15 Fuel at 9.3 each
+Sold 13 Fuel at 9.3 each
+Purchased 38 Clothes at 6.24 each
+Advance day
+Total Cash: 4.25
+Total Net Worth: 325.07
+Total Food: 0
+Total Fuel: 9
+Total Clothes: 38
+
+Day 322
+Sold 9 Fuel at 9.3 each
+Purchased 11 Clothes at 6.39 each
+Advance day
+Total Cash: 17.66
+Total Net Worth: 330.77
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 49
+
+Day 323
+Purchased 1 Fuel at 9.07 each
+Sold 49 Clothes at 6.43 each
+Advance day
+Total Cash: 323.66
+Total Net Worth: 332.73
+Total Food: 0
+Total Fuel: 1
+Total Clothes: 0
+
+Day 324
+Purchased 8 Food at 4.99 each
+Sold 1 Food at 4.99 each
+Purchased 31 Fuel at 9.04 each
+Sold 32 Fuel at 9.04 each
+Purchased 26 Food at 4.99 each
+Purchased 6 Fuel at 9.04 each
+Purchased 15 Clothes at 6.44 each
+Sold 33 Food at 4.99 each
+Purchased 20 Fuel at 9.04 each
+Sold 15 Fuel at 9.04 each
+Sold 5 Clothes at 6.44 each
+Purchased 6 Fuel at 9.04 each
+Sold 17 Fuel at 9.04 each
+Purchased 22 Clothes at 6.44 each
+Purchased 10 Food at 4.99 each
+Purchased 8 Fuel at 9.04 each
+Sold 6 Fuel at 9.04 each
+Sold 20 Clothes at 6.44 each
+Sold 10 Food at 4.99 each
+Sold 3 Clothes at 6.44 each
+Advance day
+Total Cash: 256.66
+Total Net Worth: 332.7
+Total Food: 0
+Total Fuel: 2
+Total Clothes: 9
+
+Day 325
+Advance day
+Total Cash: 256.66
+Total Net Worth: 331.47
+Total Food: 0
+Total Fuel: 2
+Total Clothes: 9
+
+Day 326
+Purchased 4 Food at 4.8 each
+Purchased 38 Clothes at 6.21 each
+Advance day
+Total Cash: 1.48
+Total Net Worth: 329.89
+Total Food: 4
+Total Fuel: 2
+Total Clothes: 47
+
+Day 327
+Sold 4 Food at 4.75 each
+Advance day
+Total Cash: 20.48
+Total Net Worth: 322.73
+Total Food: 0
+Total Fuel: 2
+Total Clothes: 47
+
+Day 328
+Purchased 3 Clothes at 5.88 each
+Sold 2 Fuel at 8.3 each
+Purchased 3 Clothes at 5.88 each
+Sold 4 Clothes at 5.88 each
+Purchased 1 Food at 4.69 each
+Purchased 3 Clothes at 5.88 each
+Sold 47 Clothes at 5.88 each
+Purchased 16 Food at 4.69 each
+Sold 10 Food at 4.69 each
+Purchased 30 Fuel at 8.3 each
+Sold 4 Clothes at 5.88 each
+Purchased 5 Food at 4.69 each
+Sold 12 Food at 4.69 each
+Purchased 1 Fuel at 8.3 each
+Purchased 1 Clothes at 5.88 each
+Purchased 9 Food at 4.69 each
+Sold 9 Food at 4.69 each
+Purchased 3 Fuel at 8.3 each
+Sold 34 Fuel at 8.3 each
+Purchased 12 Clothes at 5.88 each
+Advance day
+Total Cash: 231.12
+Total Net Worth: 313.44
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 14
+
+Day 329
+Purchased 25 Fuel at 8.13 each
+Purchased 1 Clothes at 5.67 each
+Advance day
+Total Cash: 22.2
+Total Net Worth: 310.5
+Total Food: 0
+Total Fuel: 25
+Total Clothes: 15
+
+Day 330
+Purchased 4 Food at 4.56 each
+Sold 4 Food at 4.56 each
+Sold 25 Fuel at 7.98 each
+Purchased 10 Food at 4.56 each
+Sold 6 Food at 4.56 each
+Purchased 2 Clothes at 5.45 each
+Sold 12 Clothes at 5.45 each
+Purchased 21 Clothes at 5.45 each
+Sold 3 Food at 4.56 each
+Purchased 28 Clothes at 5.45 each
+Sold 13 Clothes at 5.45 each
+Purchased 16 Food at 4.56 each
+Sold 17 Food at 4.56 each
+Purchased 5 Clothes at 5.45 each
+Sold 29 Clothes at 5.45 each
+Sold 17 Clothes at 5.45 each
+Purchased 7 Food at 4.56 each
+Purchased 20 Clothes at 5.45 each
+Purchased 27 Food at 4.56 each
+Sold 34 Food at 4.56 each
+Purchased 24 Fuel at 7.98 each
+Sold 5 Clothes at 5.45 each
+Purchased 2 Food at 4.56 each
+Sold 1 Food at 4.56 each
+Purchased 1 Fuel at 7.98 each
+Sold 25 Fuel at 7.98 each
+Sold 7 Clothes at 5.45 each
+Purchased 46 Clothes at 5.45 each
+Purchased 1 Food at 4.56 each
+Advance day
+Total Cash: 0.03
+Total Net Worth: 303.45
+Total Food: 2
+Total Fuel: 0
+Total Clothes: 54
+
+Day 331
+Sold 1 Food at 4.43 each
+Sold 25 Clothes at 5.25 each
+Purchased 30 Food at 4.43 each
+Sold 3 Clothes at 5.25 each
+Advance day
+Total Cash: 18.56
+Total Net Worth: 292.39
+Total Food: 31
+Total Fuel: 0
+Total Clothes: 26
+
+Day 332
+Purchased 3 Food at 4.52 each
+Sold 34 Food at 4.52 each
+Purchased 16 Fuel at 7.67 each
+Sold 2 Fuel at 7.67 each
+Purchased 10 Clothes at 5.06 each
+Sold 5 Clothes at 5.06 each
+Advance day
+Total Cash: 26.0
+Total Net Worth: 290.24
+Total Food: 0
+Total Fuel: 14
+Total Clothes: 31
+
+Day 333
+Purchased 3 Fuel at 7.55 each
+Sold 31 Clothes at 4.87 each
+Purchased 26 Clothes at 4.87 each
+Sold 9 Clothes at 4.87 each
+Advance day
+Total Cash: 71.53
+Total Net Worth: 282.67
+Total Food: 0
+Total Fuel: 17
+Total Clothes: 17
+
+Day 334
+Purchased 9 Fuel at 7.44 each
+Sold 15 Fuel at 7.44 each
+Sold 17 Clothes at 4.68 each
+Advance day
+Total Cash: 195.73
+Total Net Worth: 277.57
+Total Food: 0
+Total Fuel: 11
+Total Clothes: 0
+
+Day 335
+Purchased 44 Food at 4.39 each
+Sold 23 Food at 4.39 each
+Purchased 8 Fuel at 7.33 each
+Sold 9 Fuel at 7.33 each
+Purchased 9 Clothes at 4.5 each
+Sold 10 Fuel at 7.33 each
+Advance day
+Total Cash: 143.67
+Total Net Worth: 276.36
+Total Food: 21
+Total Fuel: 0
+Total Clothes: 9
+
+Day 336
+Sold 3 Food at 4.27 each
+Purchased 36 Clothes at 4.33 each
+Advance day
+Total Cash: 0.6
+Total Net Worth: 272.31
+Total Food: 18
+Total Fuel: 0
+Total Clothes: 45
+
+Day 337
+Sold 18 Food at 4.15 each
+Purchased 10 Fuel at 6.98 each
+Sold 40 Clothes at 4.16 each
+Purchased 36 Food at 4.15 each
+Advance day
+Total Cash: 22.5
+Total Net Worth: 262.5
+Total Food: 36
+Total Fuel: 10
+Total Clothes: 5
+
+Day 338
+Purchased 2 Fuel at 6.74 each
+Purchased 1 Clothes at 3.99 each
+Sold 36 Food at 4.0 each
+Purchased 5 Fuel at 6.74 each
+Sold 17 Fuel at 6.74 each
+Advance day
+Total Cash: 229.91
+Total Net Worth: 253.85
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 6
+
+Day 339
+Purchased 56 Food at 3.87 each
+Sold 24 Food at 3.87 each
+Purchased 27 Clothes at 3.83 each
+Sold 27 Clothes at 3.83 each
+Sold 24 Food at 3.87 each
+Sold 6 Clothes at 3.83 each
+Advance day
+Total Cash: 221.93
+Total Net Worth: 252.89
+Total Food: 8
+Total Fuel: 0
+Total Clothes: 0
+
+Day 340
+Purchased 1 Food at 3.72 each
+Purchased 9 Fuel at 6.21 each
+Purchased 22 Clothes at 3.68 each
+Sold 3 Clothes at 3.68 each
+Advance day
+Total Cash: 92.4
+Total Net Worth: 251.69
+Total Food: 9
+Total Fuel: 9
+Total Clothes: 19
+
+Day 341
+Purchased 3 Fuel at 5.94 each
+Sold 12 Fuel at 5.94 each
+Sold 2 Clothes at 3.54 each
+Advance day
+Total Cash: 152.94
+Total Net Worth: 245.34
+Total Food: 9
+Total Fuel: 0
+Total Clothes: 17
+
+Day 342
+Purchased 19 Food at 3.46 each
+Sold 12 Food at 3.46 each
+Purchased 8 Fuel at 5.68 each
+Sold 8 Fuel at 5.68 each
+Sold 12 Clothes at 3.39 each
+Purchased 33 Food at 3.46 each
+Sold 49 Food at 3.46 each
+Purchased 66 Clothes at 3.39 each
+Sold 6 Clothes at 3.39 each
+Purchased 1 Fuel at 5.68 each
+Sold 65 Clothes at 3.39 each
+Purchased 31 Food at 3.46 each
+Purchased 15 Clothes at 3.39 each
+Sold 31 Food at 3.46 each
+Purchased 33 Clothes at 3.39 each
+Advance day
+Total Cash: 73.31
+Total Net Worth: 241.71
+Total Food: 0
+Total Fuel: 1
+Total Clothes: 48
+
+Day 343
+Purchased 16 Food at 3.31 each
+Sold 14 Food at 3.31 each
+Purchased 14 Clothes at 3.26 each
+Sold 34 Clothes at 3.26 each
+Advance day
+Total Cash: 131.89
+Total Net Worth: 235.2
+Total Food: 2
+Total Fuel: 1
+Total Clothes: 28
+
+Day 344
+Purchased 41 Food at 3.16 each
+Sold 23 Clothes at 3.15 each
+Purchased 23 Food at 3.16 each
+Sold 1 Fuel at 5.16 each
+Sold 5 Clothes at 3.15 each
+Purchased 7 Clothes at 3.15 each
+Advance day
+Total Cash: 0.96
+Total Net Worth: 231.57
+Total Food: 66
+Total Fuel: 0
+Total Clothes: 7
+
+Day 345
+Sold 11 Food at 3.02 each
+Purchased 2 Fuel at 4.92 each
+Sold 2 Fuel at 4.92 each
+Sold 3 Clothes at 3.05 each
+Purchased 14 Food at 3.02 each
+Sold 4 Clothes at 3.05 each
+Purchased 4 Food at 3.02 each
+Advance day
+Total Cash: 1.17
+Total Net Worth: 221.63
+Total Food: 73
+Total Fuel: 0
+Total Clothes: 0
+
+Day 346
+Sold 10 Food at 2.89 each
+Advance day
+Total Cash: 30.07
+Total Net Worth: 212.14
+Total Food: 63
+Total Fuel: 0
+Total Clothes: 0
+
+Day 347
+Purchased 9 Food at 2.75 each
+Sold 27 Food at 2.75 each
+Purchased 13 Fuel at 4.48 each
+Purchased 5 Clothes at 2.91 each
+Sold 4 Clothes at 2.91 each
+Purchased 4 Food at 2.75 each
+Sold 1 Fuel at 4.48 each
+Sold 12 Fuel at 4.48 each
+Purchased 1 Fuel at 4.48 each
+Advance day
+Total Cash: 61.18
+Total Net Worth: 203.32
+Total Food: 49
+Total Fuel: 1
+Total Clothes: 1
+
+Day 348
+Purchased 23 Food at 2.63 each
+Sold 72 Food at 2.63 each
+Purchased 14 Fuel at 4.29 each
+Purchased 17 Clothes at 2.85 each
+Sold 10 Fuel at 4.29 each
+Sold 18 Clothes at 2.85 each
+Purchased 66 Food at 2.63 each
+Sold 66 Food at 2.63 each
+Purchased 29 Fuel at 4.29 each
+Purchased 17 Clothes at 2.85 each
+Sold 17 Clothes at 2.85 each
+Advance day
+Total Cash: 51.33
+Total Net Worth: 197.19
+Total Food: 0
+Total Fuel: 34
+Total Clothes: 0
+
+Day 349
+Purchased 1 Fuel at 4.11 each
+Sold 7 Fuel at 4.11 each
+Advance day
+Total Cash: 75.99
+Total Net Worth: 191.07
+Total Food: 0
+Total Fuel: 28
+Total Clothes: 0
+
+Day 350
+Purchased 5 Fuel at 3.93 each
+Purchased 1 Clothes at 2.77 each
+Purchased 13 Fuel at 3.93 each
+Advance day
+Total Cash: 2.48
+Total Net Worth: 186.03
+Total Food: 0
+Total Fuel: 46
+Total Clothes: 1
+
+Day 351
+Advance day
+Total Cash: 2.48
+Total Net Worth: 179.1
+Total Food: 0
+Total Fuel: 46
+Total Clothes: 1
+
+Day 352
+Sold 46 Fuel at 3.64 each
+Advance day
+Total Cash: 169.92
+Total Net Worth: 172.64
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 1
+
+Day 353
+Advance day
+Total Cash: 169.92
+Total Net Worth: 172.62
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 1
+
+Day 354
+Purchased 49 Fuel at 3.4 each
+Advance day
+Total Cash: 3.32
+Total Net Worth: 172.6
+Total Food: 0
+Total Fuel: 49
+Total Clothes: 1
+
+Day 355
+Sold 30 Fuel at 3.31 each
+Purchased 53 Food at 1.88 each
+Sold 1 Clothes at 2.67 each
+Purchased 3 Food at 1.88 each
+Sold 44 Food at 1.88 each
+Purchased 24 Fuel at 3.31 each
+Advance day
+Total Cash: 3.29
+Total Net Worth: 168.18
+Total Food: 12
+Total Fuel: 43
+Total Clothes: 0
+
+Day 356
+Sold 12 Food at 1.81 each
+Purchased 7 Fuel at 3.21 each
+Purchased 1 Food at 1.81 each
+Sold 1 Food at 1.81 each
+Sold 24 Fuel at 3.21 each
+Advance day
+Total Cash: 79.58
+Total Net Worth: 163.04
+Total Food: 0
+Total Fuel: 26
+Total Clothes: 0
+
+Day 357
+Purchased 25 Clothes at 2.65 each
+Sold 4 Clothes at 2.65 each
+Sold 14 Fuel at 3.13 each
+Sold 11 Clothes at 2.65 each
+Purchased 30 Fuel at 3.13 each
+Sold 42 Fuel at 3.13 each
+Purchased 50 Clothes at 2.65 each
+Sold 16 Clothes at 2.65 each
+Advance day
+Total Cash: 44.36
+Total Net Worth: 160.96
+Total Food: 0
+Total Fuel: 0
+Total Clothes: 44
+
+Day 358
+Purchased 11 Food at 1.68 each
+Purchased 3 Clothes at 2.65 each
+Sold 11 Food at 1.68 each
+Purchased 9 Fuel at 3.04 each
+Sold 2 Fuel at 3.04 each
+Sold 47 Clothes at 2.65 each
+Purchased 57 Food at 1.68 each
+Sold 57 Food at 1.68 each
+Purchased 15 Clothes at 2.65 each
+Sold 1 Clothes at 2.65 each
+Purchased 10 Food at 1.68 each
+Purchased 28 Fuel at 3.04 each
+Sold 23 Fuel at 3.04 each
+Purchased 21 Clothes at 2.65 each
+Purchased 5 Food at 1.68 each
+Sold 13 Food at 1.68 each
+Purchased 6 Fuel at 3.04 each
+Purchased 3 Clothes at 2.65 each
+Sold 38 Clothes at 2.65 each
+Purchased 6 Clothes at 2.65 each
+Advance day
+Total Cash: 86.98
+Total Net Worth: 160.96
+Total Food: 2
+Total Fuel: 18
+Total Clothes: 6
+
+Day 359
+Purchased 41 Food at 1.62 each
+Sold 5 Fuel at 2.98 each
+Purchased 21 Food at 1.62 each
+Sold 29 Food at 1.62 each
+Purchased 14 Clothes at 2.65 each
+Purchased 6 Food at 1.62 each
+Sold 5 Fuel at 2.98 each
+Purchased 6 Clothes at 2.65 each
+Sold 26 Clothes at 2.65 each
+Advance day
+Total Cash: 69.5
+Total Net Worth: 159.76
+Total Food: 41
+Total Fuel: 8
+Total Clothes: 0
+
+Day 360
+Sold 33 Food at 1.57 each
+Purchased 41 Fuel at 2.91 each
+Sold 15 Fuel at 2.91 each
+Purchased 17 Clothes at 2.64 each
+Sold 17 Clothes at 2.64 each
+Sold 8 Food at 1.57 each
+Purchased 20 Fuel at 2.91 each
+Sold 8 Fuel at 2.91 each
+Purchased 9 Food at 1.57 each
+Purchased 3 Fuel at 2.91 each
+Sold 44 Fuel at 2.91 each
+Purchased 50 Food at 1.57 each
+Purchased 4 Fuel at 2.91 each
+Sold 8 Fuel at 2.91 each
+Purchased 23 Clothes at 2.64 each
+Sold 16 Clothes at 2.64 each
+Sold 3 Food at 1.57 each
+Purchased 13 Fuel at 2.91 each
+Purchased 2 Clothes at 2.64 each
+Sold 9 Clothes at 2.64 each
+Sold 56 Food at 1.57 each
+Advance day
+Total Cash: 116.41
+Total Net Worth: 157.15
+Total Food: 0
+Total Fuel: 14
+Total Clothes: 0
+
+Day 361
+Purchased 52 Food at 1.51 each
+Sold 52 Food at 1.51 each
+Sold 14 Fuel at 2.86 each
+Purchased 67 Food at 1.51 each
+Purchased 9 Fuel at 2.86 each
+Purchased 11 Clothes at 2.64 each
+Advance day
+Total Cash: 0.5
+Total Net Worth: 156.45
+Total Food: 67
+Total Fuel: 9
+Total Clothes: 11
+
+Day 362
+Sold 3 Food at 1.47 each
+Sold 9 Fuel at 2.82 each
+Purchased 8 Clothes at 2.65 each
+Purchased 6 Food at 1.47 each
+Sold 68 Food at 1.47 each
+Purchased 35 Clothes at 2.65 each
+Sold 48 Clothes at 2.65 each
+Purchased 27 Food at 1.47 each
+Purchased 35 Clothes at 2.65 each
+Sold 41 Clothes at 2.65 each
+Purchased 16 Clothes at 2.65 each
+Purchased 46 Food at 1.47 each
+Sold 72 Food at 1.47 each
+Purchased 3 Clothes at 2.65 each
+Purchased 14 Food at 1.47 each
+Sold 1 Clothes at 2.65 each
+Advance day
+Total Cash: 80.83
+Total Net Worth: 153.52
+Total Food: 17
+Total Fuel: 0
+Total Clothes: 18
+
+Day 363
+Purchased 19 Food at 1.42 each
+Sold 3 Food at 1.42 each
+Purchased 19 Fuel at 2.79 each
+Sold 19 Fuel at 2.79 each
+Sold 1 Clothes at 2.65 each
+Advance day
+Total Cash: 60.76
+Total Net Worth: 152.67
+Total Food: 33
+Total Fuel: 0
+Total Clothes: 17
+
+Day 364
+Purchased 1 Food at 1.38 each
+Purchased 7 Fuel at 2.78 each
+Sold 1 Fuel at 2.78 each
+Advance day
+Total Cash: 42.7
+Total Net Worth: 151.35
+Total Food: 34
+Total Fuel: 6
+Total Clothes: 17
+
+Day 365
+Purchased 12 Food at 1.35 each
+Sold 32 Food at 1.35 each
+Sold 4 Fuel at 2.77 each
+Sold 17 Clothes at 2.66 each
+Advance day
+Total Cash: 126.0
+Total Net Worth: 150.44
+Total Food: 14
+Total Fuel: 2
+Total Clothes: 0
+

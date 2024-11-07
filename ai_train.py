@@ -95,7 +95,7 @@ class EconomySimEnv(gym.Env):
                 success = self.game.player.buy(self.game.market, resource, buy_quantity)
                 if success:
                     self.current_day_actions.append(
-                        f"Purchased {buy_quantity} {resource} at {self.game.market.prices[resource]:.2f} each"
+                        f"Purchased {buy_quantity} {resource} at {self.game.market.prices[resource]:} each"
                     )
 
             # Sell
@@ -105,7 +105,7 @@ class EconomySimEnv(gym.Env):
                 success = self.game.player.sell(self.game.market, resource, sell_quantity)
                 if success:
                     self.current_day_actions.append(
-                        f"Sold {sell_quantity} {resource} at {self.game.market.prices[resource]:.2f} each"
+                        f"Sold {sell_quantity} {resource} at {self.game.market.prices[resource]:} each"
                     )
 
         # Advance day if action[-1] > 0.5
