@@ -118,7 +118,7 @@ class Game:
         reward = self.calculate_reward()
 
         # Check if the game is done
-        done = self.day >= 365  # For example, end after 365 days
+        done = self.day >= 365  # end after 365 days
 
         # Additional info (can be empty)
         info = {}
@@ -297,6 +297,8 @@ class Market:
         self.prices = {resource: BASE_PRICES[resource] * (self.demand[resource] / self.supply[resource]) for resource in RESOURCES}
         self.price_history = {resource: [self.prices[resource]] for resource in RESOURCES}
         self.inflation_rate = 0.003  # Define an inflation rate of 0.3% per day
+        self.previous_prices = {resource: BASE_PRICES[resource] for resource in RESOURCES}
+        self.price_history = {resource: np.array([self.prices[resource]]) for resource in RESOURCES}
 
     def adjust_prices(self, day):
         for resource in RESOURCES:
@@ -324,8 +326,11 @@ class Market:
                 # EWMA calculation: current_price * weight + previous_average * (1 - weight)
                 smoothed_price = (price * WEIGHT) + (self.price_history[resource][-1] * (1 - WEIGHT))
 
-            # Append the smoothed price to price history
-            self.price_history[resource].append(smoothed_price)
+                # Append the smoothed price to price history
+            self.price_history[resource] = np.append(self.price_history[resource], smoothed_price)
+
+            # Save the current price before updating
+            self.previous_prices[resource] = self.prices[resource]
 
             # Update the resource price with the latest smoothed price
             self.prices[resource] = smoothed_price
@@ -451,9 +456,10 @@ class Player:
             self.money -= total_cost
             self.inventory[resource] += amount
             market.supply[resource] -= amount
-            #print(f"Bought {amount} units of {resource} for ${total_cost:.2f}")
-        #else:
-            #("Cannot complete the purchase.")
+            return True
+        else:
+            #print("Cannot complete the purchase.")
+            return False
 
     def sell(self, market, resource, amount):
         if self.inventory[resource] >= amount:
@@ -462,9 +468,10 @@ class Player:
             self.money += total_earnings
             self.inventory[resource] -= amount
             market.supply[resource] += amount
-            #print(f"Sold {amount} units of {resource} for ${total_earnings:.2f}")
-        #else:
+            return True
+        else:
             #print("Cannot complete the sale.")
+            return False
 
 def draw_progress_bar(win, x, y, width, height, progress, bg_color, fg_color):
     # Draw background
