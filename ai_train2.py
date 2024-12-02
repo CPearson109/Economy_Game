@@ -47,10 +47,15 @@ class EconomySimEnv(gym.Env):
         self.current_day = 1
 
         # Reward strategy parameters
-        self.max_inventory_threshold = 100  # threshold for penalties
-        self.transaction_cost_rate = 0.01  # 1% transaction cost
+        self.max_inventory_threshold = 100  # Example threshold for penalties
         self.diversity_bonus_per_resource = 0.2  # Bonus per unique resource held
         self.final_reward_weight = 0.5  # Weight for final net worth reward
+        self.roi_bonus_weight = 1.0  # Weight for ROI in reward
+        self.roi_penalty_weight = 0.5  # Weight for negative ROI penalties
+
+        # Tracking variables for ROI
+        self.daily_investment = 0.0
+        self.daily_net_profit = 0.0
 
     def reset(self, seed=None, options=None):
         super().reset(seed=seed)
@@ -63,6 +68,8 @@ class EconomySimEnv(gym.Env):
         self.current_day_actions = []
         self.current_day = 1
         self.episode_data = []
+        self.daily_investment = 0.0
+        self.daily_net_profit = 0.0
         observation = self.get_observation()
         return observation, {}
 
@@ -70,18 +77,18 @@ class EconomySimEnv(gym.Env):
         obs = [self.game.player.money]
         for resource in RESOURCES:
             obs.extend([
-                self.game.player.inventory[resource],
-                self.game.market.prices[resource],
-                self.game.market.previous_prices[resource],
-                self.game.market.supply[resource],
-                self.game.market.demand[resource],
-                np.mean(self.game.market.price_history[resource][-5:]) if len(self.game.market.price_history[resource]) >= 5 else self.game.market.prices[resource]
+                self.game.player.inventory.get(resource, 0),
+                self.game.market.prices.get(resource, 0.0),
+                self.game.market.previous_prices.get(resource, 0.0),
+                self.game.market.supply.get(resource, 0.0),
+                self.game.market.demand.get(resource, 0.0),
+                np.mean(self.game.market.price_history[resource][-5:]) if len(self.game.market.price_history[resource]) >= 5 else self.game.market.prices.get(resource, 0.0)
             ])
         return np.array(obs, dtype=np.float32)
 
     def calculate_net_worth(self):
         net_worth = self.game.player.money + sum(
-            self.game.player.inventory[resource] * self.game.market.prices[resource]
+            self.game.player.inventory.get(resource, 0) * self.game.market.prices.get(resource, 0.0)
             for resource in RESOURCES
         )
         return net_worth
@@ -92,9 +99,11 @@ class EconomySimEnv(gym.Env):
 
         previous_observation = self.get_observation().copy()
 
-        # Track transaction costs
+        # Track transaction costs and investments
         total_buy_cost = 0.0
         total_sell_revenue = 0.0
+        daily_investment = 0.0  # Reset daily investment
+        daily_net_profit = 0.0    # Reset daily net profit
 
         # Process buy and sell actions
         for i, resource in enumerate(resources):
@@ -103,25 +112,29 @@ class EconomySimEnv(gym.Env):
 
             # Buy
             available_cash = self.game.player.money
-            buy_amount = (available_cash * buy_fraction) / self.game.market.prices[resource]
+            buy_amount = (available_cash * buy_fraction) / self.game.market.prices.get(resource, 1.0)
             buy_quantity = int(buy_amount)
             if buy_quantity > 0:
                 success = self.game.player.buy(self.game.market, resource, buy_quantity)
                 if success:
-                    total_buy_cost += buy_quantity * self.game.market.prices[resource]
+                    cost = buy_quantity * self.game.market.prices.get(resource, 0.0)
+                    total_buy_cost += cost
+                    daily_investment += cost
                     self.current_day_actions.append(
-                        f"Purchased {buy_quantity} {resource} at ${self.game.market.prices[resource]:.2f} each"
+                        f"Purchased {buy_quantity} {resource} at ${self.game.market.prices.get(resource, 0.0):.2f} each"
                     )
 
             # Sell
-            inventory = self.game.player.inventory[resource]
+            inventory = self.game.player.inventory.get(resource, 0)
             sell_quantity = int(inventory * sell_fraction)
             if sell_quantity > 0:
                 success = self.game.player.sell(self.game.market, resource, sell_quantity)
                 if success:
-                    total_sell_revenue += sell_quantity * self.game.market.prices[resource]
+                    revenue = sell_quantity * self.game.market.prices.get(resource, 0.0)
+                    total_sell_revenue += revenue
+                    daily_net_profit += revenue
                     self.current_day_actions.append(
-                        f"Sold {sell_quantity} {resource} at ${self.game.market.prices[resource]:.2f} each"
+                        f"Sold {sell_quantity} {resource} at ${self.game.market.prices.get(resource, 0.0):.2f} each"
                     )
 
         # Advance day if action[-1] > 0.5
@@ -152,24 +165,40 @@ class EconomySimEnv(gym.Env):
             self.game.advance_day()
             self.total_days += 1
 
-        observation = self.get_observation()
-        current_net_worth = self.calculate_net_worth()
+            # Calculate daily net profit (including changes in inventory value)
+            new_net_worth = self.calculate_net_worth()
+            net_worth_change = new_net_worth - self.previous_net_worth
+            daily_net_profit += net_worth_change - daily_investment  # Net profit after investment
 
-        # Calculate basic reward based on net worth change
-        net_worth_change = current_net_worth - self.previous_net_worth
+            # Reset previous net worth for next day
+            self.previous_net_worth = new_net_worth
+        else:
+            # If day is not advanced, net profit is zero
+            net_worth_change = 0.0
 
-        # Initialize reward with net worth change
-        reward = net_worth_change
+        # Calculate ROI
+        roi = 0.0
+        if daily_investment > 0:
+            roi = daily_net_profit / daily_investment
+        elif daily_net_profit > 0:
+            # If no investment but profit was made (e.g., from selling existing inventory)
+            roi = daily_net_profit / self.initial_net_worth  # Relative to initial net worth
+        else:
+            roi = 0.0  # No investment and no profit
 
-        # Add transaction costs
-        transaction_costs = (total_buy_cost + total_sell_revenue) * self.transaction_cost_rate
-        reward -= transaction_costs
+        # Initialize reward with ROI
+        reward = roi * self.roi_bonus_weight
+
+        # Add penalties for negative ROI
+        if roi < 0:
+            reward += roi * self.roi_penalty_weight  # Negative reward for negative ROI
 
         # Penalty for excessive inventory
         excessive_inventory_penalty = 0.0
         for resource in RESOURCES:
-            if self.game.player.inventory.get(resource, 0) > self.max_inventory_threshold:
-                excessive_inventory = self.game.player.inventory.get(resource, 0) - self.max_inventory_threshold
+            inventory = self.game.player.inventory.get(resource, 0)
+            if inventory > self.max_inventory_threshold:
+                excessive_inventory = inventory - self.max_inventory_threshold
                 excessive_inventory_penalty += excessive_inventory * 0.05  # Penalty rate per excessive unit
         reward -= excessive_inventory_penalty
 
@@ -181,7 +210,7 @@ class EconomySimEnv(gym.Env):
         # Final episode reward
         done = self.total_days >= 365
         if done:
-            final_reward = current_net_worth * self.final_reward_weight
+            final_reward = self.calculate_net_worth() * self.final_reward_weight
             reward += final_reward
 
             # Record any remaining actions for the last day
@@ -210,7 +239,17 @@ class EconomySimEnv(gym.Env):
 
         self.total_reward += reward
         self.reward_count += 1
-        self.previous_net_worth = current_net_worth
+
+        # Update previous net worth if day advanced
+        if action[-1] > 0.5:
+            pass  # Already updated above
+        else:
+            # If day not advanced, keep previous net worth
+            pass
+
+        # Prepare observation
+        observation = self.get_observation()
+        current_net_worth = self.calculate_net_worth()
 
         # If done, include episode data in info
         info = {
@@ -219,7 +258,8 @@ class EconomySimEnv(gym.Env):
             'player_inventory': self.game.player.inventory.copy(),
             'days': self.total_days,
             'total_reward': round(self.total_reward, 4),
-            'average_reward': round(self.total_reward / self.reward_count, 4) if self.reward_count > 0 else 0
+            'average_reward': round(self.total_reward / self.reward_count, 4) if self.reward_count > 0 else 0,
+            'roi': round(roi, 4)
         }
 
         if done:
@@ -248,7 +288,7 @@ class CSVLoggerCallback(BaseCallback):
                 writer.writerow([
                     'Term', 'Final Net Worth', 'Final Cash',
                     'Final Reward', 'Average Reward',
-                    'Food Inventory', 'Fuel Inventory', 'Clothes Inventory', 'Water Inventory'  # **Added Water Inventory**
+                    'Food Inventory', 'Fuel Inventory', 'Clothes Inventory', 'Water Inventory', 'ROI'  # **Added ROI**
                 ])
 
     def _on_step(self) -> bool:
@@ -265,6 +305,7 @@ class CSVLoggerCallback(BaseCallback):
                 player_money = info['player_money']
                 final_reward = info['total_reward']
                 average_reward = info['average_reward']
+                roi = info.get('roi', 0.0)
                 inventories = info['player_inventory']
 
                 food_inventory = int(round(inventories.get('Food', 0)))
@@ -277,7 +318,8 @@ class CSVLoggerCallback(BaseCallback):
                     writer.writerow([
                         self.term_count, net_worth, player_money,
                         final_reward, average_reward,
-                        food_inventory, fuel_inventory, clothes_inventory, water_inventory  # **Added Water Inventory**
+                        food_inventory, fuel_inventory, clothes_inventory, water_inventory,
+                        roi  # **Added ROI**
                     ])
         return True
 
