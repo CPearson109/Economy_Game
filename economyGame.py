@@ -1,15 +1,17 @@
-# economyGame_simplified.py
-
+# economyGame.py
 import pygame
 import sys
 import matplotlib.pyplot as plt
 import numpy as np
 
+clock = pygame.time.Clock()
+FPS = 5
+
 # Initialize pygame
 pygame.init()
 
 # Screen settings
-WIDTH, HEIGHT = 800, 600
+WIDTH, HEIGHT = 800, 600  # Adjusted height
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Simplified Economy Simulation")
 
@@ -17,60 +19,262 @@ pygame.display.set_caption("Simplified Economy Simulation")
 FONT = pygame.font.SysFont("arial", 24, bold=True)
 SMALL_FONT = pygame.font.SysFont("arial", 18)
 
-# Colors
+# Colours
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY = (230, 230, 230)
-ORANGE = (255, 127, 39)
+DARK_GRAY = (50, 50, 50)
 RED = (255, 0, 0)
+GREEN = (34, 177, 76)
+BLUE = (0, 162, 232)
+ORANGE = (255, 127, 39)
+YELLOW = (255, 242, 0)
+
+# Updated RESOURCES list to include 'Water'
+RESOURCES = ["Food", "Fuel", "Clothes", "Water"]  # Added 'Water'
 
 # Simulation settings
-RESOURCES = ["Food", "Fuel", "Clothes", "Water"]
-NUM_PEOPLE = 100
-MAX_RESOURCE = {"Food": 30, "Fuel": 20, "Clothes": 10, "Water": 40}
-CONSUMPTION_RATES = {"Food": 3, "Fuel": 2, "Clothes": 1, "Water": 4}
-BASE_PRICES = {"Food": 3, "Fuel": 6, "Clothes": 9, "Water": 1}
-PRODUCTION_PER_WORKER = {"Food": 15, "Fuel": 10, "Clothes": 5, "Water": 20}
-WAGE_MULTIPLIERS = {"Food": 3, "Fuel": 3, "Clothes": 3, "Water": 3}
-MINIMUM_WAGE = 10.0
-MAX_WAGE_CHANGE = 0.1
-WEIGHT = 0.3
-REPRODUCTION_INTERVAL = 100
-INFLATION_RATE = 0.003
-PRICE_CHANGE_LIMIT = 1.5  # Allow max 50% daily change
+NUM_PEOPLE = 100  # Number of people in the simulation
+MAX_RESOURCE = {
+    "Food": 30,
+    "Fuel": 20,
+    "Clothes": 10,
+    "Water": 25  # Added max resource for Water
+}  # Max resources per person
+CONSUMPTION_RATES = {
+    "Food": 3,
+    "Fuel": 2,
+    "Clothes": 1,
+    "Water": 4  # Added higher consumption rate for Water
+}  # Daily consumption
+BASE_PRICES = {
+    "Food": 3,
+    "Fuel": 6,
+    "Clothes": 9,
+    "Water": 2  # Added base price for Water
+}  # Base market prices
+
+# Production per worker and wage multipliers per resource
+PRODUCTION_PER_WORKER = {
+    "Food": 14,
+    "Fuel": 10,
+    "Clothes": 6,
+    "Water": 18  # Added production per worker for Water
+}
+WAGE_MULTIPLIERS = {
+    "Food": 1.5,
+    "Fuel": 1.5,
+    "Clothes": 1.5,
+    "Water": 1.5  # Added wage multiplier for Water
+}
+
+# Wage settings
+MINIMUM_WAGE = 10.0  # Minimum wage for all factories
+MAX_WAGE_CHANGE = 0.1  # Max wage decrease per day (percentage)
+
+# Market settings
+MOVING_AVERAGE = 10  # Moving average window size for smoothing prices
+WEIGHT = 0.17  # Weight for exponential moving average price smoothing
+
+# Reproduction chance (set to zero to remove randomness)
+REPRODUCTION_CHANCE = 0.0  # Chance for people to reproduce each day
+
+# Load images
+try:
+    # Background image (Replace 'background.png' with your background image)
+    BACKGROUND_IMAGE = pygame.image.load('images/background.png')
+    BACKGROUND_IMAGE = pygame.transform.scale(BACKGROUND_IMAGE, (WIDTH, HEIGHT))
+except:
+    BACKGROUND_IMAGE = None
+
+try:
+    FOOD_ICON = pygame.image.load('images/food_icon.png')
+    FUEL_ICON = pygame.image.load('images/fuel_icon.png')
+    CLOTHES_ICON = pygame.image.load('images/clothes_icon.png')
+    WATER_ICON = pygame.image.load('images/water_icon.png')  # Added Water icon
+except:
+    FOOD_ICON = None
+    FUEL_ICON = None
+    CLOTHES_ICON = None
+    WATER_ICON = None  # Handle missing Water icon
+
+RESOURCE_ICONS = {
+    'Food': FOOD_ICON,
+    'Fuel': FUEL_ICON,
+    'Clothes': CLOTHES_ICON,
+    'Water': WATER_ICON  # Added Water to RESOURCE_ICONS
+}
 
 def round_currency(value):
     return round(value + 1e-8, 2)  # Round to two decimal places
 
+class Game:
+    def __init__(self):
+        pygame.init()
+        self.clock = pygame.time.Clock()
+        self.people = [Person() for _ in range(NUM_PEOPLE)]
+        self.factories = [Factory(resource) for resource in RESOURCES]
+        self.market = Market()
+        self.player = Player()
+        self.day = 0
+        self.selected_resource = "Food"
+
+        # Tracking variables for plotting (if needed)
+        self.days = []
+        self.prices_history = {resource: [] for resource in RESOURCES}
+        self.population_history = []
+        self.avg_money_history = []
+        self.avg_resources_history = {resource: [] for resource in RESOURCES}
+        self.daily_spending_history = {resource: [] for resource in RESOURCES}
+
+    def reset(self):
+        self.__init__()  # Re-initialize the game
+
+    def step(self, action):
+        # Process the AI's action
+        self.process_action(action)
+
+        # Advance the day
+        self.advance_day()
+
+        # Get the new observation
+        observation = self.get_observation()
+
+        # Calculate the reward
+        reward = self.calculate_reward()
+
+        # Check if the game is done
+        done = self.day >= 365  # end after 365 days
+
+        # Additional info (can be empty)
+        info = {}
+
+        return observation, reward, done, info
+
+    def process_action(self, action):
+        # Define how the action affects the game
+        if action == 1:  # Buy selected resource
+            amount = 1
+            self.player.buy(self.market, self.selected_resource, amount)
+        elif action == 2:  # Sell selected resource
+            amount = 1
+            self.player.sell(self.market, self.selected_resource, amount)
+
+    def advance_day(self):
+        self.day += 1
+
+        # Update people
+        alive_people = []
+        for person in self.people:
+            person.buy_resources(self.market)
+            person.consume_resources()
+            if person.is_alive:
+                alive_people.append(person)
+        self.people = alive_people
+
+        # Assign workers
+        for factory in self.factories:
+            factory.reset_worker_count()
+            factory.calculate_wage(self.market)
+
+        for person in self.people:
+            if person.decide_to_work(self.market) and not person.working:
+                self.assign_worker_to_factory(person)
+
+        # Factory operations
+        for factory in self.factories:
+            factory.pay_workers()
+            factory.produce(self.market)
+
+        # Market adjustments
+        for resource in RESOURCES:
+            self.market.demand[resource] = len(self.people) * CONSUMPTION_RATES[resource]
+        self.market.adjust_prices(self.day)
+
+        # Reproduction (disabled to remove randomness)
+        # self.people.extend(person.reproduce() for person in self.people if person.reproduce())
+
+    def assign_worker_to_factory(self, person):
+        factory_wages = {factory: factory.current_wage for factory in self.factories}
+        highest_wage_factory = max(factory_wages, key=lambda f: factory_wages[f])
+        highest_wage_factory.accept_worker(person)
+
+    def get_observation(self):
+        observation = np.array([
+            self.player.money,
+            self.market.prices['Food'],
+            self.player.inventory['Food'],
+            self.market.prices['Fuel'],
+            self.player.inventory['Fuel'],
+            self.market.prices['Clothes'],
+            self.player.inventory['Clothes'],
+            self.market.prices['Water'],      # Added Water price to observation
+            self.player.inventory['Water']    # Added Water inventory to observation
+        ], dtype=np.float32)
+        return observation
+
+    def calculate_reward(self):
+        reward = self.player.money
+        return reward
+
+    # The render function for displaying the game state
+    def render(self):
+        # This is where we will use the draw_window function to display the current game state
+        draw_window(WIN, self.people, self.factories, self.market, self.player, self.day, None, self.selected_resource)
+        pygame.display.update()  # Update the display after drawing
+
+# Button to end the game
+class Button:
+    def __init__(self, text, x, y, width, height, color, hover_color, action=None):
+        self.text = text
+        self.rect = pygame.Rect(x, y, width, height)
+        self.color = color
+        self.hover_color = hover_color
+        self.action = action
+
+    def draw(self, win):
+        mouse_pos = pygame.mouse.get_pos()
+        if self.rect.collidepoint(mouse_pos):
+            pygame.draw.rect(win, self.hover_color, self.rect, border_radius=10)
+        else:
+            pygame.draw.rect(win, self.color, self.rect, border_radius=10)
+        pygame.draw.rect(win, BLACK, self.rect, 2, border_radius=10)  # Add border
+        text_surface = SMALL_FONT.render(self.text, True, BLACK)
+        win.blit(text_surface, (self.rect.x + (self.rect.width - text_surface.get_width()) // 2,
+                                self.rect.y + (self.rect.height - text_surface.get_height()) // 2))
+
+    def check_click(self):
+        mouse_pos = pygame.mouse.get_pos()
+        if self.rect.collidepoint(mouse_pos):
+            if pygame.mouse.get_pressed()[0]:  # Left mouse button is pressed
+                if self.action:
+                    self.action()
+
 class Market:
     def __init__(self):
-        initial_supply_multiplier = 5
-        self.supply = {resource: (NUM_PEOPLE * CONSUMPTION_RATES[resource]) * initial_supply_multiplier for resource in RESOURCES}
+        self.supply = {resource: (NUM_PEOPLE * CONSUMPTION_RATES[resource]) * 3 for resource in RESOURCES}
         self.demand = {resource: NUM_PEOPLE * CONSUMPTION_RATES[resource] for resource in RESOURCES}
-        self.prices = {
-            resource: BASE_PRICES[resource] * (self.demand[resource] / self.supply[resource])
-            for resource in RESOURCES
-        }
+        self.prices = {resource: BASE_PRICES[resource] * (self.demand[resource] / self.supply[resource]) for resource in RESOURCES}
         self.price_history = {resource: [self.prices[resource]] for resource in RESOURCES}
-        self.previous_prices = self.prices.copy()
+        self.inflation_rate = 0.003  # Define an inflation rate of 0.3% per day
+        self.previous_prices = {resource: BASE_PRICES[resource] for resource in RESOURCES}
+        self.price_history = {resource: np.array([self.prices[resource]]) for resource in RESOURCES}
 
     def adjust_prices(self, day):
         for resource in RESOURCES:
             if self.supply[resource] == 0:
-                self.supply[resource] = 1  # Prevent division by zero
+                self.supply[resource] = 1
 
-            inflated_base_price = BASE_PRICES[resource] * ((1 + INFLATION_RATE) ** day)
+            inflated_base_price = BASE_PRICES[resource] * ((1 + self.inflation_rate) ** day)
             price = inflated_base_price * (self.demand[resource] / self.supply[resource])
-
-            # Limit the price change
-            price = min(price, self.prices[resource] * PRICE_CHANGE_LIMIT)
-            price = max(price, self.prices[resource] / PRICE_CHANGE_LIMIT)
-
-            # Smooth the price changes
-            smoothed_price = (price * WEIGHT) + (self.prices[resource] * (1 - WEIGHT))
-
-            # Update price history and current price
-            self.price_history[resource].append(smoothed_price)
+            max_price = inflated_base_price * 10
+            price = min(price, max_price)
+            price = max(price, inflated_base_price * 0.1)
+            if len(self.price_history[resource]) == 0:
+                smoothed_price = price
+            else:
+                smoothed_price = (price * WEIGHT) + (self.price_history[resource][-1] * (1 - WEIGHT))
+            self.price_history[resource] = np.append(self.price_history[resource], smoothed_price)
             self.previous_prices[resource] = self.prices[resource]
             self.prices[resource] = round_currency(smoothed_price)
 
@@ -78,41 +282,58 @@ class Person:
     def __init__(self):
         self.money = 100.00
         self.resources = {
-            "Food": 15,
-            "Fuel": 10,
-            "Clothes": 5,
-            "Water": 25
+            "Food": 15,     # Fixed value
+            "Fuel": 10,     # Fixed value
+            "Clothes": 5,   # Fixed value
+            "Water": 12     # Added Water with initial value
         }
         self.age = 0
         self.is_alive = True
+        self.max_resource = MAX_RESOURCE
         self.working = False
         self.factory = None
-        self.consumption_rates = CONSUMPTION_RATES.copy()
+        self.daily_spending = {resource: 0 for resource in RESOURCES}  # Track spending per resource
+        self.consumption_rates = CONSUMPTION_RATES.copy()  # Fixed consumption rates
+        self.laziness_factor = 0.0  # Fixed laziness factor
 
     def consume_resources(self):
         for resource in RESOURCES:
             self.resources[resource] -= self.consumption_rates[resource]
             if self.resources[resource] < 0:
                 self.is_alive = False
-        self.age += 1
 
     def decide_to_work(self, market):
-        money_threshold = 150
-        resource_threshold = {resource: self.consumption_rates[resource] * 5 for resource in RESOURCES}
+        money_threshold = 50
+        resource_threshold = {resource: self.consumption_rates[resource] * 2 for resource in RESOURCES}
         needs_money_or_resources = self.money < money_threshold or any(
             self.resources[resource] < resource_threshold[resource] for resource in RESOURCES
         )
+        resource_low_supply = any(
+            market.supply[resource] < market.demand[resource] / 2 for resource in RESOURCES
+        )
+        wants_to_work = needs_money_or_resources or resource_low_supply
+        # Since laziness_factor is zero, no random factor is needed
+        return wants_to_work
 
     def buy_resources(self, market):
-        target_resource_level = {resource: self.consumption_rates[resource] * 5 for resource in RESOURCES}
-        budget_allocation = {resource: 1 / len(RESOURCES) for resource in RESOURCES}
+        critical_replenishment_level = {
+            resource: self.consumption_rates[resource] * 4 for resource in RESOURCES
+        }
+        reproduction_target_level = {
+            resource: self.consumption_rates[resource] * 6 for resource in RESOURCES
+        }
+        target_resource_level = {
+            resource: reproduction_target_level[resource] if self.resources[resource] < critical_replenishment_level[resource]
+            else self.consumption_rates[resource] * 5 for resource in RESOURCES  # Fixed value instead of random.uniform(3,7)
+        }
+        budget_allocation = {'Food': 0.6, 'Fuel': 0.4, 'Clothes': 0.2, 'Water': 0.3}  # Added budget allocation for Water
         total_budget = self.money * 0.8  # Spend up to 80% of current money
 
         for resource in RESOURCES:
             amount_needed = target_resource_level[resource] - self.resources[resource]
             if amount_needed <= 0:
                 continue
-            amount_to_spend = total_budget * budget_allocation[resource]
+            amount_to_spend = total_budget * budget_allocation.get(resource, 0.2)  # Default allocation if not specified
             price_per_unit = market.prices[resource]
             affordable_amount = amount_to_spend / price_per_unit
             amount_can_buy = min(affordable_amount, market.supply[resource], amount_needed)
@@ -120,19 +341,11 @@ class Person:
                 self.resources[resource] += amount_can_buy
                 self.money -= amount_can_buy * price_per_unit
                 self.money = round_currency(self.money)
+                self.daily_spending[resource] += amount_can_buy * price_per_unit
                 market.supply[resource] -= amount_can_buy
 
     def reproduce(self):
-        can_afford_child = all(
-            self.resources[resource] >= self.consumption_rates[resource] * 3
-            for resource in RESOURCES
-        )
-        if self.age > 18 and self.age % REPRODUCTION_INTERVAL == 0 and can_afford_child:
-            child = Person()
-            for resource in RESOURCES:
-                self.resources[resource] /= 2
-                child.resources[resource] = self.resources[resource]
-            return child
+        # Reproduction disabled to remove randomness
         return None
 
 class Player:
@@ -166,38 +379,11 @@ class Player:
         else:
             return False
 
-class Factory:
-    def __init__(self, resource_type):
-        self.resource_type = resource_type
-        self.workers = []
-        self.production_per_worker = PRODUCTION_PER_WORKER[resource_type]
-        self.current_wage = MINIMUM_WAGE
-
-    def calculate_wage(self, market):
-        market_price = market.prices[self.resource_type]
-        total_production_value = self.production_per_worker * market_price
-        desired_wage = total_production_value * WAGE_MULTIPLIERS[self.resource_type]
-        desired_wage = max(MINIMUM_WAGE, desired_wage)
-        self.current_wage = round_currency(desired_wage)
-
-    def accept_worker(self, person):
-        self.workers.append(person)
-        person.working = True
-        person.factory = self
-
-    def pay_workers(self):
-        for person in self.workers:
-            person.money += self.current_wage
-            person.money = round_currency(person.money)
-            person.working = False
-            person.factory = None
-
-    def produce(self, market):
-        total_workers = len(self.workers)
-        production_amount = self.production_per_worker * total_workers
-        production_amount = int(production_amount)
-        market.supply[self.resource_type] += production_amount
-        self.workers = []
+def draw_progress_bar(win, x, y, width, height, progress, bg_color, fg_color):
+    pygame.draw.rect(win, bg_color, (x, y, width, height))
+    pygame.draw.rect(win, BLACK, (x, y, width, height), 1)
+    inner_width = int(width * progress)
+    pygame.draw.rect(win, fg_color, (x, y, inner_width, height))
 
 def draw_panel(win, x, y, width, height, title, content_items, bg_color, text_color):
     pygame.draw.rect(win, bg_color, (x, y, width, height), border_radius=15)
@@ -206,15 +392,104 @@ def draw_panel(win, x, y, width, height, title, content_items, bg_color, text_co
     win.blit(title_surface, (x + 20, y + 20))
     offset = 60
     for item in content_items:
-        line_surface = SMALL_FONT.render(item, True, text_color)
-        win.blit(line_surface, (x + 20, y + offset))
-        offset += 30
+        if isinstance(item, tuple):
+            image, text = item
+            if image:
+                win.blit(image, (x + 20, y + offset))
+                line_surface = SMALL_FONT.render(text, True, text_color)
+                win.blit(line_surface, (x + 70, y + offset + 10))
+            else:
+                line_surface = SMALL_FONT.render(text, True, text_color)
+                win.blit(line_surface, (x + 20, y + offset))
+        else:
+            line_surface = SMALL_FONT.render(item, True, text_color)
+            win.blit(line_surface, (x + 20, y + offset))
+        offset += 40
 
-def draw_window(win, people, market, player, day, selected_resource):
-    win.fill(WHITE)
+class Factory:
+    def __init__(self, resource_type):
+        self.resource_type = resource_type
+        self.workers = []
+        self.production_per_worker = PRODUCTION_PER_WORKER[resource_type]
+        self.wage_multiplier = WAGE_MULTIPLIERS[resource_type]
+        self.initial_wage = MINIMUM_WAGE
+        self.current_wage = MINIMUM_WAGE
+        self.previous_wage = MINIMUM_WAGE
+        self.max_wage_change = MAX_WAGE_CHANGE
+        self.worker_count = 0
+
+    def calculate_wage(self, market):
+        market_price = market.prices[self.resource_type]
+        total_production_value = self.production_per_worker * market_price
+        desired_wage = total_production_value * self.wage_multiplier
+        if market.supply[self.resource_type] == 0:
+            supply_demand_ratio = float('inf')
+        else:
+            supply_demand_ratio = market.demand[self.resource_type] / market.supply[self.resource_type]
+        if supply_demand_ratio < 1:
+            desired_wage *= 0.8
+        elif supply_demand_ratio > 1.5:
+            desired_wage *= 1.2
+        if desired_wage > self.previous_wage:
+            wage_growth = (desired_wage - self.previous_wage) * 0.3
+            desired_wage = self.previous_wage + wage_growth
+        desired_wage = max(MINIMUM_WAGE, desired_wage)
+        self.initial_wage = round_currency(desired_wage)
+        self.previous_wage = self.initial_wage
+        self.current_wage = self.initial_wage
+
+    def accept_worker(self, person):
+        self.workers.append((person, self.current_wage))
+        person.working = True
+        person.factory = self
+        self.current_wage *= 0.99  # Decrease wage by 1%
+        self.current_wage = max(self.current_wage, MINIMUM_WAGE)
+        self.current_wage = round_currency(self.current_wage)
+        self.worker_count += 1
+
+    def pay_workers(self):
+        for person, wage in self.workers:
+            person.money += wage
+            person.money = round_currency(person.money)
+            if person.money > 200:
+                tax_rate = 0.1
+                person.money -= wage * tax_rate
+                person.money = round_currency(person.money)
+            person.working = False
+            person.factory = None
+
+    def produce(self, market):
+        total_workers = len(self.workers)
+        production_amount = self.production_per_worker * total_workers
+        # Remove production variation
+        production_amount = int(production_amount)
+        if production_amount > 0:
+            market.supply[self.resource_type] += production_amount
+        self.workers = []
+
+    def reset_worker_count(self):
+        self.worker_count = 0
+
+def draw_player_inventory(win, x, y, width, height, player):
+    pygame.draw.rect(win, GRAY, (x, y, width, height), border_radius=15)
+    pygame.draw.rect(win, BLACK, (x, y, width, height), 2, border_radius=15)
+    title_surface = FONT.render("Player Inventory", True, BLACK)
+    win.blit(title_surface, (x + 20, y + 20))
+    money_surface = SMALL_FONT.render(f"Money: ${player.money:.2f}", True, BLACK)
+    win.blit(money_surface, (x + 20, y + 60))
+    offset = 100
+    for resource in RESOURCES:
+        inventory_surface = SMALL_FONT.render(f"{resource}: {player.inventory[resource]:.2f}", True, BLACK)
+        win.blit(inventory_surface, (x + 20, y + offset))
+        offset += 40
+
+def draw_window(win, people, factories, market, player, day, end_button, selected_resource):
+    if BACKGROUND_IMAGE:
+        win.blit(BACKGROUND_IMAGE, (0, 0))
+    else:
+        win.fill(WHITE)
     panel_width = WIDTH // 2 - 30
     panel_height = HEIGHT // 2 - 40
-
     general_info = [
         f"Day: {day}",
         f"Population: {len(people)}",
@@ -224,32 +499,29 @@ def draw_window(win, people, market, player, day, selected_resource):
         general_info.append(f"Avg Money: ${avg_money:.2f}")
     else:
         general_info.append("Avg Money: N/A")
-
     draw_panel(win, 20, 20, panel_width, panel_height, "General Info", general_info, GRAY, BLACK)
-
-    resource_prices = [f"{resource}: ${market.prices[resource]:.2f}" for resource in RESOURCES]
+    resource_prices = []
+    for resource in RESOURCES:
+        icon = pygame.transform.scale(RESOURCE_ICONS[resource], (40, 40)) if RESOURCE_ICONS[resource] else None
+        text = f"${market.prices[resource]:.2f}"
+        resource_prices.append((icon, text))
     draw_panel(win, WIDTH // 2 + 10, 20, panel_width, panel_height, "Market Prices", resource_prices, GRAY, BLACK)
-
-    player_info = [
-        f"Money: ${player.money:.2f}",
-        *[f"{resource}: {player.inventory[resource]:.2f}" for resource in RESOURCES]
-    ]
-    draw_panel(win, 20, HEIGHT // 2 + 10, panel_width, panel_height, "Player Inventory", player_info, GRAY, BLACK)
-
+    draw_player_inventory(win, 20, HEIGHT // 2 + 10, panel_width, panel_height, player)
     instructions = [
         "Press 'I' for Food",
         "Press 'O' for Fuel",
         "Press 'P' for Clothes",
-        "Press 'U' for Water",
-        "Press 'K' to Buy or 'L' to Sell resource.",
+        "Press 'W' for Water",  # Added instruction for Water
+        "Press K to Buy or L to Sell resource.",
         f"Selected resource: {selected_resource}",
         "Press SPACE to Advance Day"
     ]
     draw_panel(win, WIDTH // 2 + 10, HEIGHT // 2 + 10, panel_width, panel_height, "Instructions", instructions, GRAY, BLACK)
-
+    if end_button:
+        end_button.draw(win)
     pygame.display.update()
 
-def end_game(prices_history, days, player):
+def end_game(prices_history, population_history, avg_money_history, avg_resources_history, daily_spending_history, days, player):
     print("Game Over!!!")
     print("Total Money: ", player.money)
     plt.figure(figsize=(10, 5))
@@ -265,19 +537,28 @@ def end_game(prices_history, days, player):
     sys.exit()
 
 def main():
+    clock = pygame.time.Clock()
     people = [Person() for _ in range(NUM_PEOPLE)]
     factories = [Factory(resource) for resource in RESOURCES]
     market = Market()
     player = Player()
-    day = 1
+    day = 0
     selected_resource = "Food"
-    days = [0]
-    prices_history = {resource: [market.prices[resource]] for resource in RESOURCES}
+    days = []
+    prices_history = {resource: [] for resource in RESOURCES}
+    population_history = []
+    avg_money_history = []
+    avg_resources_history = {resource: [] for resource in RESOURCES}
+    daily_spending_history = {resource: [] for resource in RESOURCES}
+    end_button = Button("End Game", WIDTH - 150, HEIGHT - 70, 130, 40, ORANGE, RED, lambda: end_game(
+        prices_history, population_history, avg_money_history, avg_resources_history, daily_spending_history, days, player))
     running = True
     game_over = False
 
     while running:
-        draw_window(WIN, people, market, player, day, selected_resource)
+        clock.tick(FPS)
+        draw_window(WIN, people, factories, market, player, day, end_button, selected_resource)
+        end_button.check_click()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
@@ -290,7 +571,7 @@ def main():
                     selected_resource = "Fuel"
                 elif event.key == pygame.K_p:
                     selected_resource = "Clothes"
-                elif event.key == pygame.K_u:
+                elif event.key == pygame.K_w:  # Added key for selecting Water
                     selected_resource = "Water"
                 if event.key == pygame.K_k:
                     amount = 1
@@ -298,62 +579,83 @@ def main():
                 elif event.key == pygame.K_l:
                     amount = 1
                     player.sell(market, selected_resource, amount)
+
                 elif event.key == pygame.K_SPACE:
-                    day += 1
+                    while not game_over:
+                        day += 1
 
-                    # Corrected order of operations
-                    # 1. Calculate wages for factories
-                    for factory in factories:
-                        factory.calculate_wage(market)
+                        # Update people
+                        alive_people = []
+                        for person in people:
+                            person.buy_resources(market)
+                        for person in people:
+                            if person.is_alive:
+                                person.consume_resources()
+                            if person.is_alive:
+                                alive_people.append(person)
+                        people = alive_people
 
-                    # 2. Assign workers to factories
-                    for person in people:
-                        if person.decide_to_work(market) and not person.working:
-                            highest_wage_factory = max(factories, key=lambda f: f.current_wage)
-                            highest_wage_factory.accept_worker(person)
+                        # Assign workers
+                        for factory in factories:
+                            factory.reset_worker_count()
+                            factory.calculate_wage(market)
 
-                    # 3. Factories produce goods
-                    for factory in factories:
-                        factory.produce(market)
+                        potential_supply = {resource: market.supply[resource] for resource in RESOURCES}
+                        factory_worker_counts = {factory: 0 for factory in factories}
+                        for person in people:
+                            if person.decide_to_work(market) and not person.working:
+                                factory_wages = {factory: factory.current_wage for factory in factories}
+                                all_min_wage = all(wage == MINIMUM_WAGE for wage in factory_wages.values())
+                                if all_min_wage:
+                                    potential_supplies_after_joining = {}
+                                    for factory in factories:
+                                        resource = factory.resource_type
+                                        potential_supply_if_join = potential_supply[resource] + factory.production_per_worker * (
+                                                    factory_worker_counts[factory] + 1)
+                                        potential_supplies_after_joining[factory] = potential_supply_if_join
+                                    selected_factory = min(potential_supplies_after_joining,
+                                                           key=lambda f: potential_supplies_after_joining[f])
+                                    selected_factory.accept_worker(person)
+                                    factory_worker_counts[selected_factory] += 1
+                                    resource = selected_factory.resource_type
+                                    potential_supply[resource] += selected_factory.production_per_worker
+                                else:
+                                    highest_wage_factory = max(factory_wages, key=lambda f: factory_wages[f])
+                                    highest_wage_factory.accept_worker(person)
 
-                    # 4. Pay workers
-                    for factory in factories:
-                        factory.pay_workers()
+                        daily_spending_total = {resource: sum(person.daily_spending[resource] for person in people) for resource in RESOURCES}
+                        for person in people:
+                            person.daily_spending = {resource: 0 for resource in RESOURCES}
+                        for resource in RESOURCES:
+                            daily_spending_history[resource].append(daily_spending_total[resource])
 
-                    # 5. People buy resources
-                    for person in people:
-                        person.buy_resources(market)
-
-                    # 6. People consume resources
-                    for person in people:
-                        if person.is_alive:
-                            person.consume_resources()
-
-                    # Remove dead people
-                    people = [person for person in people if person.is_alive]
-
-                    # Update market demand
-                    for resource in RESOURCES:
-                        market.demand[resource] = len(people) * CONSUMPTION_RATES[resource]
-
-                    # Adjust market prices
-                    market.adjust_prices(day)
-
-                    # Reproduction
-                    new_people = []
-                    for person in people:
-                        child = person.reproduce()
-                        if child:
-                            new_people.append(child)
-                    people.extend(new_people)
-
-                    days.append(day)
-                    for resource in RESOURCES:
-                        prices_history[resource].append(market.prices[resource])
-                    if day >= 365:
-                        game_over = True
-                        end_game(prices_history, days, player)
-
+                        for factory in factories:
+                            factory.pay_workers()
+                        for factory in factories:
+                            factory.produce(market)
+                        for resource in RESOURCES:
+                            market.demand[resource] = len(people) * CONSUMPTION_RATES[resource]
+                        market.adjust_prices(day)
+                        # Reproduction disabled
+                        # new_people = []
+                        # for person in people:
+                        #     child = person.reproduce()
+                        #     if child:
+                        #         new_people.append(child)
+                        # people.extend(new_people)
+                        days.append(day)
+                        for resource in RESOURCES:
+                            prices_history[resource].append(market.prices[resource])
+                        population_history.append(len(people))
+                        avg_money_history.append(sum(person.money for person in people) / len(people) if people else 0)
+                        for resource in RESOURCES:
+                            avg_resources_history[resource].append(
+                                sum(person.resources[resource] for person in people) / len(people) if people else 0
+                            )
+                        pygame.event.pump()
+                        if day >= 365:
+                            game_over = True
+                            end_game(prices_history, population_history, avg_money_history, avg_resources_history, daily_spending_history, days, player)
 
 if __name__ == "__main__":
     main()

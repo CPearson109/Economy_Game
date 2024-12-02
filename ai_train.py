@@ -1,3 +1,4 @@
+# economy_sim_training.py
 import gymnasium as gym
 from gymnasium import spaces
 import numpy as np
@@ -95,7 +96,7 @@ class EconomySimEnv(gym.Env):
                 success = self.game.player.buy(self.game.market, resource, buy_quantity)
                 if success:
                     self.current_day_actions.append(
-                        f"Purchased {buy_quantity} {resource} at {self.game.market.prices[resource]:} each"
+                        f"Purchased {buy_quantity} {resource} at ${self.game.market.prices[resource]:.2f} each"
                     )
 
             # Sell
@@ -105,20 +106,21 @@ class EconomySimEnv(gym.Env):
                 success = self.game.player.sell(self.game.market, resource, sell_quantity)
                 if success:
                     self.current_day_actions.append(
-                        f"Sold {sell_quantity} {resource} at {self.game.market.prices[resource]:} each"
+                        f"Sold {sell_quantity} {resource} at ${self.game.market.prices[resource]:.2f} each"
                     )
 
         # Advance day if action[-1] > 0.5
         if action[-1] > 0.5:
             self.current_day_actions.append("Advance day")
 
-            # Record totals
+            # Record totals, including Water
             totals = {
                 'total_cash': round(self.game.player.money, 2),
                 'total_net_worth': round(self.calculate_net_worth(), 2),
                 'total_food': int(round(self.game.player.inventory['Food'])),
                 'total_fuel': int(round(self.game.player.inventory['Fuel'])),
-                'total_clothes': int(round(self.game.player.inventory['Clothes']))
+                'total_clothes': int(round(self.game.player.inventory['Clothes'])),
+                'total_water': int(round(self.game.player.inventory['Water']))  # **Added Water**
             }
 
             # Record day's data
@@ -148,13 +150,14 @@ class EconomySimEnv(gym.Env):
 
         # If episode is done, record any remaining actions for the last day
         if done and self.current_day_actions:
-            # Record totals
+            # Record totals, including Water
             totals = {
                 'total_cash': round(self.game.player.money, 2),
                 'total_net_worth': round(self.calculate_net_worth(), 2),
                 'total_food': int(round(self.game.player.inventory['Food'])),
                 'total_fuel': int(round(self.game.player.inventory['Fuel'])),
-                'total_clothes': int(round(self.game.player.inventory['Clothes']))
+                'total_clothes': int(round(self.game.player.inventory['Clothes'])),
+                'total_water': int(round(self.game.player.inventory['Water']))  # **Added Water**
             }
             # Record day's data
             self.episode_data.append({
@@ -202,7 +205,7 @@ class CSVLoggerCallback(BaseCallback):
                 writer.writerow([
                     'Term', 'Final Net Worth', 'Final Cash',
                     'Final Reward', 'Average Reward',
-                    'Food Inventory', 'Fuel Inventory', 'Clothes Inventory'
+                    'Food Inventory', 'Fuel Inventory', 'Clothes Inventory', 'Water Inventory'  # **Added Water Inventory**
                 ])
 
     def _on_step(self) -> bool:
@@ -224,13 +227,14 @@ class CSVLoggerCallback(BaseCallback):
                 food_inventory = int(round(inventories['Food']))
                 fuel_inventory = int(round(inventories['Fuel']))
                 clothes_inventory = int(round(inventories['Clothes']))
+                water_inventory = int(round(inventories['Water']))  # **Added Water Inventory**
 
                 with open(self.csv_path, mode='a', newline='') as file:
                     writer = csv.writer(file)
                     writer.writerow([
                         self.term_count, net_worth, player_money,
                         final_reward, average_reward,
-                        food_inventory, fuel_inventory, clothes_inventory
+                        food_inventory, fuel_inventory, clothes_inventory, water_inventory  # **Added Water Inventory**
                     ])
         return True
 
@@ -265,11 +269,12 @@ class BestRunLoggerCallback(BaseCallback):
                             file.write(f"Day {day_number}\n")
                             for action_text in actions:
                                 file.write(f"{action_text}\n")
-                            file.write(f"Total Cash: {totals['total_cash']}\n")
-                            file.write(f"Total Net Worth: {totals['total_net_worth']}\n")
+                            file.write(f"Total Cash: ${totals['total_cash']:.2f}\n")
+                            file.write(f"Total Net Worth: ${totals['total_net_worth']:.2f}\n")
                             file.write(f"Total Food: {totals['total_food']}\n")
                             file.write(f"Total Fuel: {totals['total_fuel']}\n")
                             file.write(f"Total Clothes: {totals['total_clothes']}\n")
+                            file.write(f"Total Water: {totals['total_water']}\n")  # **Added Total Water**
                             file.write("\n")  # Add a blank line between days
         return True
 
