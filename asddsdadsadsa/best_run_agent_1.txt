@@ -1,0 +1,14 @@
+Day 364
+Sold 1 Fuel at $10.56 each
+Purchased 4 Clothes at $16.86 each
+Sold 3 Clothes at $16.86 each
+Purchased 8 Fuel at $10.56 each
+Purchased 4 Clothes at $16.86 each
+End of Turn
+Total Cash: $3.03
+Total Net Worth: $344.94
+Total Food: 0
+Total Fuel: 8
+Total Clothes: 15
+Total Water: 1
+

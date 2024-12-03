@@ -115,7 +115,7 @@ class Game:
         self.people = [Person() for _ in range(NUM_PEOPLE)]
         self.factories = [Factory(resource) for resource in RESOURCES]
         self.market = Market()
-        self.players = []  # List to hold multiple players
+        self.player = Player()
         self.day = 0
         self.selected_resource = "Food"
 
@@ -130,10 +130,35 @@ class Game:
     def reset(self):
         self.__init__()  # Re-initialize the game
 
-    def create_player(self):
-        player = Player()
-        self.players.append(player)
-        return player
+    def step(self, action):
+        # Process the AI's action
+        self.process_action(action)
+
+        # Advance the day
+        self.advance_day()
+
+        # Get the new observation
+        observation = self.get_observation()
+
+        # Calculate the reward
+        reward = self.calculate_reward()
+
+        # Check if the game is done
+        done = self.day >= 365  # end after 365 days
+
+        # Additional info (can be empty)
+        info = {}
+
+        return observation, reward, done, info
+
+    def process_action(self, action):
+        # Define how the action affects the game
+        if action == 1:  # Buy selected resource
+            amount = 1
+            self.player.buy(self.market, self.selected_resource, amount)
+        elif action == 2:  # Sell selected resource
+            amount = 1
+            self.player.sell(self.market, self.selected_resource, amount)
 
     def advance_day(self):
         self.day += 1
@@ -166,16 +191,38 @@ class Game:
             self.market.demand[resource] = len(self.people) * CONSUMPTION_RATES[resource]
         self.market.adjust_prices(self.day)
 
+        # Reproduction (disabled to remove randomness)
+        # self.people.extend(person.reproduce() for person in self.people if person.reproduce())
+
     def assign_worker_to_factory(self, person):
         factory_wages = {factory: factory.current_wage for factory in self.factories}
         highest_wage_factory = max(factory_wages, key=lambda f: factory_wages[f])
         highest_wage_factory.accept_worker(person)
 
+    def get_observation(self):
+        observation = np.array([
+            self.player.money,
+            self.market.prices['Food'],
+            self.player.inventory['Food'],
+            self.market.prices['Fuel'],
+            self.player.inventory['Fuel'],
+            self.market.prices['Clothes'],
+            self.player.inventory['Clothes'],
+            self.market.prices['Water'],      # Added Water price to observation
+            self.player.inventory['Water']    # Added Water inventory to observation
+        ], dtype=np.float32)
+        return observation
+
+    def calculate_reward(self):
+        reward = self.player.money
+        return reward
+
     # The render function for displaying the game state
     def render(self):
         # This is where we will use the draw_window function to display the current game state
-        draw_window(WIN, self.people, self.factories, self.market, self.players[0], self.day, None, self.selected_resource)
+        draw_window(WIN, self.people, self.factories, self.market, self.player, self.day, None, self.selected_resource)
         pygame.display.update()  # Update the display after drawing
+
 # Button to end the game
 class Button:
     def __init__(self, text, x, y, width, height, color, hover_color, action=None):
