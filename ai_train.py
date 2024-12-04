@@ -15,11 +15,16 @@ pygame.init()
 class EconomySimEnv(gym.Env):
     metadata = {'render.modes': ['human']}
 
-    def __init__(self, game, player):
+    def __init__(self, game, player, risk_taking, portfolio_diversity_preference, investment_horizon):
         super(EconomySimEnv, self).__init__()
         self.game = game  # Shared game instance
         self.player = player  # Individual player instance
         self.num_resources = len(RESOURCES)
+
+        # Store the custom parameters
+        self.risk_taking = risk_taking  # 1 to 5
+        self.portfolio_diversity_preference = portfolio_diversity_preference  # 1 to 5
+        self.investment_horizon = investment_horizon  # 1 to 5
 
         # Action space: For each resource, decide the percentage of cash to spend on buying and percentage of inventory to sell.
         # Additionally, decide whether to advance the day.
@@ -49,7 +54,10 @@ class EconomySimEnv(gym.Env):
         # Reward strategy parameters
         self.max_inventory_threshold = 100  # Threshold for penalties
         self.transaction_cost_rate = 0.01  # 1% transaction cost
-        self.diversity_bonus_per_resource = 0.2  # Bonus per unique resource held
+
+        # Adjust diversity bonus per resource based on preference
+        self.diversity_bonus_per_resource = 0.2 * (self.portfolio_diversity_preference / 5)  # Scale from 0.04 to 0.2
+
         self.final_reward_weight = 0.5  # Weight for final net worth reward
 
     def reset(self, seed=None, options=None):
@@ -155,11 +163,17 @@ class EconomySimEnv(gym.Env):
         observation = self.get_observation()
         current_net_worth = self.calculate_net_worth()
 
-        # Calculate basic reward based on net worth change
+        # Calculate net worth change
         net_worth_change = current_net_worth - self.previous_net_worth
 
-        # Initialize reward with net worth change
-        reward = net_worth_change
+        # Adjust risk multiplier based on risk_taking parameter
+        risk_multiplier = 1 + ((self.risk_taking - 3) / 5)  # risk_taking from 1 to 5, multiplier from 0.6 to 1.4
+
+        # Adjust investment horizon weight
+        investment_horizon_weight = (6 - self.investment_horizon) / 5  # investment_horizon from 1 to 5, weight from 1.0 to 0.2
+
+        # Initialize reward with adjusted net worth change
+        reward = net_worth_change * risk_multiplier * investment_horizon_weight
 
         # Subtract transaction costs
         transaction_costs = (total_buy_cost + total_sell_revenue) * self.transaction_cost_rate
@@ -208,93 +222,6 @@ class EconomySimEnv(gym.Env):
         pygame.quit()
 
 
-class CSVLoggerCallback(BaseCallback):
-    def __init__(self, csv_path, verbose=0):
-        super(CSVLoggerCallback, self).__init__(verbose)
-        self.csv_path = csv_path
-        self.term_count = 0
-
-        file_exists = os.path.isfile(self.csv_path)
-        with open(self.csv_path, mode='a', newline='') as file:
-            writer = csv.writer(file)
-            if not file_exists:
-                writer.writerow([
-                    'Term', 'Final Net Worth', 'Final Cash',
-                    'Final Reward', 'Average Reward',
-                    'Food Inventory', 'Fuel Inventory', 'Clothes Inventory', 'Water Inventory'  # Added Water Inventory
-                ])
-
-    def _on_step(self) -> bool:
-        dones = self.locals.get('dones')
-        infos = self.locals.get('infos')
-
-        if dones is not None and any(dones):
-            done_indices = [i for i, done in enumerate(dones) if done]
-            for idx in done_indices:
-                self.term_count += 1
-                info = infos[idx]
-
-                net_worth = info['net_worth']
-                player_money = info['player_money']
-                final_reward = info['total_reward']
-                average_reward = info['average_reward']
-                inventories = info['player_inventory']
-
-                food_inventory = int(round(inventories.get('Food', 0)))
-                fuel_inventory = int(round(inventories.get('Fuel', 0)))
-                clothes_inventory = int(round(inventories.get('Clothes', 0)))
-                water_inventory = int(round(inventories.get('Water', 0)))  # Added Water Inventory
-
-                with open(self.csv_path, mode='a', newline='') as file:
-                    writer = csv.writer(file)
-                    writer.writerow([
-                        self.term_count, net_worth, player_money,
-                        final_reward, average_reward,
-                        food_inventory, fuel_inventory, clothes_inventory, water_inventory  # Added Water Inventory
-                    ])
-        return True
-
-
-class BestRunLoggerCallback(BaseCallback):
-    def __init__(self, best_run_path, verbose=0):
-        super(BestRunLoggerCallback, self).__init__(verbose)
-        self.best_run_path = best_run_path
-        self.best_net_worth = -np.inf  # Initialize with negative infinity
-
-    def _on_step(self) -> bool:
-        dones = self.locals.get('dones')
-        infos = self.locals.get('infos')
-
-        if dones is not None and any(dones):
-            done_indices = [i for i, done in enumerate(dones) if done]
-            for idx in done_indices:
-                info = infos[idx]
-                net_worth = info['net_worth']
-                # Check if this is the best net worth so far
-                if net_worth > self.best_net_worth:
-                    self.best_net_worth = net_worth
-                    # Get the episode data from the info
-                    episode_data = info.get('episode_data', [])
-
-                    # Save episode_data to text file in specified format
-                    with open(self.best_run_path, mode='w') as file:
-                        for day_data in episode_data:
-                            day_number = day_data['day']
-                            actions = day_data['actions']
-                            totals = day_data['totals']
-                            file.write(f"Day {day_number}\n")
-                            for action_text in actions:
-                                file.write(f"{action_text}\n")
-                            file.write(f"Total Cash: ${totals['total_cash']:.2f}\n")
-                            file.write(f"Total Net Worth: ${totals['total_net_worth']:.2f}\n")
-                            file.write(f"Total Food: {totals['total_food']}\n")
-                            file.write(f"Total Fuel: {totals['total_fuel']}\n")
-                            file.write(f"Total Clothes: {totals['total_clothes']}\n")
-                            file.write(f"Total Water: {totals['total_water']}\n")  # Added Total Water
-                            file.write("\n")  # Add a blank line between days
-        return True
-
-
 class TurnEndCallback(BaseCallback):
     def __init__(self):
         super(TurnEndCallback, self).__init__()
@@ -316,72 +243,184 @@ if __name__ == "__main__":
     if not os.path.exists(model_dir):
         os.makedirs(model_dir)
 
-    num_agents = 2  # Number of AI agents
-    total_days = 365  # Total days to simulate
+    # Ask the user for the number of AI agents (up to 4)
+    while True:
+        try:
+            num_agents = int(input("Enter the number of AI agents (1-4): "))
+            if 1 <= num_agents <= 4:
+                break
+            else:
+                print("Please enter a number between 1 and 4.")
+        except ValueError:
+            print("Invalid input. Please enter a valid integer between 1 and 4.")
+
+    # Collect customization parameters for each agent
+    agent_parameters = []
+
+    for i in range(num_agents):
+        print(f"\nConfigure Agent {i}")
+        while True:
+            try:
+                risk_taking = int(input(f"Enter Risk Taking level for Agent {i} (1-5): "))
+                if 1 <= risk_taking <= 5:
+                    break
+                else:
+                    print("Please enter a number between 1 and 5.")
+            except ValueError:
+                print("Invalid input. Please enter a valid integer between 1 and 5.")
+
+        while True:
+            try:
+                portfolio_diversity_preference = int(input(f"Enter Portfolio Diversity Preference for Agent {i} (1-5): "))
+                if 1 <= portfolio_diversity_preference <= 5:
+                    break
+                else:
+                    print("Please enter a number between 1 and 5.")
+            except ValueError:
+                print("Invalid input. Please enter a valid integer between 1 and 5.")
+
+        while True:
+            try:
+                investment_horizon = int(input(f"Enter Investment Horizon for Agent {i} (1-5): "))
+                if 1 <= investment_horizon <= 5:
+                    break
+                else:
+                    print("Please enter a number between 1 and 5.")
+            except ValueError:
+                print("Invalid input. Please enter a valid integer between 1 and 5.")
+
+        # Store the parameters
+        agent_parameters.append({
+            'risk_taking': risk_taking,
+            'portfolio_diversity_preference': portfolio_diversity_preference,
+            'investment_horizon': investment_horizon
+        })
+
+        # Save the parameters to a text file
+        params_file_path = os.path.join(model_dir, f"agent_{i}_parameters.txt")
+        with open(params_file_path, 'w') as f:
+            f.write(f"Agent {i} Parameters:\n")
+            f.write(f"Risk Taking: {risk_taking}\n")
+            f.write(f"Portfolio Diversity Preference: {portfolio_diversity_preference}\n")
+            f.write(f"Investment Horizon: {investment_horizon}\n")
 
     # Paths for models
     model_paths = [os.path.join(model_dir, f"economy_sim_ppo_model_agent_{i}") for i in range(num_agents)]
     csv_paths = [os.path.join(model_dir, f"economy_sim_results_agent_{i}.csv") for i in range(num_agents)]
     best_run_paths = [os.path.join(model_dir, f"best_run_agent_{i}.txt") for i in range(num_agents)]
 
-    game = Game()  # Shared game instance
-
-    players = [game.create_player() for _ in range(num_agents)]  # Create individual players
-    envs = [EconomySimEnv(game, players[i]) for i in range(num_agents)]
-    models = []
-
-    # Initialize models and callbacks
-    for i in range(num_agents):
-        env = envs[i]
-        model_path = model_paths[i]
-        csv_path = csv_paths[i]
-        best_run_path = best_run_paths[i]
-        if os.path.exists(model_path + ".zip"):
-            print(f"Loading model for Agent {i} from {model_path}")
-            model = PPO.load(model_path, env=env, verbose=1)
-        else:
-            print(f"Creating new model for Agent {i}.")
-            model = PPO(
-                "MlpPolicy",
-                env,
-                verbose=1,
-                learning_rate=0.0003,
-                n_steps=2048,
-                batch_size=64,
-                gae_lambda=0.95,
-                gamma=0.99,
-                ent_coef=0.0,
-                clip_range=0.2
-            )
-        models.append(model)
+    # Initialize term counter
+    term_number = 1
 
     try:
-        for day in range(total_days):
-            print(f"Day {day + 1}")
-            for agent_idx in range(num_agents):
-                env = envs[agent_idx]
-                model = models[agent_idx]
-                model.set_env(env)
-                # Create callbacks for logging
-                csv_logger_callback = CSVLoggerCallback(csv_path=csv_paths[agent_idx])
-                best_run_callback = BestRunLoggerCallback(best_run_path=best_run_paths[agent_idx])
-                turn_end_callback = TurnEndCallback()
-                # Train the model until the agent ends its turn
-                model.learn(
-                    total_timesteps=1000000,
-                    callback=[csv_logger_callback, best_run_callback, turn_end_callback],
-                    reset_num_timesteps=False
+        while True:
+            print(f"\nStarting Term {term_number}")
+            # Initialize game and players for the new term
+            game = Game()  # Reset the game
+            players = [game.create_player() for _ in range(num_agents)]  # Create new players
+
+            # Initialize environments with custom parameters
+            envs = []
+            for i in range(num_agents):
+                env = EconomySimEnv(
+                    game,
+                    players[i],
+                    risk_taking=agent_parameters[i]['risk_taking'],
+                    portfolio_diversity_preference=agent_parameters[i]['portfolio_diversity_preference'],
+                    investment_horizon=agent_parameters[i]['investment_horizon']
                 )
-                # Save the model
-                model.save(model_paths[agent_idx])
-            # After all agents have taken their turns, advance the day
-            game.advance_day()
+                envs.append(env)
+
+            # Load or initialize models
+            models = []
+            for i in range(num_agents):
+                env = envs[i]
+                model_path = model_paths[i]
+                if os.path.exists(model_path + ".zip"):
+                    print(f"Loading model for Agent {i} from {model_path}")
+                    model = PPO.load(model_path, env=env, verbose=1)
+                else:
+                    print(f"Creating new model for Agent {i}.")
+                    model = PPO(
+                        "MlpPolicy",
+                        env,
+                        verbose=1,
+                        learning_rate=0.0003,
+                        n_steps=2048,
+                        batch_size=64,
+                        gae_lambda=0.95,
+                        gamma=0.99,
+                        ent_coef=0.0,
+                        clip_range=0.2
+                    )
+                models.append(model)
+
+            # Run the game for 365 days
+            for day in range(365):
+                print(f"Day {game.day + 1}")
+                for agent_idx in range(num_agents):
+                    env = envs[agent_idx]
+                    model = models[agent_idx]
+                    model.set_env(env)
+                    # Create callback for turn end
+                    turn_end_callback = TurnEndCallback()
+                    # Train the model until the agent ends its turn
+                    model.learn(
+                        total_timesteps=1000000,
+                        callback=[turn_end_callback],
+                        reset_num_timesteps=False
+                    )
+                    # Save the model
+                    model.save(model_paths[agent_idx])
+                # After all agents have taken their turns, advance the day
+                game.advance_day()
+
+            # Collect final results and determine winner
+            net_worths = []
+            for i in range(num_agents):
+                env = envs[i]
+                net_worth = env.calculate_net_worth()
+                net_worths.append(net_worth)
+
+            # Determine winner(s)
+            max_net_worth = max(net_worths)
+            winner_indices = [i for i, net_worth in enumerate(net_worths) if net_worth == max_net_worth]
+
+            # Write results to CSV files
+            for i in range(num_agents):
+                env = envs[i]
+                net_worth = net_worths[i]
+                player_money = env.player.money
+                inventories = env.player.inventory
+
+                food_inventory = int(round(inventories.get('Food', 0)))
+                fuel_inventory = int(round(inventories.get('Fuel', 0)))
+                clothes_inventory = int(round(inventories.get('Clothes', 0)))
+                water_inventory = int(round(inventories.get('Water', 0)))  # Added Water Inventory
+
+                winner = 1 if i in winner_indices else 0
+
+                csv_path = csv_paths[i]
+                file_exists = os.path.isfile(csv_path)
+                with open(csv_path, mode='a', newline='') as file:
+                    writer = csv.writer(file)
+                    if os.stat(csv_path).st_size == 0:
+                        writer.writerow([
+                            'Term', 'Final Net Worth', 'Final Cash',
+                            'Food Inventory', 'Fuel Inventory', 'Clothes Inventory', 'Water Inventory',
+                            'Winner'
+                        ])
+                    writer.writerow([
+                        term_number, round(net_worth, 2), round(player_money, 2),
+                        food_inventory, fuel_inventory, clothes_inventory, water_inventory,
+                        winner
+                    ])
+
+            # Increment term number
+            term_number += 1
+
     except KeyboardInterrupt:
-        print("Training interrupted. Saving models...")
-        for i in range(num_agents):
-            models[i].save(model_paths[i])
-        pygame.quit()
-    else:
+        print("Simulation interrupted. Saving models...")
         for i in range(num_agents):
             models[i].save(model_paths[i])
         pygame.quit()

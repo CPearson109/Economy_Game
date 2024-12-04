@@ -1,0 +1,4 @@
+Agent 2 Parameters:
+Risk Taking: 5
+Portfolio Diversity Preference: 1
+Investment Horizon: 1
